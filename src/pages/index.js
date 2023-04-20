@@ -1,124 +1,201 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
+import { INPUT_INFO, APIS_LIST } from './constants'
+import { Input } from './Input.js'
+import { CheckBox } from './CheckBox.js'
+import { v4 as uuidv4 } from 'uuid'
+import React, { useEffect, useState } from 'react'
 
-const inter = Inter({ subsets: ['latin'] })
+// const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  const [inputValues, setInputValues] = useState({
+    num: '',
+    name: '',
+    clientID: '',
+    clientSecret: '',
+    entorno: 'pro',
+    apisList: []
+  })
+  const [api, setApi] = useState('')
+  const [checked, setChecked] = useState(false)
+
+  const resteApiList = () => {
+    setInputValues({
+      ...inputValues,
+      apisList: []
+    })
+    if (checked) setChecked(!checked)
+  }
+
+  const handleInputChange = (key, event) => {
+    if (key === 'name') setInputValues({ ...inputValues, name: event })
+    if (key === 'num') setInputValues({ ...inputValues, num: event })
+    if (key === 'clientID') setInputValues({ ...inputValues, clientID: event })
+    if (key === 'clientSecret')
+      setInputValues({ ...inputValues, clientSecret: event })
+  }
+
+  const addApiBtns = () => {
+    if (!api) return
+
+    const newListApi = [...inputValues.apisList]
+    newListApi.push({ name: api, id: uuidv4() })
+
+    setInputValues({
+      ...inputValues,
+      apisList: newListApi
+    })
+    console.log(newListApi)
+  }
+
+  const handleSeletAllApis = () => {
+    if (!checked) {
+      const newList = []
+      APIS_LIST.map((ictems, i) => newList.push({ name: ictems, id: uuidv4() }))
+      setInputValues({
+        ...inputValues,
+        apisList: newList
+      })
+      setChecked(!checked)
+    } else if (checked) {
+      resteApiList()
+      setChecked(!checked)
+    }
+  }
+
+  const handelChangeEntorno = (event) => {
+    setInputValues({
+      ...inputValues,
+      entorno: event.target.value
+    })
+  }
+
+  const handleSubmit = (event) => {
+    // if (!inputValues) return
+    event.preventDefault()
+    fetch('/api/hello', {
+      method: 'POST',
+      body: JSON.stringify(inputValues)
+    })
+      .then((res) => res.text())
+      .then((data) => {
+        console.log(data)
+      })
+      .catch((err) => {
+        console.error(err)
+      })
+  }
+
+  const handleDeleteApi = (id) => {
+    const filtredItems = inputValues.apisList.filter((item) => item.id !== id)
+    setInputValues({
+      ...inputValues,
+      apisList: filtredItems
+    })
+  }
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/pages/index.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+    <form onSubmit={handleSubmit} className='items-center flex flex-col'>
+      {/* Pinta todos los input segun la info que hay en la variable INPUT_INFO */}
+      {INPUT_INFO.map((info, index) => {
+        return (
+          <Input
+            changeValue={handleInputChange}
+            inputId={info.id}
+            labelText={info.labelText}
+            placeholder={info.placeholder}
+            type={info.type}
+            key={index}
+          />
+        )
+      })}
+
+      <div className='w-full md:w-1/3 px-3 mb-6 md:mb-0'>
+        <label className='block uppercase tracking-wide text-gray-700 font-bold mb-2'>
+          Entorno
+          <div className='relative'>
+            <select
+              defaultValue={inputValues.entorno}
+              onChange={handelChangeEntorno}
+              className='block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500'
+            >
+              <option value='pro'>Pro</option>
+              <option value='pre'>Pre</option>
+            </select>
+            <div className='pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700'>
+              <svg
+                className='fill-current h-4 w-4'
+                xmlns='http://www.w3.org/2000/svg'
+                viewBox='0 0 20 20'
+              >
+                <path d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z' />
+              </svg>
+            </div>
+          </div>
+        </label>
+      </div>
+
+      <div className='w-full md:w-1/3 px-3 mb-6 md:mb-0'>
+        <label className='block uppercase tracking-wide text-gray-700  font-bold mb-2'>
+          APIs
+          <input
+            list='apis-list'
+            onChange={(e) => {
+              setApi(e.target.value)
+            }}
+            className='block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500'
+          />
+        </label>
+
+        <datalist id='apis-list'>
+          {APIS_LIST.map((api, index) => {
+            return (
+              <option value={api} key={index}>
+                {api}
+              </option>
+            )
+          })}
+        </datalist>
+      </div>
+      <ul className='w-92 p-2 list-disc'>
+        {inputValues.apisList.map((apis, index) => {
+          return (
+            <CheckBox
+              text={apis.name}
+              id={apis.id}
+              onClick={handleDeleteApi}
+              key={index}
             />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+          )
+        })}
+      </ul>
+      <label>
+        Select all apis:..
+        <input
+          type='checkbox'
+          checked={checked}
+          onChange={handleSeletAllApis}
         />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      </label>
+      <button
+        onClick={addApiBtns}
+        className='mt-2 shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded'
+        type='button'
+      >
+        Add api
+      </button>
+      <button
+        onClick={resteApiList}
+        className='mt-2 shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded'
+        type='button'
+      >
+        Reset all apis
+      </button>
+      <button
+        className='shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded mt-4'
+        type='submit'
+      >
+        Generate files
+      </button>
+    </form>
   )
 }
