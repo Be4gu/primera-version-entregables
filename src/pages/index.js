@@ -1,10 +1,8 @@
-import { INPUT_INFO, APIS_LIST } from './constants'
-import { Input } from './Input.js'
-import { CheckBox } from './CheckBox.js'
+import { INPUT_INFO, APIS_LIST } from '../../utils/constants'
+import { Input } from '../../components/input.js'
+import { CheckBox } from '../../components/check-box.js'
 import { v4 as uuidv4 } from 'uuid'
 import React, { useEffect, useState } from 'react'
-
-// const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   const [inputValues, setInputValues] = useState({
