@@ -1,0 +1,13 @@
+alertsTypePayloadDetails:
+  description: ''
+  type: object
+  properties:
+    fileName:
+      type: string
+    numRegs:
+      type: number
+    changeDate:
+      type: string
+  example: >-
+    {"fileName":"Massive alert file name","numRegs":0,"changeDate":"2020-02-58
+    13:26:53"}

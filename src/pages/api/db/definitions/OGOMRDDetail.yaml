@@ -1,0 +1,36 @@
+OGOMRDDetail:
+  description: ''
+  type: object
+  properties:
+    notAvailable:
+      type: string
+    registeredActs:
+      type: array
+      items:
+        properties:
+          bulletinNumber:
+            type: string
+          datePublished:
+            type: string
+          description:
+            type: string
+          reference:
+            type: string
+          registrationDate:
+            type: string
+          registrationNumber:
+            type: string
+          subActs:
+            type: array
+            items:
+              properties:
+                code:
+                  type: string
+                value:
+                  type: string
+              type: object
+          year:
+            type: string
+        type: object
+  example: >-
+    {"notAvailable":"string","registeredActs":[{"bulletinNumber":"string","datePublished":"string","description":"string","reference":"string","registrationDate":"string","registrationNumber":"string","subActs":[{"code":"string","value":"string"}],"year":"string"}]}

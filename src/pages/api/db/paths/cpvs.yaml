@@ -1,0 +1,57 @@
+'/tendersapi/cpvs':
+  get:
+    tags:
+      - Tenders
+    responses:
+      '200':
+        description: 200 OK
+        schema:
+          $ref: '#/definitions/cpvsDetails'
+      '500':
+        description: 500 Internal Server Error
+    parameters:
+      - name: offset
+        type: integer
+        required: false
+        in: query
+        description: offset
+        format: int32
+      - name: limit
+        type: integer
+        required: false
+        in: query
+        description: limit
+        format: int32
+      - name: lang
+        type: string
+        required: false
+        in: query
+        description: lang
+'/tendersapi/cpvs/{cpvID}':
+  get:
+    tags:
+      - Tenders
+    responses:
+      '200':
+        description: 200 OK
+        schema:
+          $ref: '#/definitions/cpvDetails'
+      '400':
+        description: 400 Cpv Not Found
+        schema:
+          type: string
+      '500':
+        description: 500 Internal Server Error
+        schema:
+          type: string
+    parameters:
+      - name: cpvID
+        type: string
+        required: true
+        in: path
+        description: cpvID
+      - name: lang
+        type: string
+        required: false
+        in: query
+        description: lang

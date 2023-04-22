@@ -73,5 +73,6 @@ export const APIS_LIST = [
   'tenders',
   'v2',
   'awardee',
+  'awarder',
   'identifierType'
 ]

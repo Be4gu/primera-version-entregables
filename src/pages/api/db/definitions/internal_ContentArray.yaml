@@ -1,0 +1,4 @@
+internal_ContentArray:
+  type: array
+  items:
+    $ref: '#/definitions/internal_Content'

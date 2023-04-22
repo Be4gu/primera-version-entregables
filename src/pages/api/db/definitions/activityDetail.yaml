@@ -1,0 +1,71 @@
+activityDetail:
+  description: ''
+  type: object
+  properties:
+    activities:
+      type: array
+      items:
+        properties:
+          code:
+            type: string
+          description:
+            type: string
+          type:
+            type: string
+        type: object
+    activityDescription:
+      type: string
+    companyExperience:
+      type: object
+      properties:
+        experienceCompanyName:
+          type: object
+          properties:
+            companyName:
+              type: string
+            countryCode:
+              type: string
+        experienceRating:
+          type: string
+        experienceReason:
+          type: string
+    exclusiveDistributor:
+      type: string
+    expectedStartDate:
+      type: string
+    franchises:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            properties:
+              commercialTitle:
+                type: string
+              establishmentNumber:
+                type: string
+              franchiseName:
+                type: object
+                properties:
+                  companyName:
+                    type: string
+                  countryCode:
+                    type: string
+            type: object
+        unavailabilityReason:
+          type: string
+    incorporated:
+      type: string
+    managerExperience:
+      type: object
+      properties:
+        managerExperienceType:
+          type: string
+        previousExperienceRating:
+          type: string
+    notAvailable:
+      type: string
+    startYear:
+      type: string
+  example: >-
+    {"activities":[{"code":"string","description":"string","type":"string"}],"activityDescription":"string","companyExperience":{"experienceCompanyName":{"companyName":"string","countryCode":"string"},"experienceRating":"string","experienceReason":"string"},"exclusiveDistributor":"string","expectedStartDate":"string","franchises":{"items":[{"commercialTitle":"string","establishmentNumber":"string","franchiseName":{"companyName":"string","countryCode":"string"}}],"unavailabilityReason":"string"},"incorporated":"string","managerExperience":{"managerExperienceType":"string","previousExperienceRating":"string"},"notAvailable":"string","startYear":"string"}

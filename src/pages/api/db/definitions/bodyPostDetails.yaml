@@ -1,0 +1,52 @@
+bodyPostDetails:
+  properties:
+    userId:
+      description: userId
+      example: '255'
+      type: integer
+      format: int32
+    query:
+      type: string
+      description: query
+      example: seguros
+    scope:
+      type: string
+      example: ES,IT
+      description: scope
+    cpvs:
+      type: string
+      description: cpvs
+      example: '03111400'
+    minAmount:
+      type: integer
+      example: '5'
+      description: minAmount
+      format: int32
+    maxAmount:
+      type: integer
+      example: '20'
+      description: maxAmount
+      format: int32
+    email:
+      type: string
+      description: email
+      example: email@email.com
+    alias:
+      type: string
+      example: subscripción a limpieza
+      description: alias
+    language:
+      type: string
+      description: language
+      example: es
+    awardeeIdentifierType:
+      type: string
+      example: NREG
+    awardeeIdentifier:
+      type: string
+    awarderIdentifierType:
+      type: string
+      example: NREG
+    awarderIdentifier:
+      type: string
+  additionalProperties: false

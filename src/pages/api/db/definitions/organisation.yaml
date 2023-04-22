@@ -1,0 +1,27 @@
+organisation:
+  required:
+    - activity
+    - legalForm
+    - nameAddress
+    - orgIdent
+    - orgStatus
+    - registeredOffice
+    - scoreCS
+  properties:
+    activity:
+      $ref: '#/definitions/activity'
+    legalForm:
+      type: string
+      description: Forma jurídica de la empresa
+    nameAddress:
+      $ref: '#/definitions/nameAddress'
+    orgIdent:
+      $ref: '#/definitions/orgIdent'
+    orgStatus:
+      $ref: '#/definitions/orgStatus'
+    registeredOffice:
+      $ref: '#/definitions/registeredOffice'
+    scoreCS:
+      type: number
+      format: double
+      description: Puntuación CS

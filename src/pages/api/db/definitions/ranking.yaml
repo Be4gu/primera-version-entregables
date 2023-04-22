@@ -1,0 +1,16 @@
+ranking:
+  description: ''
+  type: object
+  properties:
+    rankingID:
+      type: string
+    description:
+      type: string
+    units:
+      type: string
+    order:
+      type: string
+    limit:
+      type: number
+  example: >-
+    {"rankingID":"01","description":"Ventas","units":"Euros","order":"desc","limit":1000}

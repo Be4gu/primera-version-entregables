@@ -1,0 +1,211 @@
+DefLegProcIDDetails:
+  description: ''
+  type: object
+  properties:
+    claimed:
+      type: string
+    courtNumber:
+      type: number
+    courtTown:
+      type: string
+    courtType:
+      type: string
+    defendants:
+      type: array
+      items:
+        properties:
+          address:
+            type: object
+            properties:
+              country:
+                type: object
+                properties:
+                  code:
+                    type: string
+                  value:
+                    type: string
+              dateUntil:
+                type: string
+              fullAddress:
+                type: string
+              number:
+                type: string
+              otherDetails:
+                type: string
+              postcode:
+                type: string
+              province:
+                type: object
+                properties:
+                  code:
+                    type: string
+                  value:
+                    type: string
+              streetName:
+                type: string
+              streetType:
+                type: object
+                properties:
+                  code:
+                    type: string
+                  value:
+                    type: string
+              town:
+                type: object
+                properties:
+                  code:
+                    type: string
+                  value:
+                    type: string
+              urbanArea:
+                type: string
+          companyName:
+            type: string
+          taxId:
+            type: string
+        type: object
+    embargoed:
+      type: string
+    embargoedAddress:
+      type: array
+      items:
+        properties:
+          address:
+            type: object
+            properties:
+              country:
+                type: object
+                properties:
+                  code:
+                    type: string
+                  value:
+                    type: string
+              dateUntil:
+                type: string
+              fullAddress:
+                type: string
+              number:
+                type: string
+              otherDetails:
+                type: string
+              postcode:
+                type: string
+              province:
+                type: object
+                properties:
+                  code:
+                    type: string
+                  value:
+                    type: string
+              streetName:
+                type: string
+              streetType:
+                type: object
+                properties:
+                  code:
+                    type: string
+                  value:
+                    type: string
+              town:
+                type: object
+                properties:
+                  code:
+                    type: string
+                  value:
+                    type: string
+              urbanArea:
+                type: string
+          homeValuation:
+            type: string
+        type: object
+    orderNumber:
+      type: string
+    plaintiffs:
+      type: array
+      items:
+        properties:
+          address:
+            type: object
+            properties:
+              country:
+                type: object
+                properties:
+                  code:
+                    type: string
+                  value:
+                    type: string
+              dateUntil:
+                type: string
+              fullAddress:
+                type: string
+              number:
+                type: string
+              otherDetails:
+                type: string
+              postcode:
+                type: string
+              province:
+                type: object
+                properties:
+                  code:
+                    type: string
+                  value:
+                    type: string
+              streetName:
+                type: string
+              streetType:
+                type: object
+                properties:
+                  code:
+                    type: string
+                  value:
+                    type: string
+              town:
+                type: object
+                properties:
+                  code:
+                    type: string
+                  value:
+                    type: string
+              urbanArea:
+                type: string
+          companyName:
+            type: string
+          taxId:
+            type: string
+        type: object
+    proceeding:
+      type: string
+    proceedingDate:
+      type: string
+    publications:
+      type: array
+      items:
+        properties:
+          datePublished:
+            type: string
+          media:
+            type: object
+            properties:
+              code:
+                type: string
+              value:
+                type: string
+        type: object
+    rating:
+      type: string
+    status:
+      type: string
+    statusDate:
+      type: string
+    statusHistory:
+      type: array
+      items:
+        properties:
+          estado:
+            type: string
+          fecha:
+            type: string
+        type: object
+  example: >-
+    {"claimed":"string","courtNumber":0,"courtTown":"string","courtType":"string","defendants":[{"address":{"country":{"code":"string","value":"string"},"dateUntil":"2019-10-04T08:16:40.791Z","fullAddress":"string","number":"string","otherDetails":"string","postcode":"string","province":{"code":"string","value":"string"},"streetName":"string","streetType":{"code":"string","value":"string"},"town":{"code":"string","value":"string"},"urbanArea":"string"},"companyName":"string","taxId":"string"}],"embargoed":"string","embargoedAddress":[{"address":{"country":{"code":"string","value":"string"},"dateUntil":"2019-10-04T08:16:40.791Z","fullAddress":"string","number":"string","otherDetails":"string","postcode":"string","province":{"code":"string","value":"string"},"streetName":"string","streetType":{"code":"string","value":"string"},"town":{"code":"string","value":"string"},"urbanArea":"string"},"homeValuation":"string"}],"orderNumber":"string","plaintiffs":[{"address":{"country":{"code":"string","value":"string"},"dateUntil":"2019-10-04T08:16:40.791Z","fullAddress":"string","number":"string","otherDetails":"string","postcode":"string","province":{"code":"string","value":"string"},"streetName":"string","streetType":{"code":"string","value":"string"},"town":{"code":"string","value":"string"},"urbanArea":"string"},"companyName":"string","taxId":"string"}],"proceeding":"string","proceedingDate":"string","publications":[{"datePublished":"string","media":{"code":"string","value":"string"}}],"rating":"string","status":"string","statusDate":"string","statusHistory":[{"estado":"string","fecha":"string"}]}

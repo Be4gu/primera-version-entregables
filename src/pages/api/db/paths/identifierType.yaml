@@ -1,0 +1,40 @@
+'/tendersapi/identifierType':
+  get:
+    tags:
+      - Tenders
+    responses:
+      '200':
+        description: 200 OK
+    parameters:
+      - name: offset
+        type: integer
+        required: false
+        in: query
+        format: int32
+      - name: limit
+        type: integer
+        required: false
+        in: query
+        format: int32
+'/tendersapi/identifierType/{country}':
+  get:
+    tags:
+      - Tenders
+    responses:
+      '200':
+        description: 200 OK
+    parameters:
+      - name: country
+        type: string
+        required: true
+        in: path
+      - name: offset
+        type: integer
+        required: false
+        in: query
+        format: int32
+      - name: limit
+        type: integer
+        required: false
+        in: query
+        format: int32

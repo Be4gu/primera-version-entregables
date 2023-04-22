@@ -1,0 +1,295 @@
+tendersDetail:
+  description: ''
+  type: object
+  properties:
+    totalResults:
+      type: number
+    numResults:
+      type: number
+    tenders:
+      type: array
+      items:
+        properties:
+          id:
+            type: number
+          date:
+            type: string
+          record:
+            type: string
+          organism:
+            type: string
+          title:
+            type: string
+          description:
+            type: string
+          budget:
+            type: string
+          endDate:
+            type: string
+          cpv:
+            type: string
+          contractType:
+            type: string
+          country: {}
+          tenderSource:
+            type: string
+          tenderState:
+            type: string
+          cpvDescriptionEN:
+            type: string
+          cpvDescriptionES:
+            type: string
+          cpvDescriptionPT:
+            type: string
+        type: object
+    trigramCounters: {}
+  example: >-
+    {"totalResults":86937,"numResults":20,"tenders":[{"id":3219783,"date":"26/09/2019","record":"2019/794","organism":"Xarxa
+    Local de Municipis Gironins (XALOC)","title":"Servei de prevenció de riscos
+    laborals aliè, tant en les especialitats tècniques (seguretat, higiene,
+    ergonomia i psicosociologia) com de vigilància i promoció de la salut, del
+    personal laboral i funcionari al servei de la Xarxa Local de Municipis
+    Gironins de la Diputació de Girona (XALOC), en qualsevol dels seus
+    centres.","description":"Id licitación: 2019/794; Órgano de Contratación:
+    Xarxa Local de Municipis Gironins (XALOC); Importe: 15045.50; Estado:
+    EVALUACION","budget":"33100.1","endDate":"25/09/2019","cpv":"71317000","contractType":"Servicios","country":null,"tenderSource":"Histórico
+    Plataformas Agregadas","tenderState":"Pendiente","cpvDescriptionEN":"Hazard
+    protection and control consultancy services","cpvDescriptionES":"Servicios
+    de consultoría en protección y control de
+    riesgos","cpvDescriptionPT":"Serviços de consultoria em matéria de controlo
+    e protecção contra os riscos
+    potenciais"},{"id":3219784,"date":"26/09/2019","record":"60/2019","organism":"Patronat
+    Municipal de Turisme de Vila-seca","title":"Contractació del servei de
+    construcció d'un conjunt escultòric de sorra al Pinar de Perruquet, la
+    Pineda, Vila-seca","description":"Id licitación: 60/2019; Órgano de
+    Contratación: Patronat Municipal de Turisme de Vila-seca; Importe: 54000.00;
+    Estado:
+    EVALUACION","budget":"54000.0","endDate":"25/09/2019","cpv":"92312230","contractType":"Servicios","country":null,"tenderSource":"Histórico
+    Plataformas
+    Agregadas","tenderState":"Pendiente","cpvDescriptionEN":"Services provided
+    by sculptors","cpvDescriptionES":"Servicios prestados por
+    escultores","cpvDescriptionPT":"Serviços prestados por
+    escultores"},{"id":3219785,"date":"15/10/2019","record":"CSdM
+    21/19-ASS","organism":"Consorci Sanitari del
+    Maresme","title":"Subministrament de 30 monitors de constants per a les
+    unitats d'hospitalització de l'Hospital de Mataró, per encàrrec del Consorci
+    Sanitari del Maresme","description":"Id licitación: CSdM 21/19-ASS; Órgano
+    de Contratación: Consorci Sanitari del Maresme; Importe: 75000.00; Estado:
+    EVALUACION","budget":"75000.0","endDate":null,"cpv":"33100000","contractType":"Suministros","country":null,"tenderSource":"Histórico
+    Plataformas Agregadas","tenderState":"Pendiente","cpvDescriptionEN":"Medical
+    equipments","cpvDescriptionES":"Equipamiento
+    médico","cpvDescriptionPT":"Equipamento
+    médico"},{"id":3219786,"date":"30/09/2019","record":"12/2019","organism":"Institut
+    Català de Finances (ICF)","title":"El servei haurà de donar cobertura a les
+    actuals necessitats de negoci, de gestió dels productes comercialitzats per
+    l'ICF, així com a les necessitats tecnològiques per a l'esmentada
+    continuïtat del negoci de l'ICF.\nEl servei donarà a l'ICF, la capacitat de
+    disposar dels mecanismes per adaptar-se als nous requeriments que en un
+    futur puguin sorgir, com la possible comercialització d'altres tipus de
+    productes bancaris a l'ICF, o modificacions en l'entorn tecnològic, a més de
+    les actualitzacions normatives promogudes pels reguladors, en un entorn
+    actual de permanent canvi. \nAquest servei haurà de ser ofert per el
+    contractista en format de programari com a servei i des d'un o diversos
+    centres de processament de dades (CPD, d'ara endavant) amb una certificació
+    mínima per a tots ells de TIER III.","description":"Id licitación: 12/2019;
+    Órgano de Contratación: Institut Català de Finances (ICF); Importe:
+    5400000.00; Estado:
+    EVALUACION","budget":"9150000.0","endDate":"30/09/2019","cpv":"72212900","contractType":"Servicios","country":null,"tenderSource":"Histórico
+    Plataformas
+    Agregadas","tenderState":"Pendiente","cpvDescriptionEN":"Miscellaneous
+    software development services and computer
+    systems","cpvDescriptionES":"Servicios de desarrollo de software y sistemas
+    informáticos diversos","cpvDescriptionPT":"Serviços de desenvolvimento de
+    software e sistemas informáticos
+    diversos"},{"id":3219787,"date":"27/09/2019","record":"14803285","organism":"Ferrocarril
+    Metropolità de Barcelona, SA","title":"Al juny de 2009 es va signar un acord
+    amb la part social on, davant de l'ampliació de Línies Automàtiques s'ha de
+    facilitar la promoció interna i això implica donar cobertura primer a la
+    formació tècnica per la equiparació de coneixements FP II /
+    Cicles.","description":"Id licitación: 14803285; Órgano de Contratación:
+    Ferrocarril Metropolità de Barcelona, SA; Importe: 40000.00; Estado:
+    RESUELTA","budget":"40000.0","endDate":"24/05/2019","cpv":"80530000","contractType":"Servicios","country":null,"tenderSource":"Histórico
+    Plataformas
+    Agregadas","tenderState":"Resuelta","cpvDescriptionEN":"Vocational training
+    services","cpvDescriptionES":"Servicios de formación
+    profesional","cpvDescriptionPT":"Serviços de formação
+    profissional"},{"id":3219788,"date":"10/09/2019","record":"2019/4139","organism":"Ajuntament
+    de Calonge i Sant Antoni","title":"Contractació del servei d'organització de
+    diferents festes de Promoció Turística del municipi amb retransmissió
+    radiofònica en directe","description":"Id licitación: 2019/4139; Órgano de
+    Contratación: Ajuntament de Calonge i Sant Antoni; Importe: 99300.00;
+    Estado:
+    RESUELTA","budget":"99300.0","endDate":"14/06/2019","cpv":"79954000","contractType":"Servicios","country":null,"tenderSource":"Histórico
+    Plataformas Agregadas","tenderState":"Resuelta","cpvDescriptionEN":"Party
+    organisation services","cpvDescriptionES":"Servicios de organización de
+    fiestas","cpvDescriptionPT":"Serviços de organização de
+    recepções"},{"id":3219789,"date":"10/09/2019","record":"2019/5/TAD","organism":"Ajuntament
+    de Castellbisbal","title":"Servei de neteja dels centres educatius públics
+    de Castellbisbal","description":"Id licitación: 2019/5/TAD; Órgano de
+    Contratación: Ajuntament de Castellbisbal; Importe: 518600.00; Estado:
+    ADJUDICADA","budget":"570460.0","endDate":"25/06/2019","cpv":"90919300","contractType":"Servicios","country":null,"tenderSource":"Histórico
+    Plataformas Agregadas","tenderState":"Adjudicada","cpvDescriptionEN":"School
+    cleaning services","cpvDescriptionES":"Servicios de limpieza de
+    escuelas","cpvDescriptionPT":"Serviços de limpeza de
+    escolas"},{"id":3219790,"date":"09/08/2019","record":"SER_OBE_2019_0018","organism":"Ajuntament
+    de Lleida","title":"Prestació del servei de bar i menjador a les Llars de
+    jubilats de la ciutat de Lleida mitjançant l'ocupació de persones amb
+    discapacitat amb especials dificultats per a la inserció laboral, amb
+    reserva a un Centre Especial de Treball d'iniciativa social i sense ànim de
+    lucre, d'acord amb el previst per la Disposició addicional quarta de la Llei
+    9/2017 de 8 de novembre, de Contractes del Sector Públic.\nAls efectes de
+    l'objecte relatiu a la inserció laboral de persones amb discapacitat, es
+    consideren persones amb discapacitat amb especials dificultats les persones
+    pertanyent a un dels següents grups: a) Persones amb paràlisi cerebral,
+    persones amb trastorn mental o persones amb discapacitat intel¿lectual, amb
+    un grau de discapacitat reconegut igual o superior al 33%. b) Persones amb
+    discapacitat física o sensorial, amb un grau de discapacitat reconegut igual
+    o superior al 65%.","description":"Id licitación: SER_OBE_2019_0018; Órgano
+    de Contratación: Ajuntament de Lleida; Importe: 24918.50; Estado:
+    EVALUACION","budget":"39814.35","endDate":"09/08/2019","cpv":"55330000","contractType":"Servicios","country":null,"tenderSource":"Histórico
+    Plataformas
+    Agregadas","tenderState":"Pendiente","cpvDescriptionEN":"Cafeteria
+    services","cpvDescriptionES":"Servicios de
+    cafetería","cpvDescriptionPT":"Serviços de
+    cafetaria"},{"id":3219791,"date":"10/09/2019","record":"20180039","organism":"La
+    Farga, Gestió d'Equipaments Municipals de l'Hospitalet de Llobregat,
+    SA","title":"Contractació del servei de manteniment integral preventiu i
+    correctiu de 60 parquímetres instal·lats a la ciutat de l'Hospitalet de
+    Llobregat.","description":"Id licitación: 20180039; Órgano de Contratación:
+    La Farga, Gestió d'Equipaments Municipals de l'Hospitalet de Llobregat, SA;
+    Importe: 151200.00; Estado:
+    ADJUDICADA","budget":"151200.0","endDate":"16/07/2018","cpv":"50324200","contractType":"Servicios","country":null,"tenderSource":"Histórico
+    Plataformas
+    Agregadas","tenderState":"Adjudicada","cpvDescriptionEN":"Preventive
+    maintenance services","cpvDescriptionES":"Servicios de mantenimiento
+    preventivo","cpvDescriptionPT":"Serviços de manutenção
+    preventiva"},{"id":3219792,"date":"26/09/2019","record":"2440/19","organism":"Institut
+    de Cultura de Barcelona","title":"Digitalització de documentació (col·lecció
+    Diari de Barcelona i fons d'arxiu i de gràfics) de l'Arxiu Històric de
+    Barcelona","description":"Id licitación: 2440/19; Órgano de Contratación:
+    Institut de Cultura de Barcelona; Importe: 45634.44; Estado:
+    EVALUACION","budget":"45634.44","endDate":"25/09/2019","cpv":"79520000","contractType":"Servicios","country":null,"tenderSource":"Histórico
+    Plataformas
+    Agregadas","tenderState":"Pendiente","cpvDescriptionEN":"Reprographic
+    services","cpvDescriptionES":"Servicios de
+    reprografía","cpvDescriptionPT":"Serviços de
+    reprografia"},{"id":3219793,"date":"10/09/2019","record":"37734","organism":"Ajuntament
+    de Mataró","title":"obres del projecte de renovació de la gespa artificial
+    del Camp Municipal de Futbol de Cirera","description":"Id licitación: 37734;
+    Órgano de Contratación: Ajuntament de Mataró; Importe: 144686.52; Estado: EN
+    PLAZO","budget":"173623.81","endDate":"01/10/2019","cpv":"45212200","contractType":"Obras","country":null,"tenderSource":"Histórico
+    Plataformas Agregadas","tenderState":"En
+    plazo","cpvDescriptionEN":"Construction work for sports
+    facilities","cpvDescriptionES":"Trabajos de construcción de instalaciones
+    deportivas","cpvDescriptionPT":"Construção de instalações
+    desportivas"},{"id":3219794,"date":"27/09/2019","record":"I19.0037S","organism":"Institut
+    d'Investigacions Biomèdiques August Pi i Sunyer","title":"Subministrament de
+    kits d'anàlisis de biomarcadors inflamatoris i anàlisis individual de
+    biomarcadors per tècniques ELISA pel projecte de recerca PI18/00974 de
+    l'IDIBAPS, en funció de les necessitats","description":"Id licitación:
+    I19.0037S; Órgano de Contratación: Institut d'Investigacions Biomèdiques
+    August Pi i Sunyer; Importe: 61285.00; Estado:
+    EVALUACION","budget":"99077.42","endDate":"27/09/2019","cpv":"33141625","contractType":"Suministros","country":null,"tenderSource":"Histórico
+    Plataformas
+    Agregadas","tenderState":"Pendiente","cpvDescriptionEN":"Diagnostic
+    kits","cpvDescriptionES":"Kits para diagnóstico","cpvDescriptionPT":"Kits de
+    diagnóstico"},{"id":3219795,"date":"16/08/2019","record":"CS
+    86/19","organism":"Consell Comarcal del Bages","title":"L'objecte d'aquest
+    contracte és oferir el servei de monitoratge, durant el servei de menjador
+    escolar, per tal de donar suport a l'alumnat amb necessitats educatives
+    especials com poden ser discapacitats motriu, trastorns de l'espectre de
+    l'autisme, trastorns conductuals, que manifestin dificultats en l'autonomia
+    personal i la regulació de la conducta, amb l'objectiu de facilitar la seva
+    inclusió educativa i aconseguir el seu desenvolupament integral i una major
+    autonomia personal, aquest servei es prestarà en determinats centres
+    educatius de la comarca del Bages.","description":"Id licitación: CS 86/19;
+    Órgano de Contratación: Consell Comarcal del Bages; Importe: 14.58; Estado:
+    EVALUACION","budget":"89302.5","endDate":"16/08/2019","cpv":"80410000","contractType":"Servicios","country":null,"tenderSource":"Histórico
+    Plataformas Agregadas","tenderState":"Pendiente","cpvDescriptionEN":"Various
+    school services","cpvDescriptionES":"Servicios escolares
+    diversos","cpvDescriptionPT":"Serviços escolares
+    diversos"},{"id":3219796,"date":"19/09/2019","record":"GO-2020-4","organism":"Departament
+    de Polítiques Digitals i Administració Pública","title":"Serveis de disseny,
+    construcció, muntatge, desmuntatge i supervisió dels estands de la
+    Generalitat de Catalunya a la fira MWC Barcelona, que se celebrarà del 24 al
+    27 de febrer de 2020.","description":"Id licitación: GO-2020-4; Órgano de
+    Contratación: Departament de Polítiques Digitals i Administració Pública;
+    Importe: 150000.00; Estado: EN
+    PLAZO","budget":"150000.0","endDate":"02/10/2019","cpv":"79950000","contractType":"Servicios","country":null,"tenderSource":"Histórico
+    Plataformas Agregadas","tenderState":"En
+    plazo","cpvDescriptionEN":"Exhibition, fair and congress organisation
+    services","cpvDescriptionES":"Servicios de organización de exposiciones,
+    ferias y congresos","cpvDescriptionPT":"Serviços de organização de
+    exposições, feiras e
+    congressos"},{"id":3219798,"date":"23/08/2019","record":"CSMS
+    12/19-N","organism":"Corporació de Salut del Maresme i la
+    Selva","title":"Serveis Postals per a la Corporació de Salut del Maresme i
+    la Selva.","description":"Id licitación: CSMS 12/19-N; Órgano de
+    Contratación: Corporació de Salut del Maresme i la Selva; Importe:
+    278403.54; Estado: EN
+    PLAZO","budget":"519686.62","endDate":"10/09/2019","cpv":"64110000","contractType":"Servicios","country":null,"tenderSource":"Histórico
+    Plataformas Agregadas","tenderState":"En plazo","cpvDescriptionEN":"Postal
+    services","cpvDescriptionES":"Servicios
+    postales","cpvDescriptionPT":"Serviços
+    postais"},{"id":3219799,"date":"10/09/2019","record":"H190000078","organism":"Institut
+    Municipal d'Hisenda de Barcelona","title":"Subministrament d'equips
+    informàtics per l'Institut Municipal d'Hisenda de
+    Barcelona","description":"Id licitación: H190000078; Órgano de Contratación:
+    Institut Municipal d'Hisenda de Barcelona; Importe: 71380.00; Estado:
+    EVALUACION","budget":"85656.0","endDate":"10/09/2019","cpv":"30213100,
+    30213300","contractType":"Suministros","country":null,"tenderSource":"Histórico
+    Plataformas
+    Agregadas","tenderState":"Pendiente","cpvDescriptionEN":"Portable
+    computers|Desktop computer","cpvDescriptionES":"Ordenadores
+    portátiles|Ordenadores de mesa","cpvDescriptionPT":"Computadores
+    portáteis|Computadores de secretária (desktop
+    computers)"},{"id":3219800,"date":"10/09/2019","record":"45-19","organism":"Barcelona
+    ACTIVA SAU SPM","title":"Serveis d'execució de programes a mida d'innovació
+    socioeconòmica,amb objectius d'eficiència social.","description":"Id
+    licitación: 45-19; Órgano de Contratación: Barcelona ACTIVA SAU SPM;
+    Importe: 118601.84; Estado:
+    EVALUACION","budget":"593009.2","endDate":"10/09/2019","cpv":"79421000","contractType":"Servicios","country":null,"tenderSource":"Histórico
+    Plataformas
+    Agregadas","tenderState":"Pendiente","cpvDescriptionEN":"Project-management
+    services other than for construction work","cpvDescriptionES":"Servicios de
+    gestión de proyectos que no sean los de
+    construcción","cpvDescriptionPT":"Serviços de gestão de projectos, excepto
+    projectos de
+    construção"},{"id":3219801,"date":"10/09/2019","record":"CTTE478","organism":"Tractament
+    i Selecció de Residus, S.A.","title":"Servei de gestió dels matalassos dels
+    punts verds de l'Àrea Metropolitana de Barcelona i del Centre de Tractament
+    de Residus Municipals (CTRM) de Gavà-Viladecans.","description":"Id
+    licitación: CTTE478; Órgano de Contratación: Tractament i Selecció de
+    Residus, S.A.; Importe: 880000.00; Estado:
+    EVALUACION","budget":"2112000.0","endDate":"10/09/2019","cpv":"90513000","contractType":"Servicios","country":null,"tenderSource":"Histórico
+    Plataformas
+    Agregadas","tenderState":"Pendiente","cpvDescriptionEN":"Non-hazardous
+    refuse and waste treatment and disposal
+    services","cpvDescriptionES":"Servicios de tratamiento y eliminación de
+    desperdicios y residuos no peligrosos","cpvDescriptionPT":"Serviços de
+    tratamento e eliminação de resíduos e lixos
+    não-perigosos"},{"id":3219802,"date":"01/08/2019","record":"CON-PO
+    32/2019","organism":"Sumar, serveis públics d'acció social de Catalunya,
+    SL","title":"L'objecte d'aquest contracte és la regulació de les condicions
+    administratives, econòmiques i tècniques particulars per a l'adjudicació i
+    posterior execució del contracte de subministrament per lots de material de
+    lampisteria i electricitat, i ferreteria per als centres gestionats per
+    SUMAR, Serveis Públics d'Acció Social de Catalunya, S.L., en endavant SUMAR,
+    d'acord amb les condicions que s'estableixen al Plec de Prescripcions
+    tècniques regulador d'aquest procediment.","description":"Id licitación:
+    CON-PO 32/2019; Órgano de Contratación: Sumar, serveis públics d'acció
+    social de Catalunya, SL; Importe: 39639.11; Estado: EN
+    PLAZO","budget":"87206.04","endDate":"10/09/2019","cpv":"44316000,
+    09310000","contractType":"Suministros","country":null,"tenderSource":"Histórico
+    Plataformas Agregadas","tenderState":"En
+    plazo","cpvDescriptionEN":"Ironmongery|Electricity","cpvDescriptionES":"Ferretería|Electricidad","cpvDescriptionPT":"Quinquilharias|Electricidade"},{"id":3219803,"date":"10/09/2019","record":"41-19","organism":"Barcelona
+    ACTIVA SAU SPM","title":"Serveis d'informació i assessorament en drets
+    laborals en tres districtes de la ciutat, amb incorporació d'objectius
+    d'eficiència social.","description":"Id licitación: 41-19; Órgano de
+    Contratación: Barcelona ACTIVA SAU SPM; Importe: 115871.02; Estado:
+    EVALUACION","budget":"602529.3","endDate":"10/09/2019","cpv":"85312300","contractType":"Servicios","country":null,"tenderSource":"Histórico
+    Plataformas
+    Agregadas","tenderState":"Pendiente","cpvDescriptionEN":"Guidance and
+    counselling services","cpvDescriptionES":"Servicios de orientación y
+    asesoramiento","cpvDescriptionPT":"Serviços de orientação e
+    aconselhamento"}],"trigramCounters":null}

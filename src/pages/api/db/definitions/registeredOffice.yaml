@@ -1,0 +1,11 @@
+registeredOffice:
+  required:
+    - registeredOfficeCode
+    - registeredOfficeType
+  properties:
+    registeredOfficeCode:
+      type: string
+      description: Código de oficina
+    registeredOfficeType:
+      type: string
+      description: Tipo de oficina

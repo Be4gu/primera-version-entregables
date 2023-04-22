@@ -1,0 +1,107 @@
+TradInfDetail:
+  description: ''
+  type: object
+  properties:
+    companyBodies:
+      type: object
+      properties:
+        dataSource:
+          type: object
+          properties:
+            date:
+              type: string
+            source:
+              type: string
+        items:
+          type: array
+          items:
+            properties:
+              holding:
+                type: string
+              name:
+                type: string
+              position:
+                type: object
+                properties:
+                  code:
+                    type: string
+                  value:
+                    type: string
+            type: object
+        unavailabilityReason:
+          type: string
+    consolidated:
+      type: string
+    corporatePurposeChange:
+      type: object
+      properties:
+        date:
+          type: string
+        newCorporatePurpose:
+          type: string
+        variationType:
+          type: object
+          properties:
+            code:
+              type: string
+            value:
+              type: string
+    groupParentCompany:
+      type: string
+    notAvailable:
+      type: string
+    relationships:
+      type: object
+      properties:
+        dataSource:
+          type: object
+          properties:
+            date:
+              type: string
+            source:
+              type: string
+        items:
+          type: array
+          items:
+            properties:
+              country:
+                type: object
+                properties:
+                  code:
+                    type: string
+                  value:
+                    type: string
+              holding:
+                type: string
+              name:
+                type: string
+              relationshipType:
+                type: object
+                properties:
+                  code:
+                    type: string
+                  value:
+                    type: string
+            type: object
+        unavailabilityReason:
+          type: string
+    shareCapitalChange:
+      type: object
+      properties:
+        changeDate:
+          type: string
+        currentAmount:
+          type: string
+        expectedAmount:
+          type: string
+        previousAmount:
+          type: string
+        variationSign:
+          type: object
+          properties:
+            code:
+              type: string
+            value:
+              type: string
+  example: >-
+    {"companyBodies":{"dataSource":{"date":"string","source":"string"},"items":[{"holding":"string","name":"string","position":{"code":"string","value":"string"}}],"unavailabilityReason":"string"},"consolidated":"string","corporatePurposeChange":{"date":"string","newCorporatePurpose":"string","variationType":{"code":"string","value":"string"}},"groupParentCompany":"string","notAvailable":"string","relationships":{"dataSource":{"date":"string","source":"string"},"items":[{"country":{"code":"string","value":"string"},"holding":"string","name":"string","relationshipType":{"code":"string","value":"string"}}],"unavailabilityReason":"string"},"shareCapitalChange":{"changeDate":"string","currentAmount":"string","expectedAmount":"string","previousAmount":"string","variationSign":{"code":"string","value":"string"}}}

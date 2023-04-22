@@ -1,0 +1,15 @@
+orgStatus:
+  required:
+    - statusCode
+    - statusDate
+    - statusDesc
+  properties:
+    statusCode:
+      type: string
+      description: Código
+    statusDate:
+      type: string
+      description: Fecha
+    statusDesc:
+      type: string
+      description: Descripción

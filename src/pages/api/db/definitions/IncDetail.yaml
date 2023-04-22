@@ -1,0 +1,79 @@
+IncDetail:
+  description: ''
+  type: object
+  properties:
+    ejercicios:
+      type: array
+      items:
+        properties:
+          anyo:
+            type: string
+          demandado:
+            type: object
+            properties:
+              concursales:
+                type: object
+                properties:
+                  total:
+                    type: number
+                  valor:
+                    type: string
+              eleTotalIncidenciaDemandado:
+                type: object
+                properties:
+                  total:
+                    type: number
+                  valor:
+                    type: string
+              judiciales:
+                type: object
+                properties:
+                  total:
+                    type: number
+                  valor:
+                    type: string
+              reclamaciones:
+                type: object
+                properties:
+                  total:
+                    type: number
+                  valor:
+                    type: string
+          demandante:
+            type: object
+            properties:
+              concursales:
+                type: object
+                properties:
+                  total:
+                    type: number
+                  valor:
+                    type: string
+              eleTotalIncidenciaDemandante:
+                type: object
+                properties:
+                  total:
+                    type: number
+                  valor:
+                    type: string
+              judiciales:
+                type: object
+                properties:
+                  total:
+                    type: number
+                  valor:
+                    type: string
+              reclamaciones:
+                type: object
+                properties:
+                  total:
+                    type: number
+                  valor:
+                    type: string
+        type: object
+    noDisponible:
+      type: string
+    texto:
+      type: string
+  example: >-
+    {"ejercicios":[{"anyo":"string","demandado":{"concursales":{"total":0,"valor":"string"},"eleTotalIncidenciaDemandado":{"total":0,"valor":"string"},"judiciales":{"total":0,"valor":"string"},"reclamaciones":{"total":0,"valor":"string"}},"demandante":{"concursales":{"total":0,"valor":"string"},"eleTotalIncidenciaDemandante":{"total":0,"valor":"string"},"judiciales":{"total":0,"valor":"string"},"reclamaciones":{"total":0,"valor":"string"}}}],"noDisponible":"string","texto":"string"}

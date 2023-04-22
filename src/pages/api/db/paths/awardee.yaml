@@ -1,0 +1,112 @@
+'/tendersapi/awardee/{country}/{identifierType}/{identifier}':
+  get:
+    tags:
+      - Tenders
+    responses:
+      '200':
+        description: 200 OK
+  parameters:
+    - name: country
+      type: string
+      required: true
+      in: path
+    - name: identifierType
+      type: string
+      required: true
+      in: path
+    - name: identifier
+      type: string
+      required: true
+      in: path
+    - name: offset
+      type: integer
+      required: true
+      in: query
+      format: int32
+    - name: limit
+      type: integer
+      required: false
+      in: query
+      format: int32
+'/tendersapi/awardee/{country}':
+  get:
+    tags:
+      - Tenders
+    responses:
+      '200':
+        description: 200 OK
+  parameters:
+    - name: country
+      type: string
+      required: true
+      in: path
+    - name: name
+      type: string
+      required: true
+      in: query
+    - name: offset
+      type: integer
+      required: false
+      in: query
+      format: int32
+    - name: limit
+      type: integer
+      required: false
+      in: query
+      format: int32
+'/tendersapi/awardee/{country}/{identifierType}/{identifier}/tenders':
+  get:
+    tags:
+      - Tenders
+    responses:
+      '200':
+        description: 200 OK
+  parameters:
+    - name: country
+      type: string
+      required: true
+      in: path
+    - name: identifierType
+      type: string
+      required: true
+      in: path
+    - name: identifier
+      type: string
+      required: true
+      in: path
+    - name: offset
+      type: integer
+      required: false
+      in: query
+      format: int32
+    - name: limit
+      type: integer
+      required: false
+      in: query
+      format: int32
+'/tendersapi/awardee/{country}/tenders':
+  get:
+    tags:
+      - Tenders
+    responses:
+      '200':
+        description: 200 OK
+  parameters:
+    - name: country
+      type: string
+      required: true
+      in: path
+    - name: name
+      type: string
+      required: true
+      in: query
+    - name: offset
+      type: integer
+      required: false
+      in: query
+      format: int32
+    - name: limit
+      type: integer
+      required: false
+      in: query
+      format: int32

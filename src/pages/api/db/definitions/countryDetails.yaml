@@ -1,0 +1,11 @@
+countryDetails:
+  description: ''
+  type: object
+  properties:
+    country:
+      type: string
+    trigram:
+      type: string
+    bigram:
+      type: string
+  example: '{"country":"Argentina","trigram":"ARG","bigram":"AR"}'

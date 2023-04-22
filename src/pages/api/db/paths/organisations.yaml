@@ -1,0 +1,87 @@
+'/modules/organisations/':
+  get:
+    tags:
+      - Companies
+    parameters:
+      - name: user
+        in: query
+        description: Alias del usuario
+        required: false
+        type: string
+      - name: lang
+        in: query
+        description: Idioma del usuario
+        required: false
+        type: string
+      - name: maxOrgs
+        in: query
+        description: Número máximo de firmas de las localizadas a devolver
+        required: false
+        type: integer
+        format: int32
+      - name: name
+        in: query
+        description: Denominación por la que se quiere localizar firmas
+        required: false
+        type: string
+      - name: country
+        in: query
+        description: País
+        required: false
+        type: string
+      - name: street
+        in: query
+        description: Calle
+        required: false
+        type: string
+      - name: city
+        in: query
+        description: Municipio
+        required: false
+        type: string
+      - name: postCode
+        in: query
+        description: Código postal
+        required: false
+        type: string
+      - name: countrySubidentName
+        in: query
+        description: Provincia
+        required: false
+        type: string
+      - name: registeredOfficeCode
+        in: query
+        description: 'Número de identificación (NIF,CIF)'
+        required: false
+        type: string
+      - name: minScore
+        in: query
+        description: Puntuación mínima de coincidencia de las firmas localizadas con la Denominación y Datos del Domicilio.
+        required: false
+        type: number
+        format: double
+    responses:
+      '200':
+        description: Recurso recuperado correctamente
+        schema:
+          $ref: '#/definitions/organisationSearchResult'
+      '400':
+        description: Parametros de peticion incorrectos
+        schema:
+          $ref: '#/definitions/ErrorDetail'
+      '401':
+        description: No autorizado
+        schema:
+          $ref: '#/definitions/ErrorDetail'
+      '403':
+        description: Acceso no permitido
+        schema:
+          $ref: '#/definitions/ErrorDetail'
+      '404':
+        description: Recurso no encontrado
+        schema:
+          $ref: '#/definitions/ErrorDetail'
+      '500':
+        description: Internal error
+        schema:
+          $ref: '#/definitions/ErrorDetail'

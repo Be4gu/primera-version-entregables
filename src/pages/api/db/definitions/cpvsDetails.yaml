@@ -1,0 +1,29 @@
+cpvsDetails:
+  type: array
+  description: ''
+  items:
+    type: object
+    properties:
+      code:
+        type: string
+      description:
+        type: string
+  example: >-
+    [{"code":"03000000","description":"Agricultural, farming, fishing, forestry
+    and related products"},{"code":"03100000","description":"Agricultural and
+    horticultural products"},{"code":"03110000","description":"Crops, products
+    of market gardening and
+    horticulture"},{"code":"03111000","description":"Seeds"},{"code":"03111100","description":"Soya
+    beans"},{"code":"03111200","description":"Peanuts"},{"code":"03111300","description":"Sunflower
+    seeds"},{"code":"03111400","description":"Cotton
+    seeds"},{"code":"03111500","description":"Sesame
+    seeds"},{"code":"03111600","description":"Mustard
+    seeds"},{"code":"03111700","description":"Vegetable
+    seeds"},{"code":"03111800","description":"Fruit
+    seeds"},{"code":"03111900","description":"Flower
+    seeds"},{"code":"03112000","description":"Unmanufactured
+    tobacco"},{"code":"03113000","description":"Plants used for sugar
+    manufacturing"},{"code":"03113100","description":"Sugar
+    beet"},{"code":"03113200","description":"Sugar
+    cane"},{"code":"03114000","description":"Straw and
+    forage"},{"code":"03114100","description":"Straw"},{"code":"03114200","description":"Forage"}]

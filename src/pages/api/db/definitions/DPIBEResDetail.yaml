@@ -1,0 +1,42 @@
+DPIBEResDetail:
+  description: ''
+  type: object
+  properties:
+    capitalSubscribedRaw:
+      type: number
+    corporatePurpose:
+      type: string
+    currency:
+      type: string
+    folio:
+      type: string
+    incorporationDate:
+      type: string
+    lastActType:
+      type: object
+      properties:
+        code:
+          type: string
+        value:
+          type: string
+    notAvailable:
+      type: string
+    page:
+      type: string
+    paidInCapital:
+      type: string
+    province:
+      type: object
+      properties:
+        code:
+          type: string
+        value:
+          type: string
+    section:
+      type: string
+    subscribedCapital:
+      type: string
+    volume:
+      type: string
+  example: >-
+    {"capitalSubscribedRaw":0,"corporatePurpose":"string","currency":"string","folio":"string","incorporationDate":"string","lastActType":{"code":"string","value":"string"},"notAvailable":"string","page":"string","paidInCapital":"string","province":{"code":"string","value":"string"},"section":"string","subscribedCapital":"string","volume":"string"}

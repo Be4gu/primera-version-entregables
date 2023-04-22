@@ -1,0 +1,10 @@
+nameAddress:
+  required:
+    - address
+    - name
+  properties:
+    address:
+      $ref: '#/definitions/address'
+    name:
+      type: string
+      description: Nombre de la empresa

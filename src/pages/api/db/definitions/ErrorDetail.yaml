@@ -1,0 +1,17 @@
+ErrorDetail:
+  description: ''
+  type: object
+  properties:
+    code:
+      type: string
+    message:
+      type: string
+    principal:
+      type: string
+    status:
+      type: number
+      format: int32
+    propiedad-nueva-1:
+      type: string
+  example: '{"code":"string","message":"string","principal":"string","status":0}'
+  additionalProperties: false

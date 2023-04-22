@@ -1,0 +1,19 @@
+RCEDetail:
+  description: ''
+  type: object
+  properties:
+    controlEntity:
+      type: string
+    notAvailable:
+      type: string
+    riskItems:
+      type: array
+      items:
+        properties:
+          code:
+            type: string
+          value:
+            type: string
+        type: object
+  example: >-
+    {"controlEntity":"string","notAvailable":"string","riskItems":[{"code":"string","value":"string"}]}

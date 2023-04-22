@@ -1,0 +1,4 @@
+organisationsArray:
+  type: array
+  items:
+    $ref: '#/definitions/organisation'

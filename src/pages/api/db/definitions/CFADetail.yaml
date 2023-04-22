@@ -1,0 +1,31 @@
+CFADetail:
+  description: ''
+  type: object
+  properties:
+    notAvailable:
+      type: string
+    wrapperYears:
+      type: array
+      items:
+        properties:
+          employees:
+            type: string
+          equity:
+            type: string
+          period:
+            type: string
+          reservations:
+            type: string
+          result:
+            type: string
+          sales:
+            type: string
+          shortTermDebt:
+            type: string
+          workingCapital:
+            type: string
+          year:
+            type: string
+        type: object
+  example: >-
+    {"notAvailable":"string","wrapperYears":[{"employees":"string","equity":"string","period":"string","reservations":"string","result":"string","sales":"string","shortTermDebt":"string","workingCapital":"string","year":"string"}]}

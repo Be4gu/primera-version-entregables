@@ -1,0 +1,18 @@
+organisationSearchResult:
+  required:
+    - baseRequest
+    - count
+    - organisations
+  properties:
+    baseRequest:
+      description: BaseRequest
+      $ref: '#/definitions/baseRequest'
+    count:
+      type: integer
+      format: int32
+      description: Número de empresas localizadas
+    organisations:
+      description: >-
+        Listado que contiene las empresas que cumplen los criterios de la
+        petición
+      $ref: '#/definitions/organisationsArray'

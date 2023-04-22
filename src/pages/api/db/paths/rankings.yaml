@@ -1,0 +1,78 @@
+'/modules/rankings':
+  get:
+    tags:
+      - Rankings
+    responses:
+      '200':
+        description: 200 OK
+        schema:
+          $ref: '#/definitions/rankings'
+      '401':
+        description: Unauthorized
+        schema:
+          $ref: '#/definitions/ErrorDetail'
+      '403':
+        description: Forbidden
+        schema:
+          $ref: '#/definitions/ErrorDetail'
+      '404':
+        description: Recurso no encontrado
+        schema:
+          $ref: '#/definitions/ErrorDetail'
+      '500':
+        description: Internal error
+        schema:
+          $ref: '#/definitions/ErrorDetail'
+    parameters:
+      - name: language
+        type: string
+        required: false
+        in: query
+        description: idioma
+'/modules/rankings/{rankingID}':
+  get:
+    tags:
+      - Rankings
+    responses:
+      '200':
+        description: 200 OK
+        schema:
+          $ref: '#/definitions/rankingData'
+      '401':
+        description: Unauthorized
+        schema:
+          $ref: '#/definitions/responseError'
+      '403':
+        description: Forbidden
+        schema:
+          $ref: '#/definitions/responseError'
+      '404':
+        description: Recurso no encontrado
+        schema:
+          $ref: '#/definitions/responseError'
+      '500':
+        description: Internal error
+        schema:
+          $ref: '#/definitions/responseError'
+    parameters:
+      - name: limit
+        type: integer
+        required: false
+        in: query
+        description: capacidad
+        format: int32
+      - name: language
+        type: string
+        required: false
+        in: query
+        description: Idioma generación
+      - name: offset
+        type: string
+        required: false
+        in: query
+        description: pagina
+      - name: rankingID
+        type: string
+        required: true
+        in: path
+        description: identificador de Ranking

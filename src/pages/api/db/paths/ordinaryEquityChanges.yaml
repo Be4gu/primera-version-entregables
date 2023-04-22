@@ -1,0 +1,36 @@
+'/modules/ordinaryEquityChanges/{organisationID}':
+  get:
+    tags:
+      - Financial Data
+    responses:
+      '200':
+        description: 200 OK
+        schema:
+          $ref: '#/definitions/OECDetail'
+      '401':
+        description: Unauthorized
+        schema:
+          $ref: '#/definitions/ErrorDetail'
+      '403':
+        description: Forbidden
+        schema:
+          $ref: '#/definitions/ErrorDetail'
+      '404':
+        description: Recurso no encontrado
+        schema:
+          $ref: '#/definitions/ErrorDetail'
+      '500':
+        description: Internal error
+        schema:
+          $ref: '#/definitions/ErrorDetail'
+    parameters:
+      - name: organisationID
+        type: string
+        required: true
+        in: path
+        description: identificador de la firma
+      - name: language
+        type: string
+        required: false
+        in: query
+        description: Idioma generación

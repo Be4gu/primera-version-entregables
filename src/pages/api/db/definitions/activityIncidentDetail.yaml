@@ -1,0 +1,31 @@
+activityIncidentDetail:
+  description: ''
+  type: object
+  properties:
+    incidents:
+      type: array
+      items:
+        properties:
+          dateFrom:
+            type: string
+          dateTo:
+            type: string
+          impact:
+            type: string
+          type:
+            type: string
+        type: object
+    notAvailable:
+      type: string
+  example: |-
+    {
+      "incidents": [
+        {
+          "dateFrom": "string",
+          "dateTo": "string",
+          "impact": "string",
+          "type": "string"
+        }
+      ],
+      "notAvailable": "string"
+    }

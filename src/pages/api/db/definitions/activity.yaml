@@ -1,0 +1,19 @@
+activity:
+  required:
+    - activityClassCode
+    - activityClassDesc
+    - activityClassType
+    - activityClassVersion
+  properties:
+    activityClassCode:
+      type: string
+      description: Código
+    activityClassDesc:
+      type: string
+      description: Descripción
+    activityClassType:
+      type: string
+      description: Tipo de actividad
+    activityClassVersion:
+      type: string
+      description: Versión

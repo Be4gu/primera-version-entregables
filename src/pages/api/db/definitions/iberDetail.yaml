@@ -1,0 +1,850 @@
+iberDetail:
+  description: ''
+  type: object
+  properties:
+    actos_borme:
+      type: object
+      properties:
+        actos_inscritos:
+          type: object
+          properties:
+            listado:
+              type: array
+              items:
+                properties:
+                  fechaPublicacion:
+                    type: string
+                  numeroSubActos:
+                    type: number
+                  subActos:
+                    type: array
+                    items:
+                      properties:
+                        codigo:
+                          type: string
+                        valor:
+                          type: string
+                      type: object
+                type: object
+        deposito_cuentas:
+          type: object
+          properties:
+            registro:
+              type: array
+              items:
+                properties:
+                  anyoCuenta:
+                    type: string
+                  codigoTipoCuenta:
+                    type: string
+                  fechaDeposito:
+                    type: string
+                  fechaPublicacion:
+                    type: string
+                type: object
+        nd:
+          type: string
+        textoCuentasBORME:
+          type: object
+          properties:
+            codigo:
+              type: string
+            valor:
+              type: string
+    clientes_proveedores:
+      type: object
+      properties:
+        nd:
+          type: string
+        registro:
+          type: array
+          items:
+            properties:
+              nif:
+                type: string
+              nombre:
+                type: object
+                properties:
+                  forma_juridica:
+                    type: string
+                  fuente:
+                    type: string
+                  pais:
+                    type: string
+                  provincia:
+                    type: string
+                  tipo:
+                    type: string
+                  valor:
+                    type: string
+            type: object
+    cuentas:
+      type: object
+      properties:
+        listado:
+          type: array
+          items:
+            properties:
+              anyo:
+                type: string
+              listado:
+                type: array
+                items:
+                  properties:
+                    bloque:
+                      type: object
+                      properties:
+                        nivel:
+                          type: string
+                        valor:
+                          type: string
+                    codigo:
+                      type: string
+                    valorTraducido:
+                      type: string
+                  type: object
+              periodo:
+                type: string
+            type: object
+        nd:
+          type: string
+    datos_economicos:
+      type: object
+      properties:
+        ejerciciosXml:
+          type: array
+          items:
+            properties:
+              EBIT:
+                type: string
+              EBITDA:
+                type: string
+              Endeudamiento_a_corto_plazo:
+                type: string
+              Endeudamiento_a_largo_plazo:
+                type: string
+              Fondo_de_Maniobra:
+                type: string
+              Free_Cash_Flow:
+                type: string
+              Patrimonio_neto:
+                type: string
+              Resultado:
+                type: string
+              Total_Activo:
+                type: string
+              Ventas:
+                type: string
+              anyo:
+                type: string
+              modelo_cuentas:
+                type: object
+                properties:
+                  codigo:
+                    type: string
+                  valor:
+                    type: string
+              moneda:
+                type: object
+                properties:
+                  codigo:
+                    type: string
+                  valor:
+                    type: string
+              unidades:
+                type: object
+                properties:
+                  codigo:
+                    type: string
+                  valor:
+                    type: string
+            type: object
+        nd:
+          type: string
+    datos_identificativos:
+      type: object
+      properties:
+        capital_desembolsado:
+          type: object
+          properties:
+            fecha:
+              type: string
+            importe:
+              type: string
+        capital_social:
+          type: object
+          properties:
+            fecha:
+              type: string
+            importe:
+              type: string
+        datosident_cnae:
+          type: object
+          properties:
+            codigo:
+              type: string
+            descripcion:
+              type: string
+            tipo:
+              type: string
+        datosident_grado_actividad:
+          type: string
+        datosident_situacion:
+          type: string
+        denominacion:
+          type: string
+        denominacion_anterior:
+          type: string
+        domicilio:
+          type: string
+        domicilio_anterior:
+          type: object
+          properties:
+            domicilio:
+              type: string
+        empleados:
+          type: object
+          properties:
+            listado:
+              type: array
+              items:
+                properties:
+                  anyo:
+                    type: string
+                  dif:
+                    type: string
+                  listado:
+                    type: array
+                    items:
+                      properties:
+                        genero:
+                          type: string
+                        situacion:
+                          type: string
+                        valor:
+                          type: string
+                      type: object
+                  periodo:
+                    type: string
+                  valor:
+                    type: string
+                type: object
+        estado_firma:
+          type: string
+        fax:
+          type: string
+        fecha_inicio:
+          type: string
+        forma_juridica:
+          type: object
+          properties:
+            codigo:
+              type: string
+            valor:
+              type: string
+        incidencias_actividad:
+          type: string
+        nif:
+          type: string
+        nombre_comercial:
+          type: string
+        objeto_social:
+          type: string
+        operacion_mercantil:
+          type: object
+          properties:
+            estado:
+              type: string
+            fecha:
+              type: string
+        otras_actividades:
+          type: object
+          properties:
+            actividad:
+              type: array
+              items:
+                properties:
+                  codigo:
+                    type: string
+                  descripcion:
+                    type: string
+                  tipo:
+                    type: string
+                type: object
+        otras_situaciones:
+          type: object
+          properties:
+            estado:
+              type: string
+            fecha:
+              type: string
+        situacion_concursal:
+          type: object
+          properties:
+            estado:
+              type: string
+            fecha:
+              type: string
+        situacion_mercantil:
+          type: string
+        tamanio_empresa:
+          type: object
+          properties:
+            codigo_cuenta:
+              type: string
+            valor:
+              type: string
+        telefono:
+          type: string
+        web:
+          type: string
+    detalleInforme:
+      type: object
+      properties:
+        fechaEntrevista:
+          type: string
+        fechaUltDato:
+          type: string
+        textoCuentas:
+          type: string
+        textoFuentes:
+          type: string
+        textoInformes:
+          type: string
+    incidencias:
+      type: object
+      properties:
+        ejercicios:
+          type: array
+          items:
+            properties:
+              anyo:
+                type: string
+              demandado:
+                type: object
+                properties:
+                  concursales:
+                    type: object
+                    properties:
+                      total:
+                        type: number
+                      valor:
+                        type: string
+                  eleTotalIncidenciaDemandado:
+                    type: object
+                    properties:
+                      total:
+                        type: number
+                      valor:
+                        type: string
+                  judiciales:
+                    type: object
+                    properties:
+                      total:
+                        type: number
+                      valor:
+                        type: string
+                  reclamaciones:
+                    type: object
+                    properties:
+                      total:
+                        type: number
+                      valor:
+                        type: string
+              demandante:
+                type: object
+                properties:
+                  concursales:
+                    type: object
+                    properties:
+                      total:
+                        type: number
+                      valor:
+                        type: string
+                  eleTotalIncidenciaDemandante:
+                    type: object
+                    properties:
+                      total:
+                        type: number
+                      valor:
+                        type: string
+                  judiciales:
+                    type: object
+                    properties:
+                      total:
+                        type: number
+                      valor:
+                        type: string
+                  reclamaciones:
+                    type: object
+                    properties:
+                      total:
+                        type: number
+                      valor:
+                        type: string
+            type: object
+        noDisponible:
+          type: string
+        texto:
+          type: string
+    informacion_cuentas:
+      type: object
+      properties:
+        ejercicio:
+          type: array
+          items:
+            properties:
+              anyo:
+                type: string
+              auditadopor:
+                type: string
+              auditoria:
+                type: object
+                properties:
+                  codigo:
+                    type: string
+                  valor:
+                    type: string
+              modelo_cuentas:
+                type: object
+                properties:
+                  codigo:
+                    type: string
+                  valor:
+                    type: string
+              moneda:
+                type: object
+                properties:
+                  codigo:
+                    type: string
+                  valor:
+                    type: string
+              periodo:
+                type: string
+              referencia:
+                type: object
+                properties:
+                  codigo:
+                    type: string
+                  valor:
+                    type: string
+              resultado:
+                type: object
+                properties:
+                  codigo:
+                    type: string
+                  valor:
+                    type: string
+              salvedades:
+                type: object
+                properties:
+                  codigo:
+                    type: string
+                  valor:
+                    type: string
+              tipo_cuenta:
+                type: object
+                properties:
+                  codigo:
+                    type: string
+                  valor:
+                    type: string
+              unidades:
+                type: object
+                properties:
+                  codigo:
+                    type: string
+                  valor:
+                    type: string
+            type: object
+        nd:
+          type: string
+    marcas:
+      type: object
+      properties:
+        nd:
+          type: string
+        registros_marcas:
+          type: object
+          properties:
+            registro:
+              type: array
+              items:
+                properties:
+                  calificador:
+                    type: string
+                  claves_niza:
+                    type: object
+                    properties:
+                      registro:
+                        type: array
+                        items:
+                          properties:
+                            actividad:
+                              type: string
+                            clave:
+                              type: string
+                          type: object
+                  estado:
+                    type: string
+                  expediente:
+                    type: string
+                  fecha_actualizacion:
+                    type: string
+                  fecha_concesion:
+                    type: string
+                  fecha_renovacion:
+                    type: string
+                  fecha_solicitud:
+                    type: string
+                  nombre:
+                    type: string
+                  ruta_imagen:
+                    type: string
+                type: object
+        registros_nombres_comerciales:
+          type: object
+          properties:
+            registro:
+              type: array
+              items:
+                properties:
+                  calificador:
+                    type: string
+                  claves_niza:
+                    type: object
+                    properties:
+                      registro:
+                        type: array
+                        items:
+                          properties:
+                            actividad:
+                              type: string
+                            clave:
+                              type: string
+                          type: object
+                  estado:
+                    type: string
+                  expediente:
+                    type: string
+                  fecha_actualizacion:
+                    type: string
+                  fecha_concesion:
+                    type: string
+                  fecha_renovacion:
+                    type: string
+                  fecha_solicitud:
+                    type: string
+                  nombre:
+                    type: string
+                  ruta_imagen:
+                    type: string
+                type: object
+    organos_sociales:
+      type: object
+      properties:
+        nd:
+          type: string
+        registro:
+          type: array
+          items:
+            properties:
+              cargo:
+                type: object
+                properties:
+                  codigo:
+                    type: string
+                  valor:
+                    type: string
+              denominacion:
+                type: string
+              fecha:
+                type: string
+            type: object
+    ratios:
+      type: object
+      properties:
+        ejercicio_cuentas:
+          type: array
+          items:
+            properties:
+              anyo:
+                type: string
+              registro:
+                type: array
+                items:
+                  properties:
+                    codigo:
+                      type: string
+                    unidad:
+                      type: string
+                    valor:
+                      type: string
+                  type: object
+            type: object
+        nd:
+          type: string
+    sectorial:
+      type: object
+      properties:
+        nd:
+          type: string
+        wrapperEjercicioCuentas:
+          type: object
+          properties:
+            ejerciciosXml:
+              type: array
+              items:
+                properties:
+                  anyo:
+                    type: string
+                  listado:
+                    type: array
+                    items:
+                      properties:
+                        codigo:
+                          type: string
+                        diferencial:
+                          type: object
+                          properties:
+                            unidad:
+                              type: string
+                            valorString:
+                              type: string
+                        empresa:
+                          type: string
+                        sector:
+                          type: string
+                      type: object
+                type: object
+    valoracion:
+      type: object
+      properties:
+        morosidad:
+          type: object
+          properties:
+            definicion:
+              type: string
+            escala:
+              type: string
+            regla_exclusion:
+              type: object
+              properties:
+                codigo:
+                  type: string
+                valor:
+                  type: string
+        nd:
+          type: string
+        opinion_credito:
+          type: object
+          properties:
+            codigo:
+              type: string
+            valorTraducido:
+              type: string
+        solvencia:
+          type: string
+    vinculaciones:
+      type: object
+      properties:
+        accionistas:
+          type: object
+          properties:
+            registro:
+              type: array
+              items:
+                properties:
+                  forma_juridica:
+                    type: object
+                    properties:
+                      codigo:
+                        type: string
+                      valor:
+                        type: string
+                  nif:
+                    type: string
+                  nombre:
+                    type: string
+                  porcentaje:
+                    type: string
+                type: object
+        grupo_empresarial:
+          type: object
+          properties:
+            registro:
+              type: array
+              items:
+                properties:
+                  nif:
+                    type: string
+                  nombre:
+                    type: object
+                    properties:
+                      formaJuridica:
+                        type: string
+                      nombre:
+                        type: string
+                      pais:
+                        type: string
+                  tipoEmpresa:
+                    type: string
+                type: object
+        inversiones:
+          type: object
+          properties:
+            listado:
+              type: array
+              items:
+                properties:
+                  fecha:
+                    type: string
+                  partida:
+                    type: array
+                    items:
+                      properties:
+                        codigo:
+                          type: string
+                        valor:
+                          type: string
+                      type: object
+                type: object
+        moneda:
+          type: object
+          properties:
+            codigo:
+              type: string
+            valor:
+              type: string
+        nd:
+          type: string
+        operaciones:
+          type: object
+          properties:
+            registro:
+              type: array
+              items:
+                properties:
+                  compra:
+                    type: string
+                  nif:
+                    type: string
+                  nombre:
+                    type: object
+                    properties:
+                      formaJuridica:
+                        type: string
+                      nombre:
+                        type: string
+                      pais:
+                        type: string
+                  tipo:
+                    type: string
+                  venta:
+                    type: string
+                type: object
+        participadas:
+          type: object
+          properties:
+            registro:
+              type: array
+              items:
+                properties:
+                  directa:
+                    type: string
+                  forma_juridica:
+                    type: object
+                    properties:
+                      codigo:
+                        type: string
+                      valor:
+                        type: string
+                  indirecta:
+                    type: string
+                  nif:
+                    type: string
+                  nombre:
+                    type: string
+                  porcentaje:
+                    type: string
+                  tipo:
+                    type: object
+                    properties:
+                      codigo:
+                        type: string
+                      valor:
+                        type: string
+                type: object
+        saldos_transacciones:
+          type: object
+          properties:
+            registro:
+              type: array
+              items:
+                properties:
+                  businessInformation:
+                    type: object
+                    properties:
+                      acronym:
+                        type: object
+                        properties:
+                          code:
+                            type: string
+                          value:
+                            type: string
+                      country:
+                        type: object
+                        properties:
+                          code:
+                            type: string
+                          value:
+                            type: string
+                      fullName:
+                        type: string
+                      taxId:
+                        type: string
+                  transactionAmounts:
+                    type: object
+                    properties:
+                      compensations:
+                        type: string
+                      interests:
+                        type: string
+                      providedGuarantees:
+                        type: string
+                      purchaseOfCurrentAssets:
+                        type: string
+                      purchaseOfNonCurrentAssets:
+                        type: string
+                      receivedGuarantees:
+                        type: string
+                      receivedServices:
+                        type: string
+                      renderedServices:
+                        type: string
+                      saleOfCurrentAssets:
+                        type: string
+                      saleOfNonCurrentAssets:
+                        type: string
+                type: object
+        socioUnico:
+          type: object
+          properties:
+            registro:
+              type: array
+              items:
+                properties:
+                  nombre:
+                    type: string
+                  porcentaje:
+                    type: string
+                type: object
+        unidades:
+          type: object
+          properties:
+            codigo:
+              type: string
+            valor:
+              type: string
+  example: >-
+    {"actos_borme":{"actos_inscritos":{"listado":[{"fechaPublicacion":"string","numeroSubActos":0,"subActos":[{"codigo":"string","valor":"string"}]}]},"deposito_cuentas":{"registro":[{"anyoCuenta":"string","codigoTipoCuenta":"string","fechaDeposito":"string","fechaPublicacion":"string"}]},"nd":"string","textoCuentasBORME":{"codigo":"string","valor":"string"}},"clientes_proveedores":{"nd":"string","registro":[{"nif":"string","nombre":{"forma_juridica":"string","fuente":"string","pais":"string","provincia":"string","tipo":"string","valor":"string"}}]},"cuentas":{"listado":[{"anyo":"string","listado":[{"bloque":{"nivel":"string","valor":"string"},"codigo":"string","valorTraducido":"string"}],"periodo":"string"}],"nd":"string"},"datos_economicos":{"ejerciciosXml":[{"EBIT":"string","EBITDA":"string","Endeudamiento_a_corto_plazo":"string","Endeudamiento_a_largo_plazo":"string","Fondo_de_Maniobra":"string","Free_Cash_Flow":"string","Patrimonio_neto":"string","Resultado":"string","Total_Activo":"string","Ventas":"string","anyo":"string","modelo_cuentas":{"codigo":"string","valor":"string"},"moneda":{"codigo":"string","valor":"string"},"unidades":{"codigo":"string","valor":"string"}}],"nd":"string"},"datos_identificativos":{"capital_desembolsado":{"fecha":"string","importe":"string"},"capital_social":{"fecha":"string","importe":"string"},"datosident_cnae":{"codigo":"string","descripcion":"string","tipo":"string"},"datosident_grado_actividad":"string","datosident_situacion":"string","denominacion":"string","denominacion_anterior":"string","domicilio":"string","domicilio_anterior":{"domicilio":"string"},"empleados":{"listado":[{"anyo":"string","dif":"string","listado":[{"genero":"string","situacion":"string","valor":"string"}],"periodo":"string","valor":"string"}]},"estado_firma":"string","fax":"string","fecha_inicio":"string","forma_juridica":{"codigo":"string","valor":"string"},"incidencias_actividad":"string","nif":"string","nombre_comercial":"string","objeto_social":"string","operacion_mercantil":{"estado":"string","fecha":"string"},"otras_actividades":{"actividad":[{"codigo":"string","descripcion":"string","tipo":"string"}]},"otras_situaciones":{"estado":"string","fecha":"string"},"situacion_concursal":{"estado":"string","fecha":"string"},"situacion_mercantil":"string","tamanio_empresa":{"codigo_cuenta":"string","valor":"string"},"telefono":"string","web":"string"},"detalleInforme":{"fechaEntrevista":"string","fechaUltDato":"string","textoCuentas":"string","textoFuentes":"string","textoInformes":"string"},"incidencias":{"ejercicios":[{"anyo":"string","demandado":{"concursales":{"total":0,"valor":"string"},"eleTotalIncidenciaDemandado":{"total":0,"valor":"string"},"judiciales":{"total":0,"valor":"string"},"reclamaciones":{"total":0,"valor":"string"}},"demandante":{"concursales":{"total":0,"valor":"string"},"eleTotalIncidenciaDemandante":{"total":0,"valor":"string"},"judiciales":{"total":0,"valor":"string"},"reclamaciones":{"total":0,"valor":"string"}}}],"noDisponible":"string","texto":"string"},"informacion_cuentas":{"ejercicio":[{"anyo":"string","auditadopor":"string","auditoria":{"codigo":"string","valor":"string"},"modelo_cuentas":{"codigo":"string","valor":"string"},"moneda":{"codigo":"string","valor":"string"},"periodo":"string","referencia":{"codigo":"string","valor":"string"},"resultado":{"codigo":"string","valor":"string"},"salvedades":{"codigo":"string","valor":"string"},"tipo_cuenta":{"codigo":"string","valor":"string"},"unidades":{"codigo":"string","valor":"string"}}],"nd":"string"},"marcas":{"nd":"string","registros_marcas":{"registro":[{"calificador":"string","claves_niza":{"registro":[{"actividad":"string","clave":"string"}]},"estado":"string","expediente":"string","fecha_actualizacion":"string","fecha_concesion":"string","fecha_renovacion":"string","fecha_solicitud":"string","nombre":"string","ruta_imagen":"string"}]},"registros_nombres_comerciales":{"registro":[{"calificador":"string","claves_niza":{"registro":[{"actividad":"string","clave":"string"}]},"estado":"string","expediente":"string","fecha_actualizacion":"string","fecha_concesion":"string","fecha_renovacion":"string","fecha_solicitud":"string","nombre":"string","ruta_imagen":"string"}]}},"organos_sociales":{"nd":"string","registro":[{"cargo":{"codigo":"string","valor":"string"},"denominacion":"string","fecha":"string"}]},"ratios":{"ejercicio_cuentas":[{"anyo":"string","registro":[{"codigo":"string","unidad":"string","valor":"string"}]}],"nd":"string"},"sectorial":{"nd":"string","wrapperEjercicioCuentas":{"ejerciciosXml":[{"anyo":"string","listado":[{"codigo":"string","diferencial":{"unidad":"string","valorString":"string"},"empresa":"string","sector":"string"}]}]}},"valoracion":{"morosidad":{"definicion":"string","escala":"string","regla_exclusion":{"codigo":"string","valor":"string"}},"nd":"string","opinion_credito":{"codigo":"string","valorTraducido":"string"},"solvencia":"string"},"vinculaciones":{"accionistas":{"registro":[{"forma_juridica":{"codigo":"string","valor":"string"},"nif":"string","nombre":"string","porcentaje":"string"}]},"grupo_empresarial":{"registro":[{"nif":"string","nombre":{"formaJuridica":"string","nombre":"string","pais":"string"},"tipoEmpresa":"string"}]},"inversiones":{"listado":[{"fecha":"string","partida":[{"codigo":"string","valor":"string"}]}]},"moneda":{"codigo":"string","valor":"string"},"nd":"string","operaciones":{"registro":[{"compra":"string","nif":"string","nombre":{"formaJuridica":"string","nombre":"string","pais":"string"},"tipo":"string","venta":"string"}]},"participadas":{"registro":[{"directa":"string","forma_juridica":{"codigo":"string","valor":"string"},"indirecta":"string","nif":"string","nombre":"string","porcentaje":"string","tipo":{"codigo":"string","valor":"string"}}]},"saldos_transacciones":{"registro":[{"businessInformation":{"acronym":{"code":"string","value":"string"},"country":{"code":"string","value":"string"},"fullName":"string","taxId":"string"},"transactionAmounts":{"compensations":"string","interests":"string","providedGuarantees":"string","purchaseOfCurrentAssets":"string","purchaseOfNonCurrentAssets":"string","receivedGuarantees":"string","receivedServices":"string","renderedServices":"string","saleOfCurrentAssets":"string","saleOfNonCurrentAssets":"string"}}]},"socioUnico":{"registro":[{"nombre":"string","porcentaje":"string"}]},"unidades":{"codigo":"string","valor":"string"}}}

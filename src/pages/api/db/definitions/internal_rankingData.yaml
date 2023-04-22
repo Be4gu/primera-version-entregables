@@ -1,0 +1,77 @@
+internal_rankingData:
+  description: ''
+  type: object
+  properties:
+    rankingType:
+      type: string
+    capacity:
+      type: number
+    language:
+      type: string
+    page:
+      type: number
+    total:
+      type: number
+    date:
+      type: string
+    symbol:
+      type: string
+    content:
+      items:
+        properties:
+          firmid:
+            type: number
+          webDescription:
+            type: string
+          name:
+            type: string
+          fullName:
+            type: string
+          tradeName:
+            type: string
+          country:
+            type: string
+          province:
+            type: string
+          locality:
+            type: string
+          rankingValue:
+            type: string
+        type: object
+      $ref: '#/definitions/internal_ContentArray'
+  example: >-
+    {"rankingType":"01","capacity":10,"language":"ES","page":0,"total":1000,"date":"05-12-2019
+    15:55:06.0","symbol":"€","content":[{"firmid":6334608,"webDescription":"wire-technologies","name":"WIRE
+    TECHNOLOGIES","fullName":"WIRE TECHNOLOGIES
+    SL","tradeName":"WITECH","country":"ESPAÑA","province":"BARCELONA","locality":"GRANOLLERS","rankingValue":"
+    1.497.900.320.000,00"},{"firmid":6743430,"webDescription":"artesanos-de-la-madera-de-toledo","name":"ARTESANOS
+    DE LA MADERA DE TOLEDO","fullName":"ARTESANOS DE LA MADERA DE TOLEDO
+    SLL","tradeName":"AMT","country":"ESPAÑA","province":"TOLEDO","locality":"VILLACAÑAS","rankingValue":"
+    957.633.590.000,00"},{"firmid":141417,"webDescription":"ifco-systems-espana","name":"IFCO
+    SYSTEMS ESPAÑA","fullName":"IFCO SYSTEMS ESPAÑA
+    SL","country":"ESPAÑA","province":"VALENCIA","locality":"PICASSENT","rankingValue":"
+    141.083.509.000,00"},{"firmid":3998567,"webDescription":"antonio-guillin-luana-y-rogelio-dono-pampin","name":"ANTONIO
+    GUILLIN LUAÑA Y ROGELIO DONO PAMPIN","fullName":"ANTONIO GUILLIN LUAÑA Y
+    ROGELIO DONO PAMPIN Sociedad Civil","country":"ESPAÑA","province":"CORUÑA
+    (A)","locality":"OLEIROS","rankingValue":"
+    135.000.135.000,00"},{"firmid":6213959,"webDescription":"suministros-industriales-mahofri","name":"SUMINISTROS
+    INDUSTRIALES MAHOFRI","fullName":"SUMINISTROS INDUSTRIALES MAHOFRI
+    SL","country":"ESPAÑA","province":"ALICANTE","locality":"ELCHE","rankingValue":"
+    61.411.530.000,00"},{"firmid":1994945,"webDescription":"metalab-2010","name":"METALAB
+    2010","fullName":"METALAB 2010
+    SL","country":"ESPAÑA","province":"MADRID","locality":"POZUELO DE
+    ALARCON","rankingValue":"
+    33.000.000.000,00"},{"firmid":6532265,"webDescription":"taoufik-bahdaoui","name":"TAOUFIK
+    BAHDAOUI","fullName":"TAOUFIK BAHDAOUI","tradeName":"LA TIENDA
+    CHOLLOS","country":"ESPAÑA","province":"CIUDAD
+    REAL","locality":"DAIMIEL","rankingValue":"
+    28.851.326.680,00"},{"firmid":611505,"webDescription":"autocares-carrasco","name":"AUTOCARES
+    CARRASCO","fullName":"AUTOCARES CARRASCO
+    SL","country":"ESPAÑA","province":"MALAGA","locality":"CAMPILLOS","rankingValue":"
+    28.851.326.680,00"},{"firmid":63770,"webDescription":"mercadona","name":"MERCADONA","fullName":"MERCADONA
+    SA","country":"ESPAÑA","province":"VALENCIA","locality":"TAVERNES
+    BLANQUES","rankingValue":"
+    19.059.157.000,00"},{"firmid":2265953,"webDescription":"repsol-petroleo","name":"REPSOL
+    PETROLEO","fullName":"REPSOL PETROLEO
+    SA","tradeName":"REPSOL","country":"ESPAÑA","province":"MADRID","locality":"MADRID","rankingValue":"
+    18.344.171.000,00"}]}

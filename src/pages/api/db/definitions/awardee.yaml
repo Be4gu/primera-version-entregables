@@ -1,0 +1,14 @@
+awardee:
+  description: ''
+  type: object
+  properties:
+    identifier:
+      type: string
+    identifierType:
+      type: string
+    name:
+      type: string
+    country:
+      type: string
+  example: >-
+    {"identifier":"string","identifierType":"string","name":"string","country":"string"}

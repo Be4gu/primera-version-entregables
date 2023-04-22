@@ -1,0 +1,28 @@
+awarder:
+  description: ''
+  type: object
+  properties:
+    id:
+      type: string
+    adminType:
+      type: string
+    division:
+      type: string
+    divisionLevel1:
+      type: string
+    divisionLevel2:
+      type: string
+    divisionLevel3:
+      type: string
+    identifier:
+      type: string
+    identifierType:
+      type: string
+    name:
+      type: string
+    country:
+      type: string
+    nut:
+      type: string
+  example: >-
+    {"id":"string","adminType":"string","division":"string","divisionLevel1":"string","divisionLevel2":"string","divisionLevel3":"string","identifier":"string","identifierType":"string","name":"string","country":"string","nut":"string"}

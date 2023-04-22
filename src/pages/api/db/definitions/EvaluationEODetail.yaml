@@ -1,0 +1,31 @@
+EvaluationEODetail:
+  description: ''
+  type: object
+  properties:
+    morosidad:
+      type: object
+      properties:
+        definicion:
+          type: string
+        escala:
+          type: string
+        regla_exclusion:
+          type: object
+          properties:
+            codigo:
+              type: string
+            valor:
+              type: string
+    nd:
+      type: string
+    opinion_credito:
+      type: object
+      properties:
+        codigo:
+          type: string
+        valorTraducido:
+          type: string
+    solvencia:
+      type: string
+  example: >-
+    {"morosidad":{"definicion":"string","escala":"string","regla_exclusion":{"codigo":"string","valor":"string"}},"nd":"string","opinion_credito":{"codigo":"string","valorTraducido":"string"},"solvencia":"string"}

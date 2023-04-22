@@ -1,0 +1,376 @@
+'/modules/incidents/{organisationID}/affectedAsPlaintiff/legalProceedings':
+  get:
+    tags:
+      - Incidents
+    responses:
+      '200':
+        description: 200 OK
+        schema:
+          $ref: '#/definitions/LeProcDetail'
+      '401':
+        description: Unauthorized
+        schema:
+          $ref: '#/definitions/ErrorDetail'
+      '403':
+        description: Forbidden
+        schema:
+          $ref: '#/definitions/ErrorDetail'
+      '404':
+        description: Recurso no encontrado
+        schema:
+          $ref: '#/definitions/ErrorDetail'
+      '500':
+        description: Internal error
+        schema:
+          $ref: '#/definitions/ErrorDetail'
+    parameters:
+      - name: organisationID
+        type: string
+        required: true
+        in: path
+        description: identificador de la firma
+      - name: language
+        type: string
+        required: false
+        in: query
+        description: Idioma generación
+'/modules/incidents/{organisationID}/affectedAsPlaintiff/legalProceedings/{incidentID}':
+  get:
+    tags:
+      - Incidents
+    responses:
+      '200':
+        description: 200 OK
+        schema:
+          $ref: '#/definitions/LeProcIDDetail'
+      '401':
+        description: Unauthorized
+        schema:
+          $ref: '#/definitions/ErrorDetail'
+      '403':
+        description: Forbidden
+        schema:
+          $ref: '#/definitions/ErrorDetail'
+      '404':
+        description: Recurso no encontrado
+        schema:
+          $ref: '#/definitions/ErrorDetail'
+      '500':
+        description: Internal error
+        schema:
+          $ref: '#/definitions/ErrorDetail'
+    parameters:
+      - name: organisationID
+        type: string
+        required: true
+        in: path
+      - name: incidentID
+        type: string
+        required: true
+        in: path
+      - name: language
+        type: string
+        required: false
+        in: query
+'/modules/incidents/{organisationID}/affectedAsPlaintiff/bankruptcyProceedings':
+  get:
+    tags:
+      - Incidents
+    responses:
+      '200':
+        description: 200 OK
+        schema:
+          $ref: '#/definitions/bankruptcyDetail'
+      '401':
+        description: Unauthorized
+        schema:
+          $ref: '#/definitions/ErrorDetail'
+      '403':
+        description: Forbidden
+        schema:
+          $ref: '#/definitions/ErrorDetail'
+      '404':
+        description: Recurso no encontrado
+        schema:
+          $ref: '#/definitions/ErrorDetail'
+      '500':
+        description: Internal error
+        schema:
+          $ref: '#/definitions/ErrorDetail'
+    parameters:
+      - name: organisationID
+        type: string
+        required: true
+        in: path
+        description: identificador de la firma
+      - name: language
+        type: string
+        required: false
+        in: query
+        description: Idioma generación
+'/modules/incidents/{organisationID}/affectedAsPlaintiff/bankruptcyProceedings/{incidentID}':
+  get:
+    tags:
+      - Incidents
+    responses:
+      '200':
+        description: 200 OK
+        schema:
+          $ref: '#/definitions/bankruptcyIDDetail'
+      '401':
+        description: Unauthorized
+        schema:
+          $ref: '#/definitions/ErrorDetail'
+      '403':
+        description: Forbidden
+        schema:
+          $ref: '#/definitions/ErrorDetail'
+      '404':
+        description: Recurso no encontrado
+        schema:
+          $ref: '#/definitions/ErrorDetail'
+      '500':
+        description: Internal error
+        schema:
+          $ref: '#/definitions/ErrorDetail'
+    parameters:
+      - name: organisationID
+        type: string
+        required: true
+        in: path
+      - name: incidentID
+        type: string
+        required: true
+        in: path
+      - name: language
+        type: string
+        required: false
+        in: query
+'/modules/incidents/{organisationID}/defendant/legalProceedings':
+  get:
+    tags:
+      - Incidents
+    responses:
+      '200':
+        description: 200 OK
+        schema:
+          $ref: '#/definitions/ErrorDetail'
+      '401':
+        description: Unauthorized
+        schema:
+          $ref: '#/definitions/DefLegProcDetails'
+      '403':
+        description: Forbidden
+        schema:
+          $ref: '#/definitions/DefLegProcDetails'
+      '404':
+        description: Recurso no encontrado
+        schema:
+          $ref: '#/definitions/DefLegProcDetails'
+      '500':
+        description: Internal error
+        schema:
+          $ref: '#/definitions/DefLegProcDetails'
+    parameters:
+      - name: organisationID
+        type: string
+        required: true
+        in: path
+        description: identificador de la firma
+      - name: language
+        type: string
+        required: false
+        in: query
+        description: Idioma generación
+'/modules/incidents/{organisationID}/defendant/legalProceedings/{incidentID}':
+  get:
+    tags:
+      - Incidents
+    responses:
+      '200':
+        description: 200 OK
+        schema:
+          $ref: '#/definitions/ErrorDetail'
+      '401':
+        description: Unauthorized
+        schema:
+          $ref: '#/definitions/DefLegProcIDDetails'
+      '403':
+        description: Forbidden
+        schema:
+          $ref: '#/definitions/DefLegProcIDDetails'
+      '404':
+        description: Recurso no encontrado
+        schema:
+          $ref: '#/definitions/DefLegProcIDDetails'
+      '500':
+        description: Internal error
+        schema:
+          $ref: '#/definitions/DefLegProcIDDetails'
+    parameters:
+      - name: organisationID
+        type: string
+        required: true
+        in: path
+        description: identificador de la firma
+      - name: language
+        type: string
+        required: false
+        in: query
+        description: Idioma generación
+      - name: incidentID
+        type: string
+        required: true
+        in: path
+'/modules/incidents/{organisationID}/defendant/bankruptcyProceedings':
+  get:
+    tags:
+      - Incidents
+    responses:
+      '200':
+        description: 200 OK
+        schema:
+          $ref: '#/definitions/defenbankruptcyProceedingsDetail'
+      '401':
+        description: Unauthorized
+        schema:
+          $ref: '#/definitions/ErrorDetail'
+      '403':
+        description: Forbidden
+        schema:
+          $ref: '#/definitions/ErrorDetail'
+      '404':
+        description: Recurso no encontrado
+        schema:
+          $ref: '#/definitions/ErrorDetail'
+      '500':
+        description: Internal error
+        schema:
+          $ref: '#/definitions/ErrorDetail'
+    parameters:
+      - name: organisationID
+        type: string
+        required: true
+        in: path
+        description: identificador de la firma
+      - name: language
+        type: string
+        required: false
+        in: query
+        description: Idioma generación
+'/modules/incidents/{organisationID}/defendant/bankruptcyProceedings/{incidentID}':
+  get:
+    tags:
+      - Incidents
+    responses:
+      '200':
+        description: 200 OK
+        schema:
+          $ref: '#/definitions/defenbankruptcyProceedingsIDDetail'
+      '401':
+        description: Unauthorized
+        schema:
+          $ref: '#/definitions/ErrorDetail'
+      '403':
+        description: Forbidden
+        schema:
+          $ref: '#/definitions/ErrorDetail'
+      '404':
+        description: Recurso no encontrado
+        schema:
+          $ref: '#/definitions/ErrorDetail'
+      '500':
+        description: Internal error
+        schema:
+          $ref: '#/definitions/ErrorDetail'
+    parameters:
+      - name: organisationID
+        type: string
+        required: true
+        in: path
+        description: identificador de la firma
+      - name: language
+        type: string
+        required: false
+        in: query
+        description: Idioma generación
+      - name: incidentID
+        type: string
+        required: true
+        in: path
+'/modules/incidents/{organisationID}/defendant/claims':
+  get:
+    tags:
+      - Incidents
+    responses:
+      '200':
+        description: 200 OK
+        schema:
+          $ref: '#/definitions/DefClaimsDetail'
+      '401':
+        description: Unauthorized
+        schema:
+          $ref: '#/definitions/ErrorDetail'
+      '403':
+        description: Forbidden
+        schema:
+          $ref: '#/definitions/ErrorDetail'
+      '404':
+        description: Recurso no encontrado
+        schema:
+          $ref: '#/definitions/ErrorDetail'
+      '500':
+        description: Internal error
+        schema:
+          $ref: '#/definitions/ErrorDetail'
+    parameters:
+      - name: organisationID
+        type: string
+        required: true
+        in: path
+        description: identificador de la firma
+      - name: language
+        type: string
+        required: false
+        in: query
+        description: Idioma generación
+'/modules/incidents/{organisationID}/defendant/claims/{incidentID}':
+  get:
+    tags:
+      - Incidents
+    responses:
+      '200':
+        description: 200 OK
+        schema:
+          $ref: '#/definitions/DefClaimsIDDetail'
+      '401':
+        description: Unauthorized
+        schema:
+          $ref: '#/definitions/ErrorDetail'
+      '403':
+        description: Forbidden
+        schema:
+          $ref: '#/definitions/ErrorDetail'
+      '404':
+        description: Recurso no encontrado
+        schema:
+          $ref: '#/definitions/ErrorDetail'
+      '500':
+        description: Internal error
+        schema:
+          $ref: '#/definitions/ErrorDetail'
+    parameters:
+      - name: organisationID
+        type: string
+        required: true
+        in: path
+        description: identificador de la firma
+      - name: language
+        type: string
+        required: false
+        in: query
+        description: Idioma generación
+      - name: incidentID
+        type: string
+        required: true
+        in: path

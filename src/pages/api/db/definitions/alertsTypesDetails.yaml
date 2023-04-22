@@ -1,0 +1,50 @@
+alertsTypesDetails:
+  description: ''
+  type: object
+  properties:
+    alertsTypes:
+      type: array
+      items:
+        properties:
+          typeID:
+            type: number
+          typeDescription:
+            type: string
+          reportingMode:
+            type: string
+          payLoad:
+            type: object
+            properties:
+              fileName:
+                type: string
+              numRegs:
+                type: number
+              changeDate:
+                type: string
+        type: object
+    totalAlertTypes: {}
+  example: >-
+    {"alertsTypes":[{"typeID":1,"typeDescription":"Masivo","reportingMode":"MASSIVE","payLoad":{"fileName":"Massive
+    alert file name","numRegs":0,"changeDate":"2020-02-58
+    13:15:11"}},{"typeID":2,"typeDescription":"CNAE","reportingMode":"UNITARY","payLoad":{"companyId":0,"previousValue":"Previous
+    value of the field monitorized","previousDescription":"Previous description 
+    of the field monitorized","currentValue":"Current value of the field
+    monitorized","currentDescription":"Current description of the field
+    monitorized","changeDate":"2020-02-58
+    13:15:11"}},{"typeID":3,"typeDescription":"Telefono","reportingMode":"UNITARY","payLoad":{"companyId":0,"previousValue":"Previous
+    value of the field monitorized","previousDescription":"Previous description 
+    of the field monitorized","currentValue":"Current value of the field
+    monitorized","currentDescription":"Current description of the field
+    monitorized","changeDate":"2020-02-58
+    13:15:11"}},{"typeID":4,"typeDescription":"Forma
+    Jurídica","reportingMode":"UNITARY","payLoad":{"companyId":0,"previousValue":"Previous
+    value of the field monitorized","previousDescription":"Previous description 
+    of the field monitorized","currentValue":"Current value of the field
+    monitorized","currentDescription":"Current description of the field
+    monitorized","changeDate":"2020-02-58
+    13:15:11"}},{"typeID":5,"typeDescription":"Razon
+    Social","reportingMode":"UNITARY","payLoad":{"companyId":0,"previousValue":"Previous
+    value of the field monitorized","previousDescription":"Previous description 
+    of the field monitorized","currentValue":"Current value of the field
+    monitorized","currentDescription":"Current description of the field
+    monitorized","changeDate":"2020-02-58 13:15:11"}}],"totalAlertTypes":null}

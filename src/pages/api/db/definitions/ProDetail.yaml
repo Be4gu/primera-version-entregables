@@ -1,0 +1,21 @@
+ProDetail:
+  description: ''
+  type: object
+  properties:
+    importPercentage:
+      type: string
+    imports:
+      type: string
+    notAvailable:
+      type: string
+    providersPortfolio:
+      type: object
+      properties:
+        code:
+          type: string
+        value:
+          type: string
+    purchasePercentage:
+      type: string
+  example: >-
+    {"importPercentage":"string","imports":"string","notAvailable":"string","providersPortfolio":{"code":"string","value":"string"},"purchasePercentage":"string"}

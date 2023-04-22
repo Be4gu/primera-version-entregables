@@ -1,0 +1,40 @@
+'/modules/asnefdata/{nif}':
+  get:
+    tags:
+      - Incidents
+    responses:
+      '200':
+        description: 200 OK
+        schema:
+          $ref: '#/definitions/asnefDetails'
+      '400':
+        description: 400 Bad Request
+        schema:
+          $ref: '#/definitions/responseError'
+      '401':
+        description: 401 Unauthorized
+        schema:
+          $ref: '#/definitions/responseError'
+      '403':
+        description: 403 Forbidden
+        schema:
+          $ref: '#/definitions/responseError'
+      '404':
+        description: 404 Not Found
+        schema:
+          $ref: '#/definitions/responseError'
+      '500':
+        description: 500 Internal Server Error
+        schema:
+          $ref: '#/definitions/responseError'
+    parameters:
+      - name: nif
+        type: string
+        required: true
+        in: path
+        description: nif
+      - name: lang
+        type: string
+        required: false
+        in: query
+        description: lang

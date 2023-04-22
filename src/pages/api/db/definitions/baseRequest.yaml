@@ -1,0 +1,8 @@
+baseRequest:
+  properties:
+    lang:
+      type: string
+      description: Código del idioma en el que se están retornando las descripciones
+    user:
+      type: string
+      description: Alias del usuario

@@ -1,0 +1,84 @@
+DefClaimsIDDetail:
+  description: ''
+  type: object
+  properties:
+    claimConcept:
+      type: object
+      properties:
+        code:
+          type: string
+        description:
+          type: string
+    claimPublicationDate:
+      type: string
+    claimantType:
+      type: object
+      properties:
+        code:
+          type: string
+        description:
+          type: string
+    claimedAmount:
+      type: string
+    companyName:
+      type: string
+    endDate:
+      type: string
+    mainAddress:
+      type: object
+      properties:
+        country:
+          type: object
+          properties:
+            code:
+              type: string
+            value:
+              type: string
+        dateUntil:
+          type: string
+        fullAddress:
+          type: string
+        number:
+          type: string
+        otherDetails:
+          type: string
+        postcode:
+          type: string
+        province:
+          type: object
+          properties:
+            code:
+              type: string
+            value:
+              type: string
+        streetName:
+          type: string
+        streetType:
+          type: object
+          properties:
+            code:
+              type: string
+            value:
+              type: string
+        town:
+          type: object
+          properties:
+            code:
+              type: string
+            value:
+              type: string
+        urbanArea:
+          type: string
+    publishedMedia:
+      type: object
+      properties:
+        code:
+          type: string
+        description:
+          type: string
+    startDate:
+      type: string
+    taxId:
+      type: string
+  example: >-
+    {"claimConcept":{"code":"string","description":"string"},"claimPublicationDate":"string","claimantType":{"code":"string","description":"string"},"claimedAmount":"string","companyName":"string","endDate":"string","mainAddress":{"country":{"code":"string","value":"string"},"dateUntil":"2019-10-07T10:34:35.001Z","fullAddress":"string","number":"string","otherDetails":"string","postcode":"string","province":{"code":"string","value":"string"},"streetName":"string","streetType":{"code":"string","value":"string"},"town":{"code":"string","value":"string"},"urbanArea":"string"},"publishedMedia":{"code":"string","description":"string"},"startDate":"string","taxId":"string"}

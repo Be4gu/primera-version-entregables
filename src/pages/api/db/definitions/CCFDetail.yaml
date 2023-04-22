@@ -1,0 +1,52 @@
+CCFDetail:
+  description: ''
+  type: object
+  properties:
+    notAvailable:
+      type: string
+    wrapperYears:
+      type: array
+      items:
+        properties:
+          accountsWrapper:
+            type: object
+            properties:
+              accounts:
+                type: array
+                items:
+                  properties:
+                    balance:
+                      type: string
+                    description:
+                      type: object
+                      properties:
+                        code:
+                          type: string
+                        value:
+                          type: string
+                  type: object
+              unavailabilityReason:
+                type: string
+          balanceInformation:
+            type: object
+            properties:
+              balanceType:
+                type: object
+                properties:
+                  code:
+                    type: string
+                  value:
+                    type: string
+              closeDate:
+                type: string
+              documentLink:
+                type: string
+              period:
+                type: string
+              startDate:
+                type: string
+              year:
+                type: string
+        type: object
+  example: >-
+    {"notAvailable":"string","wrapperYears":[{"accountsWrapper":{"accounts":[{"balance":"string","description":{"code":"string","value":"string"}}],"unavailabilityReason":"string"},"balanceInformation":{"balanceType":{"code":"string","value":"string"},"closeDate":"string","documentLink":"string","period":"string","startDate":"string","year":"string"}}]}

@@ -1,0 +1,9 @@
+identifierType:
+  description: ''
+  type: object
+  properties:
+    country:
+      type: string
+    identifierType:
+      type: string
+  example: '{"country":"string","identifierType":"string"}'

@@ -1,0 +1,82 @@
+responseGetOrganisationByKey:
+  description: ''
+  type: object
+  properties:
+    count:
+      type: number
+    baseRequest:
+      type: object
+      properties:
+        user:
+          type: string
+        lang:
+          type: string
+    organisations:
+      type: array
+      items:
+        properties:
+          scoreCS:
+            type: number
+          activity:
+            type: object
+            properties:
+              activityClassType:
+                type: string
+              activityClassVersion:
+                type: string
+              activityClassCode:
+                type: string
+              activityClassDesc:
+                type: string
+          legalForm:
+            type: string
+          nameAddress:
+            type: object
+            properties:
+              name:
+                type: string
+              address:
+                type: object
+                properties:
+                  street:
+                    type: string
+                  city:
+                    type: string
+                  postCode:
+                    type: string
+                  countrySubident:
+                    type: string
+                  country:
+                    type: string
+          orgIdent:
+            type: object
+            properties:
+              orgIdentType:
+                type: string
+              orgIdentId:
+                type: number
+              orgIdentStrId: {}
+          orgStatus:
+            type: object
+            properties:
+              statusCode:
+                type: string
+              statusDate:
+                type: string
+              statusDesc:
+                type: string
+          registeredOffice:
+            type: object
+            properties:
+              registeredOfficeType:
+                type: string
+              registeredOfficeCode:
+                type: string
+        type: object
+  example: >-
+    {"count":1,"baseRequest":{"user":"","lang":"ES"},"organisations":[{"scoreCS":0,"activity":{"activityClassType":"CNAE","activityClassVersion":"2009","activityClassCode":"4776","activityClassDesc":"Comercio
+    al por menor de flores, plantas, semillas, fertilizantes, animales de
+    compañía y alimentos para los mismos en establecimientos especializados
+    "},"legalForm":"SL","nameAddress":{"name":"ERICA GARDEN FLORISTERIA
+    SL","address":{"street":"PLAZA DEL DOCTOR LAGUNA
+    2","city":"MADRID","postCode":"28009","countrySubident":"MADRID","country":"ESPAÑA"}},"orgIdent":{"orgIdentType":"IBER","orgIdentId":7600,"orgIdentStrId":null},"orgStatus":{"statusCode":"0","statusDate":"01/01/0001","statusDesc":"N/A"},"registeredOffice":{"registeredOfficeType":"NREG","registeredOfficeCode":"B81548166"}}]}

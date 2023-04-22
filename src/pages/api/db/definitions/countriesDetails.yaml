@@ -1,0 +1,17 @@
+countriesDetails:
+  type: array
+  description: ''
+  items:
+    type: object
+    properties:
+      country:
+        type: string
+      trigram:
+        type: string
+      bigram:
+        type: string
+  example: >-
+    [{"country":"Aruba","trigram":"ABW","bigram":"AW"},{"country":"Afghanistan","trigram":"AFG","bigram":"AF"},{"country":"Angola","trigram":"AGO","bigram":"AO"},{"country":"Anguilla","trigram":"AIA","bigram":"AI"},{"country":"Åland
+    Islands","trigram":"ALA","bigram":"AX"},{"country":"Albania","trigram":"ALB","bigram":"AL"},{"country":"Andorra","trigram":"AND","bigram":"AD"},{"country":"Emiratos
+    Árabes
+    Unidos","trigram":"ARE","bigram":"AE"},{"country":"Argentina","trigram":"ARG","bigram":"AR"},{"country":"Armenia","trigram":"ARM","bigram":"AM"}]

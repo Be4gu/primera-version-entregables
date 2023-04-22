@@ -1,0 +1,377 @@
+oBSAISResponse:
+  description: ''
+  type: object
+  properties:
+    wrapperYears:
+      type: array
+      items:
+        properties:
+          balanceInformation:
+            type: object
+            properties:
+              year:
+                type: string
+              period:
+                type: string
+              balanceType:
+                type: object
+                properties:
+                  code:
+                    type: string
+              documentLink:
+                type: string
+          fullBalanceSheet:
+            type: object
+            properties:
+              unavailabilityReason:
+                type: string
+              accounts:
+                type: array
+                items:
+                  properties:
+                    description:
+                      type: object
+                      properties:
+                        code:
+                          type: string
+                        value:
+                          type: string
+                    balance:
+                      type: string
+                  type: object
+          fullIncomeStatement:
+            type: object
+            properties:
+              unavailabilityReason:
+                type: string
+              accounts:
+                type: array
+                items:
+                  properties:
+                    description:
+                      type: object
+                      properties:
+                        code:
+                          type: string
+                        value:
+                          type: string
+                    balance:
+                      type: string
+                  type: object
+        type: object
+  example: >-
+    {"wrapperYears":[{"balanceInformation":{"year":"2018","period":"6","balanceType":{"code":"02"},"documentLink":"https://desa.iberinform.es/RepositorioWs/api/v1.0/cuentas-imagen/oqmeb77qag3sbpv7oqbgz5voemloe63swrgdoje4"},"fullBalanceSheet":{"unavailabilityReason":"ND","accounts":[{"description":{"code":"2130015ES","value":"III.Reservas"},"balance":"9.061.870,40"},{"description":{"code":"1255015ES","value":"5.Otros
+    activos
+    financieros"},"balance":"25,00"},{"description":{"code":"2170015ES","value":"VII.Resultado
+    del
+    ejercicio"},"balance":"3.366.775,11"},{"description":{"code":"3260015ES","value":"VI.Periodificaciones
+    a corto
+    plazo"},"balance":"828.667,60"},{"description":{"code":"3220015ES","value":"II.Provisiones
+    a corto
+    plazo"},"balance":"110.000,00"},{"description":{"code":"3256015ES","value":"6.Otras
+    deudas Administaciones
+    Públicas"},"balance":"433.607,57"},{"description":{"code":"1110015ES","value":"I.Inmovilizado
+    intangible"},"balance":"2.056.626,06"},{"description":{"code":"1231015ES","value":"1.Cli.
+    ventas y prestaciones de
+    servicios"},"balance":"1.114.492,01"},{"description":{"code":"1122015ES","value":"2.Instalaciones
+    téc. y otro inmo.
+    material"},"balance":"204.891,51"},{"description":{"code":"1150015ES","value":"V.Inversiones
+    finan. a largo
+    plazo"},"balance":"8.498,50"},{"description":{"code":"1271015ES","value":"1.Tesorería"},"balance":"13.381.063,29"},{"description":{"code":"2131015ES","value":"1.Legal
+    y
+    estatutarias"},"balance":"1.262.100,00"},{"description":{"code":"1232015ES","value":"2.Clientes
+    empresas del grupo y
+    asociadas"},"balance":"2.381.093,92"},{"description":{"code":"1260015ES","value":"VI.Periodificaciones
+    a corto
+    plazo"},"balance":"3.548,16"},{"description":{"code":"2100015ES","value":"A-1)Fondos
+    propios"},"balance":"18.739.145,51"},{"description":{"code":"3230015ES","value":"III.Deudas
+    a corto
+    plazo"},"balance":"2.779,12"},{"description":{"code":"3254015ES","value":"4.Personal
+    (remuneraciones pendnts.
+    pago)"},"balance":"295.271,85"},{"description":{"code":"3000015ES","value":"TOTAL
+    PATRIMONIO NETO Y
+    PASIVO"},"balance":"21.783.536,55"},{"description":{"code":"1120015ES","value":"II.Inmovilizado
+    material"},"balance":"204.891,51"},{"description":{"code":"1160015ES","value":"VI.Activos
+    por impuesto
+    diferido"},"balance":"200.909,06"},{"description":{"code":"3253015ES","value":"3.Acreedores
+    varios"},"balance":"52.338,83"},{"description":{"code":"1000015ES","value":"TOTAL
+    ACTIVO"},"balance":"21.783.536,55"},{"description":{"code":"1230015ES","value":"III.Deudores
+    comer. cuentas a
+    cobrar"},"balance":"3.500.496,17"},{"description":{"code":"1242015ES","value":"2.Créditos
+    a
+    empresas"},"balance":"97.978,80"},{"description":{"code":"1270015ES","value":"VII.Efectivo/activos
+    líquidos
+    equiva."},"balance":"13.381.063,29"},{"description":{"code":"2110015ES","value":"I.Capital"},"balance":"6.310.500,00"},{"description":{"code":"3252015ES","value":"2.Proveedores,
+    emp. del grupo y
+    asociadas"},"balance":"226.213,84"},{"description":{"code":"3200015ES","value":"C)PASIVO
+    CORRIENTE"},"balance":"3.044.391,04"},{"description":{"code":"1115015ES","value":"5.Aplicaciones
+    informáticas"},"balance":"2.056.626,06"},{"description":{"code":"1200015ES","value":"B)ACTIVO
+    CORRIENTE"},"balance":"16.983.111,42"},{"description":{"code":"1236015ES","value":"6.Otros
+    créditos Administraciones
+    Públicas"},"balance":"4.910,24"},{"description":{"code":"2111015ES","value":"1.Capital
+    escriturado"},"balance":"6.310.500,00"},{"description":{"code":"3235015ES","value":"5.Otros
+    pasivos
+    financieros"},"balance":"2.779,12"},{"description":{"code":"3251015ES","value":"1.Proveedores"},"balance":"1.094.176,40"},{"description":{"code":"1155015ES","value":"5.Otros
+    activos
+    financieros"},"balance":"8.498,50"},{"description":{"code":"1240015ES","value":"IV.Inver.
+    emp. grupo y asociadas
+    C.P."},"balance":"97.978,80"},{"description":{"code":"2132015ES","value":"2.Otras
+    reservas"},"balance":"7.799.770,40"},{"description":{"code":"3250015ES","value":"V.Acreedores
+    comer. cuentas a
+    pagar"},"balance":"2.102.944,32"},{"description":{"code":"1100015ES","value":"A)ACTIVO
+    NO
+    CORRIENTE"},"balance":"4.800.425,13"},{"description":{"code":"1140015ES","value":"IV.Inver.
+    emp. grupo y asoci.
+    L.P."},"balance":"2.329.500,00"},{"description":{"code":"2000015ES","value":"A)PATRIMONIO
+    NETO"},"balance":"18.739.145,51"},{"description":{"code":"3257015ES","value":"7.Anticipos
+    de
+    clientes"},"balance":"1.335,83"},{"description":{"code":"1141015ES","value":"1.Instrumentos
+    de
+    patrimonio"},"balance":"2.329.500,00"},{"description":{"code":"1250015ES","value":"V.Inversiones
+    financieras a
+    C.P."},"balance":"25,00"}]},"fullIncomeStatement":{"unavailabilityReason":"ND","accounts":[{"description":{"code":"4010015ES","value":"1.Importe
+    neto cifra de
+    negocios"},"balance":"23.113.850,36"},{"description":{"code":"4011015ES","value":"a)Ventas"},"balance":"23.081.398,76"},{"description":{"code":"4012015ES","value":"b)Prestaciones
+    de
+    servicios"},"balance":"32.451,60"},{"description":{"code":"4040015ES","value":"4.Aprovisionamientos"},"balance":"-10.375.802,74"},{"description":{"code":"4041015ES","value":"a)Consumo
+    de
+    mercaderías"},"balance":"-10.370.376,07"},{"description":{"code":"4042015ES","value":"b)Consu.
+    mat. primas/otras mat.
+    consumble."},"balance":"-5.426,67"},{"description":{"code":"4060015ES","value":"6.Gastos
+    de
+    personal"},"balance":"-3.402.081,51"},{"description":{"code":"4061015ES","value":"a)Sueldos,
+    salarios y
+    asimilados"},"balance":"-2.472.992,99"},{"description":{"code":"4062015ES","value":"b)Cargas
+    sociales"},"balance":"-929.088,52"},{"description":{"code":"4070015ES","value":"7.Otros
+    gastos de
+    explotación"},"balance":"-4.400.353,59"},{"description":{"code":"4071015ES","value":"a)Servicios
+    exteriores"},"balance":"-4.325.752,33"},{"description":{"code":"4072015ES","value":"b)Tributos"},"balance":"-14.949,61"},{"description":{"code":"4073015ES","value":"c)Pérd.,
+    deter./varia. provi. ope.
+    comer."},"balance":"-59.651,65"},{"description":{"code":"4080015ES","value":"8.Amortización
+    del
+    inmovilizado"},"balance":"-1.013.709,41"},{"description":{"code":"4140015ES","value":"14.Ingresos
+    financieros"},"balance":"10.614,42"},{"description":{"code":"4142015ES","value":"b)Valores
+    negociables/otros instru.
+    finan."},"balance":"10.614,42"},{"description":{"code":"4142215ES","value":"b2)De
+    terceros"},"balance":"10.614,42"},{"description":{"code":"4190015ES","value":"20.Impuestos
+    sobre
+    beneficios"},"balance":"-565.742,42"},{"description":{"code":"4910015ES","value":"A.1)RESULTADO
+    DE
+    EXPLOTACIÓN"},"balance":"3.921.903,11"},{"description":{"code":"4920015ES","value":"A.2)RESULTADO
+    FINANCIERO"},"balance":"10.614,42"},{"description":{"code":"4930015ES","value":"A.3)RESULTADO
+    ANTES DE
+    IMPUESTOS"},"balance":"3.932.517,53"},{"description":{"code":"4940015ES","value":"A.4)RESUL.
+    EJER. PROCED. OPER.
+    CONTINUADAS"},"balance":"3.366.775,11"},{"description":{"code":"4950015ES","value":"A.5)RESULTADO
+    DEL
+    EJERCICIO"},"balance":"3.366.775,11"}]}},{"balanceInformation":{"year":"2017","period":"12","balanceType":{"code":"02"},"documentLink":"https://desa.iberinform.es/RepositorioWs/api/v1.0/cuentas-imagen/3dq655ul0tv93qghxidk2oeasel0slt8enmq48h2"},"fullBalanceSheet":{"unavailabilityReason":"ND","accounts":[{"description":{"code":"2130015ES","value":"III.Reservas"},"balance":"9.061.870,40"},{"description":{"code":"1255015ES","value":"5.Otros
+    activos
+    financieros"},"balance":"25,00"},{"description":{"code":"2170015ES","value":"VII.Resultado
+    del
+    ejercicio"},"balance":"3.366.775,11"},{"description":{"code":"3260015ES","value":"VI.Periodificaciones
+    a corto
+    plazo"},"balance":"828.667,60"},{"description":{"code":"3220015ES","value":"II.Provisiones
+    a corto
+    plazo"},"balance":"110.000,00"},{"description":{"code":"3256015ES","value":"6.Otras
+    deudas Administaciones
+    Públicas"},"balance":"433.607,57"},{"description":{"code":"1110015ES","value":"I.Inmovilizado
+    intangible"},"balance":"2.056.626,06"},{"description":{"code":"1231015ES","value":"1.Cli.
+    ventas y prestaciones de
+    servicios"},"balance":"1.114.492,01"},{"description":{"code":"1122015ES","value":"2.Instalaciones
+    téc. y otro inmo.
+    material"},"balance":"204.891,51"},{"description":{"code":"1150015ES","value":"V.Inversiones
+    finan. a largo
+    plazo"},"balance":"8.498,50"},{"description":{"code":"1271015ES","value":"1.Tesorería"},"balance":"13.381.063,29"},{"description":{"code":"2131015ES","value":"1.Legal
+    y
+    estatutarias"},"balance":"1.262.100,00"},{"description":{"code":"1232015ES","value":"2.Clientes
+    empresas del grupo y
+    asociadas"},"balance":"2.381.093,92"},{"description":{"code":"1260015ES","value":"VI.Periodificaciones
+    a corto
+    plazo"},"balance":"3.548,16"},{"description":{"code":"2100015ES","value":"A-1)Fondos
+    propios"},"balance":"18.739.145,51"},{"description":{"code":"3230015ES","value":"III.Deudas
+    a corto
+    plazo"},"balance":"2.779,12"},{"description":{"code":"3254015ES","value":"4.Personal
+    (remuneraciones pendnts.
+    pago)"},"balance":"295.271,85"},{"description":{"code":"3000015ES","value":"TOTAL
+    PATRIMONIO NETO Y
+    PASIVO"},"balance":"21.783.536,55"},{"description":{"code":"1120015ES","value":"II.Inmovilizado
+    material"},"balance":"204.891,51"},{"description":{"code":"1160015ES","value":"VI.Activos
+    por impuesto
+    diferido"},"balance":"200.909,06"},{"description":{"code":"3253015ES","value":"3.Acreedores
+    varios"},"balance":"52.338,83"},{"description":{"code":"1000015ES","value":"TOTAL
+    ACTIVO"},"balance":"21.783.536,55"},{"description":{"code":"1230015ES","value":"III.Deudores
+    comer. cuentas a
+    cobrar"},"balance":"3.500.496,17"},{"description":{"code":"1242015ES","value":"2.Créditos
+    a
+    empresas"},"balance":"97.978,80"},{"description":{"code":"1270015ES","value":"VII.Efectivo/activos
+    líquidos
+    equiva."},"balance":"13.381.063,29"},{"description":{"code":"2110015ES","value":"I.Capital"},"balance":"6.310.500,00"},{"description":{"code":"3252015ES","value":"2.Proveedores,
+    emp. del grupo y
+    asociadas"},"balance":"226.213,84"},{"description":{"code":"3200015ES","value":"C)PASIVO
+    CORRIENTE"},"balance":"3.044.391,04"},{"description":{"code":"1115015ES","value":"5.Aplicaciones
+    informáticas"},"balance":"2.056.626,06"},{"description":{"code":"1200015ES","value":"B)ACTIVO
+    CORRIENTE"},"balance":"16.983.111,42"},{"description":{"code":"1236015ES","value":"6.Otros
+    créditos Administraciones
+    Públicas"},"balance":"4.910,24"},{"description":{"code":"2111015ES","value":"1.Capital
+    escriturado"},"balance":"6.310.500,00"},{"description":{"code":"3235015ES","value":"5.Otros
+    pasivos
+    financieros"},"balance":"2.779,12"},{"description":{"code":"3251015ES","value":"1.Proveedores"},"balance":"1.094.176,40"},{"description":{"code":"1155015ES","value":"5.Otros
+    activos
+    financieros"},"balance":"8.498,50"},{"description":{"code":"1240015ES","value":"IV.Inver.
+    emp. grupo y asociadas
+    C.P."},"balance":"97.978,80"},{"description":{"code":"2132015ES","value":"2.Otras
+    reservas"},"balance":"7.799.770,40"},{"description":{"code":"3250015ES","value":"V.Acreedores
+    comer. cuentas a
+    pagar"},"balance":"2.102.944,32"},{"description":{"code":"1100015ES","value":"A)ACTIVO
+    NO
+    CORRIENTE"},"balance":"4.800.425,13"},{"description":{"code":"1140015ES","value":"IV.Inver.
+    emp. grupo y asoci.
+    L.P."},"balance":"2.329.500,00"},{"description":{"code":"2000015ES","value":"A)PATRIMONIO
+    NETO"},"balance":"18.739.145,51"},{"description":{"code":"3257015ES","value":"7.Anticipos
+    de
+    clientes"},"balance":"1.335,83"},{"description":{"code":"1141015ES","value":"1.Instrumentos
+    de
+    patrimonio"},"balance":"2.329.500,00"},{"description":{"code":"1250015ES","value":"V.Inversiones
+    financieras a
+    C.P."},"balance":"25,00"}]},"fullIncomeStatement":{"unavailabilityReason":"ND","accounts":[{"description":{"code":"4010015ES","value":"1.Importe
+    neto cifra de
+    negocios"},"balance":"23.113.850,36"},{"description":{"code":"4011015ES","value":"a)Ventas"},"balance":"23.081.398,76"},{"description":{"code":"4012015ES","value":"b)Prestaciones
+    de
+    servicios"},"balance":"32.451,60"},{"description":{"code":"4040015ES","value":"4.Aprovisionamientos"},"balance":"-10.375.802,74"},{"description":{"code":"4041015ES","value":"a)Consumo
+    de
+    mercaderías"},"balance":"-10.370.376,07"},{"description":{"code":"4042015ES","value":"b)Consu.
+    mat. primas/otras mat.
+    consumble."},"balance":"-5.426,67"},{"description":{"code":"4060015ES","value":"6.Gastos
+    de
+    personal"},"balance":"-3.402.081,51"},{"description":{"code":"4061015ES","value":"a)Sueldos,
+    salarios y
+    asimilados"},"balance":"-2.472.992,99"},{"description":{"code":"4062015ES","value":"b)Cargas
+    sociales"},"balance":"-929.088,52"},{"description":{"code":"4070015ES","value":"7.Otros
+    gastos de
+    explotación"},"balance":"-4.400.353,59"},{"description":{"code":"4071015ES","value":"a)Servicios
+    exteriores"},"balance":"-4.325.752,33"},{"description":{"code":"4072015ES","value":"b)Tributos"},"balance":"-14.949,61"},{"description":{"code":"4073015ES","value":"c)Pérd.,
+    deter./varia. provi. ope.
+    comer."},"balance":"-59.651,65"},{"description":{"code":"4080015ES","value":"8.Amortización
+    del
+    inmovilizado"},"balance":"-1.013.709,41"},{"description":{"code":"4140015ES","value":"14.Ingresos
+    financieros"},"balance":"10.614,42"},{"description":{"code":"4142015ES","value":"b)Valores
+    negociables/otros instru.
+    finan."},"balance":"10.614,42"},{"description":{"code":"4142215ES","value":"b2)De
+    terceros"},"balance":"10.614,42"},{"description":{"code":"4190015ES","value":"20.Impuestos
+    sobre
+    beneficios"},"balance":"-565.742,42"},{"description":{"code":"4910015ES","value":"A.1)RESULTADO
+    DE
+    EXPLOTACIÓN"},"balance":"3.921.903,11"},{"description":{"code":"4920015ES","value":"A.2)RESULTADO
+    FINANCIERO"},"balance":"10.614,42"},{"description":{"code":"4930015ES","value":"A.3)RESULTADO
+    ANTES DE
+    IMPUESTOS"},"balance":"3.932.517,53"},{"description":{"code":"4940015ES","value":"A.4)RESUL.
+    EJER. PROCED. OPER.
+    CONTINUADAS"},"balance":"3.366.775,11"},{"description":{"code":"4950015ES","value":"A.5)RESULTADO
+    DEL
+    EJERCICIO"},"balance":"3.366.775,11"}]}},{"balanceInformation":{"year":"2016","period":"12","balanceType":{"code":"02"},"documentLink":"https://desa.iberinform.es/RepositorioWs/api/v1.0/cuentas-imagen/zccuqhco2v4h6c4zr3hr0pc4xmch2gf7kj316qkg"},"fullBalanceSheet":{"accounts":[{"description":{"code":"2130009ES","value":"III.Reservas"},"balance":"5.692.242,82"},{"description":{"code":"1255009ES","value":"5.Otros
+    activos
+    financieros"},"balance":"5.000.391,78"},{"description":{"code":"2170009ES","value":"VII.Resultado
+    del
+    ejercicio"},"balance":"3.369.627,58"},{"description":{"code":"3260009ES","value":"VI.Periodificaciones
+    a corto
+    plazo"},"balance":"759.273,92"},{"description":{"code":"3256009ES","value":"6.Otras
+    deudas Administraciones
+    Públicas"},"balance":"246.375,20"},{"description":{"code":"1110009ES","value":"I.Inmovilizado
+    intangible"},"balance":"2.292.049,47"},{"description":{"code":"1231009ES","value":"1.Cli.
+    ventas y prestaciones de
+    servicios"},"balance":"1.184.979,12"},{"description":{"code":"1122009ES","value":"2.Instalaciones
+    téc. y otro inmo.
+    material"},"balance":"206.256,01"},{"description":{"code":"1150009ES","value":"V.Inversiones
+    finan. a largo
+    plazo"},"balance":"8.498,50"},{"description":{"code":"1271009ES","value":"1.Tesorería"},"balance":"5.420.577,14"},{"description":{"code":"2131009ES","value":"1.Legal
+    y
+    estatutarias"},"balance":"1.262.100,00"},{"description":{"code":"1220009ES","value":"II.Existencias"},"balance":"38.984,34"},{"description":{"code":"1232009ES","value":"2.Clientes
+    empresas del grupo y
+    asociadas"},"balance":"2.112.735,03"},{"description":{"code":"1260009ES","value":"VI.Periodificaciones
+    a corto
+    plazo"},"balance":"37.285,68"},{"description":{"code":"2100009ES","value":"A-1)Fondos
+    propios"},"balance":"15.372.370,40"},{"description":{"code":"3230009ES","value":"III.Deudas
+    a corto
+    plazo"},"balance":"289.466,49"},{"description":{"code":"3254009ES","value":"4.Personal
+    (remuneraciones pendnts.
+    pago)"},"balance":"270.892,46"},{"description":{"code":"3000009ES","value":"TOTAL
+    PATRIMONIO NETO Y
+    PASIVO"},"balance":"18.844.202,21"},{"description":{"code":"1120009ES","value":"II.Inmovilizado
+    material"},"balance":"206.256,01"},{"description":{"code":"1160009ES","value":"VI.Activos
+    por impuesto
+    diferido"},"balance":"208.950,92"},{"description":{"code":"1226009ES","value":"6.Anticipos
+    a
+    proveedores"},"balance":"38.984,34"},{"description":{"code":"3253009ES","value":"3.Acreedores
+    varios"},"balance":"37.657,33"},{"description":{"code":"1000009ES","value":"TOTAL
+    ACTIVO"},"balance":"18.844.202,21"},{"description":{"code":"1230009ES","value":"III.Deudores
+    comer. cuentas a
+    cobrar"},"balance":"3.301.708,37"},{"description":{"code":"1270009ES","value":"VII.Efectivo/activos
+    líquidos
+    equiva."},"balance":"5.420.577,14"},{"description":{"code":"2110009ES","value":"I.Capital"},"balance":"6.310.500,00"},{"description":{"code":"3252009ES","value":"2.Proveedores,
+    emp. del grupo y
+    asociadas"},"balance":"234.005,32"},{"description":{"code":"3240009ES","value":"IV.Deudas
+    emp. grupo y asociadas
+    C.P."},"balance":"171.857,06"},{"description":{"code":"3200009ES","value":"C)PASIVO
+    CORRIENTE"},"balance":"3.471.831,81"},{"description":{"code":"1115009ES","value":"5.Aplicaciones
+    informáticas"},"balance":"2.292.049,47"},{"description":{"code":"1200009ES","value":"B)ACTIVO
+    CORRIENTE"},"balance":"13.798.947,31"},{"description":{"code":"1236009ES","value":"6.Otros
+    créditos Administraciones
+    Públicas"},"balance":"3.532,54"},{"description":{"code":"2111009ES","value":"1.Capital
+    escriturado"},"balance":"6.310.500,00"},{"description":{"code":"3235009ES","value":"5.Otros
+    pasivos
+    financieros"},"balance":"289.466,49"},{"description":{"code":"3251209ES","value":"b)Proveedores
+    a corto
+    plazo"},"balance":"1.461.344,51"},{"description":{"code":"3251009ES","value":"1.Proveedores"},"balance":"1.461.344,51"},{"description":{"code":"1155009ES","value":"5.Otros
+    activos
+    financieros"},"balance":"8.498,50"},{"description":{"code":"2132009ES","value":"2.Otras
+    reservas"},"balance":"4.430.142,82"},{"description":{"code":"3250009ES","value":"V.Acreedores
+    comer. cuentas a
+    pagar"},"balance":"2.251.234,34"},{"description":{"code":"1100009ES","value":"A)ACTIVO
+    NO
+    CORRIENTE"},"balance":"5.045.254,90"},{"description":{"code":"1140009ES","value":"IV.Inver.
+    emp. grupo y asoci.
+    L.P."},"balance":"2.329.500,00"},{"description":{"code":"1234009ES","value":"4.Personal"},"balance":"461,68"},{"description":{"code":"2000009ES","value":"A)PATRIMONIO
+    NETO"},"balance":"15.372.370,40"},{"description":{"code":"3257009ES","value":"7.Anticipos
+    de
+    clientes"},"balance":"959,52"},{"description":{"code":"1141009ES","value":"1.Instrumentos
+    de
+    patrimonio"},"balance":"2.329.500,00"},{"description":{"code":"1250009ES","value":"V.Inversiones
+    financieras a
+    C.P."},"balance":"5.000.391,78"}]},"fullIncomeStatement":{"accounts":[{"description":{"code":"4010009ES","value":"1.Importe
+    neto cifra de
+    negocios"},"balance":"23.141.576,49"},{"description":{"code":"4011009ES","value":"a)Ventas"},"balance":"23.090.538,57"},{"description":{"code":"4012009ES","value":"b)Prestaciones
+    de
+    servicios"},"balance":"51.037,92"},{"description":{"code":"4040009ES","value":"4.Aprovisionamientos"},"balance":"-10.724.982,16"},{"description":{"code":"4041009ES","value":"a)Consumo
+    de
+    mercaderías"},"balance":"-10.718.637,36"},{"description":{"code":"4042009ES","value":"b)Consu.
+    mat. primas/otras mat.
+    consumble."},"balance":"-6.344,80"},{"description":{"code":"4060009ES","value":"6.Gastos
+    de
+    personal"},"balance":"-3.334.133,46"},{"description":{"code":"4061009ES","value":"a)Sueldos,
+    salarios y
+    asimilados"},"balance":"-2.438.442,18"},{"description":{"code":"4062009ES","value":"b)Cargas
+    sociales"},"balance":"-895.691,28"},{"description":{"code":"4070009ES","value":"7.Otros
+    gastos de
+    explotación"},"balance":"-4.095.790,48"},{"description":{"code":"4071009ES","value":"a)Servicios
+    exteriores"},"balance":"-3.865.173,30"},{"description":{"code":"4072009ES","value":"b)Tributos"},"balance":"-15.421,35"},{"description":{"code":"4073009ES","value":"c)Pérd.,
+    deter./varia. provi. ope.
+    comer."},"balance":"-215.195,83"},{"description":{"code":"4080009ES","value":"8.Amortización
+    del
+    inmovilizado"},"balance":"-1.038.669,19"},{"description":{"code":"4100009ES","value":"10.Excesos
+    de
+    provisiones"},"balance":"30.000,00"},{"description":{"code":"4140009ES","value":"14.Ingresos
+    financieros"},"balance":"17.190,84"},{"description":{"code":"4142009ES","value":"b)Valores
+    negociables/otros instru.
+    finan."},"balance":"17.190,84"},{"description":{"code":"4142209ES","value":"b
+    2)De
+    terceros"},"balance":"17.190,84"},{"description":{"code":"4190009ES","value":"20.Impuestos
+    sobre
+    beneficios"},"balance":"-625.564,46"},{"description":{"code":"4910009ES","value":"A.1)RESULTADO
+    DE
+    EXPLOTACIÓN"},"balance":"3.978.001,20"},{"description":{"code":"4920009ES","value":"A.2)RESULTADO
+    FINANCIERO"},"balance":"17.190,84"},{"description":{"code":"4930009ES","value":"A.3)RESULTADO
+    ANTES DE
+    IMPUESTOS"},"balance":"3.995.192,04"},{"description":{"code":"4940009ES","value":"A.4)RESUL.
+    EJER. PROCED. OPER.
+    CONTINUADAS"},"balance":"3.369.627,58"},{"description":{"code":"4950009ES","value":"A.5)RESULTADO
+    DEL EJERCICIO"},"balance":"3.369.627,58"}]}}]}

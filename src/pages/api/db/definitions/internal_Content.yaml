@@ -1,0 +1,26 @@
+internal_Content:
+  description: ''
+  type: object
+  properties:
+    firmId:
+      type: number
+    webDescription:
+      type: string
+    name:
+      type: string
+    fullName:
+      type: string
+    tradeName:
+      type: string
+    country:
+      type: string
+    province:
+      type: string
+    locality:
+      type: string
+    rankingValue:
+      type: string
+  example: >-
+    {"firmId":63770,"webDescription":"mercadona","name":"MERCADONA","fullName":"MERCADONA
+    SA","tradeName":"MERCADONA","country":"ESPAÑA","province":"VALENCIA","locality":"TAVERNES
+    BLANQUES","rankingValue":" 23.343.778.000,00"}

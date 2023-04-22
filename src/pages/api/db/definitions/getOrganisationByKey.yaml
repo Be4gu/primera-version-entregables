@@ -1,0 +1,5 @@
+getOrganisationByKey:
+  properties:
+    propiedad-nueva-1:
+      type: string
+  additionalProperties: false

@@ -1,0 +1,249 @@
+NTAADetail:
+  description: ''
+  type: object
+  properties:
+    notAvailable:
+      type: string
+    wrapperYears:
+      type: array
+      items:
+        properties:
+          audit:
+            type: object
+            properties:
+              auditCost:
+                type: string
+              auditor:
+                type: string
+              notProvided:
+                type: string
+              reservations:
+                type: string
+          balanceInformation:
+            type: object
+            properties:
+              balanceType:
+                type: object
+                properties:
+                  code:
+                    type: string
+                  value:
+                    type: string
+              closeDate:
+                type: string
+              documentLink:
+                type: string
+              period:
+                type: string
+              startDate:
+                type: string
+              year:
+                type: string
+          customers:
+            type: object
+            properties:
+              items:
+                type: array
+                items:
+                  properties:
+                    acronym:
+                      type: object
+                      properties:
+                        code:
+                          type: string
+                        value:
+                          type: string
+                    country:
+                      type: object
+                      properties:
+                        code:
+                          type: string
+                        value:
+                          type: string
+                    fullName:
+                      type: string
+                    taxId:
+                      type: string
+                  type: object
+              unavailabilityReason:
+                type: string
+          investments:
+            type: object
+            properties:
+              currentInvestments:
+                type: object
+                properties:
+                  date:
+                    type: string
+                  longTermInvestment:
+                    type: string
+                  shortTermInvestment:
+                    type: string
+                  totalInvestments:
+                    type: string
+              previousInvestments:
+                type: object
+                properties:
+                  date:
+                    type: string
+                  longTermInvestment:
+                    type: string
+                  shortTermInvestment:
+                    type: string
+                  totalInvestments:
+                    type: string
+              unavailabilityReason:
+                type: string
+          operations:
+            type: object
+            properties:
+              operationCompanys:
+                type: array
+                items:
+                  properties:
+                    businessInformation:
+                      type: object
+                      properties:
+                        acronym:
+                          type: object
+                          properties:
+                            code:
+                              type: string
+                            value:
+                              type: string
+                        country:
+                          type: object
+                          properties:
+                            code:
+                              type: string
+                            value:
+                              type: string
+                        fullName:
+                          type: string
+                        taxId:
+                          type: string
+                    operations:
+                      type: object
+                      properties:
+                        purchases:
+                          type: string
+                        sales:
+                          type: string
+                  type: object
+              totalOperations:
+                type: object
+                properties:
+                  purchases:
+                    type: string
+                  sales:
+                    type: string
+              unavailabilityReason:
+                type: string
+          suppliers:
+            type: object
+            properties:
+              items:
+                type: array
+                items:
+                  properties:
+                    acronym:
+                      type: object
+                      properties:
+                        code:
+                          type: string
+                        value:
+                          type: string
+                    country:
+                      type: object
+                      properties:
+                        code:
+                          type: string
+                        value:
+                          type: string
+                    fullName:
+                      type: string
+                    taxId:
+                      type: string
+                  type: object
+              unavailabilityReason:
+                type: string
+          transactionBalances:
+            type: object
+            properties:
+              totalTransactionBalances:
+                type: object
+                properties:
+                  compensations:
+                    type: string
+                  interests:
+                    type: string
+                  providedGuarantees:
+                    type: string
+                  purchaseOfCurrentAssets:
+                    type: string
+                  purchaseOfNonCurrentAssets:
+                    type: string
+                  receivedGuarantees:
+                    type: string
+                  receivedServices:
+                    type: string
+                  renderedServices:
+                    type: string
+                  saleOfCurrentAssets:
+                    type: string
+                  saleOfNonCurrentAssets:
+                    type: string
+              transactionCompanys:
+                type: array
+                items:
+                  properties:
+                    businessInformation:
+                      type: object
+                      properties:
+                        acronym:
+                          type: object
+                          properties:
+                            code:
+                              type: string
+                            value:
+                              type: string
+                        country:
+                          type: object
+                          properties:
+                            code:
+                              type: string
+                            value:
+                              type: string
+                        fullName:
+                          type: string
+                        taxId:
+                          type: string
+                    transactionAmounts:
+                      type: object
+                      properties:
+                        compensations:
+                          type: string
+                        interests:
+                          type: string
+                        providedGuarantees:
+                          type: string
+                        purchaseOfCurrentAssets:
+                          type: string
+                        purchaseOfNonCurrentAssets:
+                          type: string
+                        receivedGuarantees:
+                          type: string
+                        receivedServices:
+                          type: string
+                        renderedServices:
+                          type: string
+                        saleOfCurrentAssets:
+                          type: string
+                        saleOfNonCurrentAssets:
+                          type: string
+                  type: object
+              unavailabilityReason:
+                type: string
+        type: object
+  example: >-
+    {"notAvailable":"string","wrapperYears":[{"audit":{"auditCost":"string","auditor":"string","notProvided":"string","reservations":"string"},"balanceInformation":{"balanceType":{"code":"string","value":"string"},"closeDate":"string","documentLink":"string","period":"string","startDate":"string","year":"string"},"customers":{"items":[{"acronym":{"code":"string","value":"string"},"country":{"code":"string","value":"string"},"fullName":"string","taxId":"string"}],"unavailabilityReason":"string"},"investments":{"currentInvestments":{"date":"string","longTermInvestment":"string","shortTermInvestment":"string","totalInvestments":"string"},"previousInvestments":{"date":"string","longTermInvestment":"string","shortTermInvestment":"string","totalInvestments":"string"},"unavailabilityReason":"string"},"operations":{"operationCompanys":[{"businessInformation":{"acronym":{"code":"string","value":"string"},"country":{"code":"string","value":"string"},"fullName":"string","taxId":"string"},"operations":{"purchases":"string","sales":"string"}}],"totalOperations":{"purchases":"string","sales":"string"},"unavailabilityReason":"string"},"suppliers":{"items":[{"acronym":{"code":"string","value":"string"},"country":{"code":"string","value":"string"},"fullName":"string","taxId":"string"}],"unavailabilityReason":"string"},"transactionBalances":{"totalTransactionBalances":{"compensations":"string","interests":"string","providedGuarantees":"string","purchaseOfCurrentAssets":"string","purchaseOfNonCurrentAssets":"string","receivedGuarantees":"string","receivedServices":"string","renderedServices":"string","saleOfCurrentAssets":"string","saleOfNonCurrentAssets":"string"},"transactionCompanys":[{"businessInformation":{"acronym":{"code":"string","value":"string"},"country":{"code":"string","value":"string"},"fullName":"string","taxId":"string"},"transactionAmounts":{"compensations":"string","interests":"string","providedGuarantees":"string","purchaseOfCurrentAssets":"string","purchaseOfNonCurrentAssets":"string","receivedGuarantees":"string","receivedServices":"string","renderedServices":"string","saleOfCurrentAssets":"string","saleOfNonCurrentAssets":"string"}}],"unavailabilityReason":"string"}}]}

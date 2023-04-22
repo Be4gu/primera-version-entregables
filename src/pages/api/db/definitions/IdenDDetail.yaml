@@ -1,0 +1,61 @@
+IdenDDetail:
+  description: ''
+  type: object
+  properties:
+    acronym:
+      type: object
+      properties:
+        code:
+          type: string
+        value:
+          type: string
+    commercialTitle:
+      type: object
+      properties:
+        dataSource:
+          type: object
+          properties:
+            date:
+              type: string
+            source:
+              type: string
+        items:
+          type: array
+          items:
+            type: string
+        unavailabilityReason:
+          type: string
+    companyName:
+      type: string
+    corporateMail:
+      type: string
+    dataSource:
+      type: string
+    documentedExistence:
+      type: string
+    familyCompany:
+      type: string
+    legalForm:
+      type: object
+      properties:
+        code:
+          type: string
+        value:
+          type: string
+    notAvailable:
+      type: string
+    seasonality:
+      type: string
+    status:
+      type: object
+      properties:
+        code:
+          type: string
+        value:
+          type: string
+    taxId:
+      type: string
+    web:
+      type: string
+  example: >-
+    {"acronym":{"code":"string","value":"string"},"commercialTitle":{"dataSource":{"date":"string","source":"string"},"items":["string"],"unavailabilityReason":"string"},"companyName":"string","corporateMail":"string","dataSource":"string","documentedExistence":"string","familyCompany":"string","legalForm":{"code":"string","value":"string"},"notAvailable":"string","seasonality":"string","status":{"code":"string","value":"string"},"taxId":"string","web":"string"}

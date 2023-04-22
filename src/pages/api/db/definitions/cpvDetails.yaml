@@ -1,0 +1,11 @@
+cpvDetails:
+  description: ''
+  type: object
+  properties:
+    code:
+      type: string
+    description:
+      type: string
+  example: >-
+    {"code":"03000000","description":"Agricultural, farming, fishing, forestry
+    and related products"}

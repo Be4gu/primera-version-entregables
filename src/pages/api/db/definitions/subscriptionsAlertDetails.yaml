@@ -1,0 +1,15 @@
+subscriptionsAlertDetails:
+  type: array
+  description: ''
+  items:
+    type: object
+    properties:
+      filter:
+        type: string
+      type:
+        type: string
+      value: {}
+  example: >-
+    [{"filter":"Text","type":"Text","value":null},{"filter":"Cpv","type":"List<Values>","value":"REST"},{"filter":"Country","type":"List<Values>","value":"REST"},{"filter":"Maximum
+    Amount","type":"Integer","value":null},{"filter":"Minimum
+    Amount","type":"Integer","value":null}]

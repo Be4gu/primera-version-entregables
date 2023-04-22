@@ -1,0 +1,306 @@
+tendersTwins:
+  description: ''
+  type: object
+  properties:
+    totalResults:
+      type: number
+    numResults:
+      type: number
+    tenders:
+      type: array
+      items:
+        properties:
+          id:
+            type: number
+          date:
+            type: string
+          record:
+            type: string
+          organism:
+            type: string
+          title:
+            type: string
+          description:
+            type: string
+          budget:
+            type: string
+          endDate:
+            type: string
+          cpv:
+            type: string
+          contractType:
+            type: string
+          country: {}
+          tenderSource:
+            type: string
+          tenderState:
+            type: string
+          cpvDescriptionEN:
+            type: string
+          cpvDescriptionES:
+            type: string
+          cpvDescriptionPT:
+            type: string
+        type: object
+    trigramCounters: {}
+  example: >-
+    {"totalResults":1,"numResults":20,"tenders":[{"id":3220541,"date":"12/09/2019","record":"40-19","organism":"Barcelona
+    ACTIVA SAU SPM","title":"Serveis per al funcionament i dinamització de dos
+    punts d'atenció a l'activitat econòmica a dos districtes de la ciutat, amb
+    incorporació d'objectius d'eficiència social.","description":"Id licitación:
+    40-19; Órgano de Contratación: Barcelona ACTIVA SAU SPM; Importe: 86940.00;
+    Estado:
+    EVALUACION","budget":"434700.0","endDate":"12/09/2019","cpv":"85312300","contractType":"Servicios","country":null,"tenderSource":"Histórico
+    Plataformas
+    Agregadas","tenderState":"Pendiente","cpvDescriptionEN":"Guidance and
+    counselling services","cpvDescriptionES":"Servicios de orientación y
+    asesoramiento","cpvDescriptionPT":"Serviços de orientação e
+    aconselhamento"},{"id":3209443,"date":"26/09/2019","record":"48-19","organism":"Barcelona
+    ACTIVA SAU SPM","title":"Serveis de capacitació en habilitats emprenedores
+    en el sector de l'artesania, amb incorporació d'objectius d'eficiència
+    social.","description":"Id licitación: 48-19; Órgano de Contratación:
+    Barcelona ACTIVA SAU SPM; Importe: 20400.00; Estado:
+    ADJUDICADA","budget":"30600.0","endDate":"29/07/2019","cpv":"80590000","contractType":"Servicios","country":null,"tenderSource":"Plataformas
+    Agregadas","tenderState":"Adjudicada","cpvDescriptionEN":"Tutorial
+    services","cpvDescriptionES":"Servicios de
+    tutoría","cpvDescriptionPT":"Serviços de
+    tutoria"},{"id":3320065,"date":"09/07/2019","record":"48-19","organism":"Barcelona
+    ACTIVA SAU SPM","title":"Serveis de capacitació en habilitats emprenedores
+    en el sector de l'artesania, amb incorporació d'objectius d'eficiència
+    social.","description":"Id licitación: 48-19; Órgano de Contratación:
+    Barcelona ACTIVA SAU SPM; Importe: 20400.00; Estado: EN
+    PLAZO","budget":"30600.0","endDate":"29/07/2019","cpv":"80590000","contractType":"Servicios","country":null,"tenderSource":"Histórico
+    Plataformas Agregadas","tenderState":"En plazo","cpvDescriptionEN":"Tutorial
+    services","cpvDescriptionES":"Servicios de
+    tutoría","cpvDescriptionPT":"Serviços de
+    tutoria"},{"id":3209873,"date":"14/10/2019","record":"58/19","organism":"Barcelona
+    ACTIVA SAU SPM","title":"Serveis d'impartició de les accions d'acompanyament
+    del Programa Creamedia de la Direcció d'Emprenedoria, amb incorporació
+    d'objectius d'eficiència social.","description":"Id licitación: 58/19;
+    Órgano de Contratación: Barcelona ACTIVA SAU SPM; Importe: 50130.00; Estado:
+    EN PLAZO","budget":"150390.0","endDate":"24/10/2019","cpv":"80500000,
+    80590000","contractType":"Servicios","country":null,"tenderSource":"Plataformas
+    Agregadas","tenderState":"En plazo","cpvDescriptionEN":"Training
+    services|Tutorial services","cpvDescriptionES":"Servicios de
+    formación|Servicios de tutoría","cpvDescriptionPT":"Serviços de
+    formação|Serviços de
+    tutoria"},{"id":3225886,"date":"26/09/2019","record":"39-19","organism":"Barcelona
+    ACTIVA SAU SPM","title":"Serveis de formació específica i pràctica
+    professional del Programa Operatiu d'Ocupació, Formació i Educació (POEFE)
+    Passarel·les cap a l'ocupació i la inclusió, amb incorporació d'objectius
+    d'eficiència social.","description":"Id licitación: 39-19; Órgano de
+    Contratación: Barcelona ACTIVA SAU SPM; Importe: 42748.70; Estado:
+    ADJUDICADA","budget":"128246.1","endDate":"15/07/2019","cpv":"80500000","contractType":"Servicios","country":null,"tenderSource":"Histórico
+    Plataformas
+    Agregadas","tenderState":"Adjudicada","cpvDescriptionEN":"Training
+    services","cpvDescriptionES":"Servicios de
+    formación","cpvDescriptionPT":"Serviços de
+    formação"},{"id":3220960,"date":"13/09/2019","record":"46-19","organism":"Barcelona
+    ACTIVA SAU SPM","title":"Serveis per al disseny, creació, impartició i/o
+    dinamització de les accions formatives de determinades especialitats de
+    l'oferta formativa del Programa Barcelona Treball, amb incorporació
+    d'objectius d'eficiència social.","description":"Id licitación: 46-19;
+    Órgano de Contratación: Barcelona ACTIVA SAU SPM; Importe: 159450.00;
+    Estado:
+    EVALUACION","budget":"829140.0","endDate":"13/09/2019","cpv":"80500000","contractType":"Servicios","country":null,"tenderSource":"Histórico
+    Plataformas
+    Agregadas","tenderState":"Pendiente","cpvDescriptionEN":"Training
+    services","cpvDescriptionES":"Servicios de
+    formación","cpvDescriptionPT":"Serviços de
+    formação"},{"id":3209382,"date":"03/07/2019","record":"34-19","organism":"Barcelona
+    ACTIVA SAU SPM","title":"Serveis de disseny, implementació i execució d'un
+    programa d'acompanyament de projectesdesenvolupats per empreses i entitats
+    del sector artístic, cultural i creatiu en el marc del Projecte Smath-un
+    projecte cofinançat pel Programa Interreg MED, amb incorporació d'objectius
+    d'eficiència social.","description":"Id licitación: 34-19; Órgano de
+    Contratación: Barcelona ACTIVA SAU SPM; Importe: 22200.00; Estado: EN
+    PLAZO","budget":"26640.0","endDate":"22/07/2019","cpv":"80510000,
+    66171000","contractType":"Servicios","country":null,"tenderSource":"Plataformas
+    Agregadas","tenderState":"En plazo","cpvDescriptionEN":"Specialist training
+    services|Financial consultancy services","cpvDescriptionES":"Servicios de
+    formación especializada|Servicios de asesoramiento
+    financiero","cpvDescriptionPT":"Serviços de formação especializada|Serviços
+    de consultoria
+    financeira"},{"id":3219125,"date":"31/07/2019","record":"08-19","organism":"Barcelona
+    ACTIVA SAU SPM","title":"Serveis docents per al disseny, creació i
+    impartició de part de les accions formatives de determinades especialitats
+    de l'oferta formativa estable de Barcelona Activa gestionada per la Direcció
+    Executiva d'Emprenedoria, Empresa i Innovació, amb incorporació d'objectius
+    d'eficiència social (Exp. 08/19)","description":"Id licitación: 08-19;
+    Órgano de Contratación: Barcelona ACTIVA SAU SPM; Importe: 699825.00;
+    Estado:
+    ADJUDICADA","budget":"1889527.5","endDate":"17/04/2019","cpv":"80500000","contractType":"Servicios","country":null,"tenderSource":"Histórico
+    Plataformas
+    Agregadas","tenderState":"Adjudicada","cpvDescriptionEN":"Training
+    services","cpvDescriptionES":"Servicios de
+    formación","cpvDescriptionPT":"Serviços de
+    formação"},{"id":3323539,"date":"12/07/2019","record":"07-19","organism":"Barcelona
+    ACTIVA SAU SPM","title":"L'objecte del contracte consisteix en la prestació
+    dels serveis de creació, conversió i impartició de continguts del Programa
+    Barcelona Indústria Urbana per millorar la competitivitat de les empreses en
+    l'àmbit de la indústria 4.0, amb incorporació d'objectius d'eficiència
+    social. El contracte es divideix en 2 Lots.","description":"Id licitación:
+    07-19; Órgano de Contratación: Barcelona ACTIVA SAU SPM; Importe: 41055.25;
+    Estado:
+    RESUELTA","budget":"41055.25","endDate":"27/03/2019","cpv":"80510000","contractType":"Servicios","country":null,"tenderSource":"Histórico
+    Plataformas
+    Agregadas","tenderState":"Resuelta","cpvDescriptionEN":"Specialist training
+    services","cpvDescriptionES":"Servicios de formación
+    especializada","cpvDescriptionPT":"Serviços de formação
+    especializada"},{"id":3253939,"date":"03/07/2019","record":"14-19","organism":"Barcelona
+    ACTIVA SAU SPM","title":"L'objecte del contracte es la concessió del servei
+    d'explotació del bar restaurant de l'equipament Parc Tecnològic de Barcelona
+    Activa ubicat al carrer Marie Curie, 8-14 de Barcelona, amb incorporació
+    d'objectius d'eficiència social.","description":"Id licitación: 14-19;
+    Órgano de Contratación: Barcelona ACTIVA SAU SPM; Importe: 0.00; Estado: EN
+    PLAZO","budget":"1509339.0","endDate":"26/07/2019","cpv":"55000000","contractType":"Concesión
+    de Servicios","country":null,"tenderSource":"Histórico Plataformas
+    Agregadas","tenderState":"En plazo","cpvDescriptionEN":"Hotel, restaurant
+    and retail trade services","cpvDescriptionES":"Servicios comerciales al por
+    menor de hostelería y restauración","cpvDescriptionPT":"Serviços de
+    hotelaria, restauração e comércio a
+    retalho"},{"id":3217245,"date":"02/07/2019","record":"35-19","organism":"Barcelona
+    ACTIVA SAU SPM","title":"Serveis de disseny i articulació d'accions
+    d'acompanyament i formació per a promoure els valors de l'economia social i
+    solidària i el cooperativisme entre les i els joves de la ciutat tant en
+    l'àmbit de l'educació reglada com no formal, amb objectius d'eficiència
+    social.","description":"Id licitación: 35-19; Órgano de Contratación:
+    Barcelona ACTIVA SAU SPM; Importe: 68262.82; Estado: EN
+    PLAZO","budget":"68262.82","endDate":"18/07/2019","cpv":"79421000","contractType":"Servicios","country":null,"tenderSource":"Histórico
+    Plataformas Agregadas","tenderState":"En
+    plazo","cpvDescriptionEN":"Project-management services other than for
+    construction work","cpvDescriptionES":"Servicios de gestión de proyectos que
+    no sean los de construcción","cpvDescriptionPT":"Serviços de gestão de
+    projectos, excepto projectos de
+    construção"},{"id":3219800,"date":"10/09/2019","record":"45-19","organism":"Barcelona
+    ACTIVA SAU SPM","title":"Serveis d'execució de programes a mida d'innovació
+    socioeconòmica,amb objectius d'eficiència social.","description":"Id
+    licitación: 45-19; Órgano de Contratación: Barcelona ACTIVA SAU SPM;
+    Importe: 118601.84; Estado:
+    EVALUACION","budget":"593009.2","endDate":"10/09/2019","cpv":"79421000","contractType":"Servicios","country":null,"tenderSource":"Histórico
+    Plataformas
+    Agregadas","tenderState":"Pendiente","cpvDescriptionEN":"Project-management
+    services other than for construction work","cpvDescriptionES":"Servicios de
+    gestión de proyectos que no sean los de
+    construcción","cpvDescriptionPT":"Serviços de gestão de projectos, excepto
+    projectos de
+    construção"},{"id":3215633,"date":"28/08/2019","record":"563/2019","organism":"Ajuntament
+    de Sabadell","title":"Prestació del Servei d'Informació, Atenció i
+    Acompanyament LGTBI, consistent en informar, assessorar i acompanyar a
+    persones lgtbi, persones de l'entorn, professionals i entitats que busquin
+    suport professional referent a la diversitat sexual i de gènere,
+    assessorament en relació a l'exercici dels seus drets en tots els àmbits
+    relacionats amb la vida laboral, social, sanitària, personal i familiar,
+    així com en situacions relacionades amb la discriminació per raó de
+    gènere.","description":"Id licitación: 563/2019; Órgano de Contratación:
+    Ajuntament de Sabadell; Importe: 11029.70; Estado: EN
+    PLAZO","budget":"46324.74","endDate":"12/09/2019","cpv":"98113000","contractType":"Servicios","country":null,"tenderSource":"Histórico
+    Plataformas Agregadas","tenderState":"En plazo","cpvDescriptionEN":"Services
+    furnished by specialist organisations","cpvDescriptionES":"Servicios
+    proporcionados por organizaciones
+    especializadas","cpvDescriptionPT":"Serviços prestados por organizações
+    especializadas"},{"id":3216801,"date":"12/08/2019","record":"S-0228/2019","organism":"Ajuntament
+    de Reus","title":"L'objecte és la contractació del serveis de 
+    desenvolupament de l'assessorament legal i la realització d'accions de
+    sensibilització comunitària del Servei d'Informació i Atenció a les Dones
+    (SIAD).","description":"Id licitación: S-0228/2019; Órgano de Contratación:
+    Ajuntament de Reus; Importe: 15360.00; Estado: EN
+    PLAZO","budget":"64512.0","endDate":"27/08/2019","cpv":"85312300","contractType":"Servicios","country":null,"tenderSource":"Histórico
+    Plataformas Agregadas","tenderState":"En plazo","cpvDescriptionEN":"Guidance
+    and counselling services","cpvDescriptionES":"Servicios de orientación y
+    asesoramiento","cpvDescriptionPT":"Serviços de orientação e
+    aconselhamento"},{"id":3217022,"date":"06/08/2019","record":"2018/2317","organism":"Organisme
+    Autònom de Salut Pública de la Diputació de Girona","title":"Assessorament
+    en el disseny de polítiques, programes i processos d'avaluació de l'àrea de
+    promoció de la salut, benestar i atenció a les persones; dels programes
+    inclosos al Catàleg de Serveis de Dipsalut","description":"Id licitación:
+    2018/2317; Órgano de Contratación: Organisme Autònom de Salut Pública de la
+    Diputació de Girona; Importe: 38608.00; Estado:
+    ADJUDICADA","budget":"84937.6","endDate":"26/03/2019","cpv":"85312300","contractType":"Servicios","country":null,"tenderSource":"Histórico
+    Plataformas
+    Agregadas","tenderState":"Adjudicada","cpvDescriptionEN":"Guidance and
+    counselling services","cpvDescriptionES":"Servicios de orientación y
+    asesoramiento","cpvDescriptionPT":"Serviços de orientação e
+    aconselhamento"},{"id":3219229,"date":"04/07/2019","record":"N774190010","organism":"Ajuntament
+    de Barberà del Vallès","title":"La prestació del servei estarà destinat a
+    l'assessorament especialitzat en matèria de comerç, en els vessant de:
+    gestió de la formació especialitzada en retail; consultoria sobre
+    normatives, formularis de subvencions i oportunitat de finançament en
+    matèria de comerç; anàlisi del teixit econòmic i social del municipi;
+    assessorament estratègic per al foment del comerç de proximitat;
+    planificació, dinamització i gestió d'un Retail tour anual; elaboració i
+    distribució de newsletters informatius i divulgatius de novetats en matèria
+    de comerç; assessorament personalitzat per als establiments
+    comercials.","description":"Id licitación: N774190010; Órgano de
+    Contratación: Ajuntament de Barberà del Vallès; Importe: 11000.00; Estado:
+    ADJUDICADA","budget":"22000.0","endDate":"12/06/2019","cpv":"85312300","contractType":"Servicios","country":null,"tenderSource":"Histórico
+    Plataformas
+    Agregadas","tenderState":"Adjudicada","cpvDescriptionEN":"Guidance and
+    counselling services","cpvDescriptionES":"Servicios de orientación y
+    asesoramiento","cpvDescriptionPT":"Serviços de orientação e
+    aconselhamento"},{"id":3222294,"date":"31/07/2019","record":"19000238","organism":"Ajuntament
+    de Barcelona","title":"Servei de suport i assessorament al funcionament del
+    Consell de Ciutat de la ciutat de Barcelona. Aquest servei inclou també el
+    suport a la Direcció de Serveis de Democràcia Activa i Descentralització en
+    el funcionament del Consell de Ciutat","description":"Id licitación:
+    19000238; Órgano de Contratación: Ajuntament de Barcelona; Importe:
+    95800.30; Estado:
+    ADJUDICADA","budget":"162860.52","endDate":"26/04/2019","cpv":"79400000","contractType":"Servicios","country":null,"tenderSource":"Histórico
+    Plataformas
+    Agregadas","tenderState":"Adjudicada","cpvDescriptionEN":"Business and
+    management consultancy and related services","cpvDescriptionES":"Servicios
+    de consultoría comercial y de gestión y servicios
+    afines","cpvDescriptionPT":"Serviços de consultoria em matéria comercial e
+    de gestão e serviços
+    conexos"},{"id":3222019,"date":"18/09/2019","record":"CO2019033ASPI","organism":"Ajuntament
+    de Sant Joan Despí","title":"L'objecte del contracte es divideix en els lots
+    següents:\n\nLOT 1. Servei d'informació i atenció a les dones i llurs fills
+    i filles\n\nEs tracta d'un servei que dona resposta a les diferents demandes
+    d'informació i atenció, i atenció psicològica, a les dones de la ciutat,
+    vinculades a les situacions de discriminació per causes de gènere i/o
+    violències masclistes, i a llurs fills i filles:\n¿\tInformació i Atenció a
+    les dones\n¿\tAtenció psicològica individual \n¿\tAtenció psicològica als
+    fills i filles de les dones ateses\n¿\tAtenció psicològica grupal\n¿\tSuport
+    al Circuit municipal de Violències Masclistes\n\nLOT 2. Servei d'assessoria
+    jurídica especialitzada per a dones\n\nServei d'assessoria jurídica
+    especialitzat per a dones que ofereix una atenció immediata personalitzada
+    en temes jurídics relacionats amb situacions de violències masclistes. El
+    servei d'assessoria jurídica està concebut per donar resposta a
+    assessoraments puntuals en demandes concretes.\n\nTambé oferirà informació,
+    orientació i assessorament jurídic general als equips bàsics de serveis
+    socials en relació a les problemàtiques que els hi afecten en el
+    desenvolupament de la seva tasca professional vinculada a l'àmbit de les
+    violències masclistes i, a més, formarà part de les 6 reunions anuals de la
+    comissió de violències masclistes","description":"Id licitación:
+    CO2019033ASPI; Órgano de Contratación: Ajuntament de Sant Joan Despí;
+    Importe: 106000.00; Estado: EN
+    PLAZO","budget":"233200.0","endDate":"03/10/2019","cpv":"85312300","contractType":"Servicios","country":null,"tenderSource":"Histórico
+    Plataformas Agregadas","tenderState":"En plazo","cpvDescriptionEN":"Guidance
+    and counselling services","cpvDescriptionES":"Servicios de orientación y
+    asesoramiento","cpvDescriptionPT":"Serviços de orientação e
+    aconselhamento"},{"id":3258528,"date":"02/08/2019","record":"1848/2018","organism":"Ajuntament
+    de Sant Adrià de Besòs","title":"Prestació del servei d'assessorament
+    psicològic al CIOD (Centre d'Informació i Orientació a la
+    Dona).","description":"Id licitación: 1848/2018; Órgano de Contratación:
+    Ajuntament de Sant Adrià de Besòs; Importe: 21542.40; Estado:
+    EVALUACION","budget":"78140.16","endDate":null,"cpv":"85312300","contractType":"Servicios","country":null,"tenderSource":"Histórico
+    Plataformas
+    Agregadas","tenderState":"Pendiente","cpvDescriptionEN":"Guidance and
+    counselling services","cpvDescriptionES":"Servicios de orientación y
+    asesoramiento","cpvDescriptionPT":"Serviços de orientação e
+    aconselhamento"},{"id":3222434,"date":"19/09/2019","record":"19/0054-00-CP/01","organism":"Institut
+    Municipal Parcs i Jardins de Barcelona","title":"Contractació dels serveis
+    d'assistència i assessorament tècnic en l'àmbit de la prevenció d'accidents,
+    salvament i socorrisme, informació a l'usuari i assistència al bany assistit
+    a les platges de la ciutat de Barcelona","description":"Id licitación:
+    19/0054-00-CP/01; Órgano de Contratación: Institut Municipal Parcs i Jardins
+    de Barcelona; Importe: 75867.76; Estado:
+    ADJUDICADA","budget":"125157.01","endDate":"14/05/2019","cpv":"79000000","contractType":"Servicios","country":null,"tenderSource":"Histórico
+    Plataformas
+    Agregadas","tenderState":"Adjudicada","cpvDescriptionEN":"Business services:
+    law, marketing, consulting, recruitment, printing and
+    security","cpvDescriptionES":"Servicios a empresas: legislación,
+    mercadotecnia, asesoría, selección de personal, imprenta y
+    seguridad","cpvDescriptionPT":"Serviços a empresas: direito,
+    comercialização, consultoria, recrutamento, impressão e
+    segurança"}],"trigramCounters":null}

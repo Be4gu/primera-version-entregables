@@ -1,0 +1,13 @@
+orgIdent:
+  required:
+    - orgIdentId
+    - orgIdentStrId
+    - orgIdentType
+  properties:
+    orgIdentId:
+      type: integer
+      format: int32
+    orgIdentStrId:
+      type: string
+    orgIdentType:
+      type: string

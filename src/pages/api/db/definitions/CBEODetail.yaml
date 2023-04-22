@@ -1,0 +1,25 @@
+CBEODetail:
+  description: ''
+  type: object
+  properties:
+    nd:
+      type: string
+    registro:
+      type: array
+      items:
+        properties:
+          cargo:
+            type: object
+            properties:
+              codigo:
+                type: string
+              valor:
+                type: string
+          denominacion:
+            type: string
+          fecha:
+            type: object
+            properties: {}
+        type: object
+  example: >-
+    {"nd":"string","registro":[{"cargo":{"codigo":"string","valor":"string"},"denominacion":"string","fecha":{}}]}

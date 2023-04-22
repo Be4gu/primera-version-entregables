@@ -1,0 +1,39 @@
+BanksDetails:
+  description: ''
+  type: object
+  properties:
+    banks:
+      type: array
+      items:
+        properties:
+          address:
+            type: string
+          agency:
+            type: string
+          branch:
+            type: string
+          cityTown:
+            type: object
+            properties:
+              code:
+                type: string
+              value:
+                type: string
+          name:
+            type: string
+          postcode:
+            type: string
+          province:
+            type: object
+            properties:
+              code:
+                type: string
+              value:
+                type: string
+        type: object
+    notAvailable:
+      type: string
+    notProvided:
+      type: string
+  example: >-
+    {"banks":[{"address":"string","agency":"string","branch":"string","cityTown":{"code":"string","value":"string"},"name":"string","postcode":"string","province":{"code":"string","value":"string"}}],"notAvailable":"string","notProvided":"string"}

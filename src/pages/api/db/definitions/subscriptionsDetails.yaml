@@ -1,0 +1,33 @@
+subscriptionsDetails:
+  type: array
+  description: ''
+  items:
+    type: object
+    properties:
+      id:
+        type: number
+      userId:
+        type: number
+      query:
+        type: string
+      scope:
+        type: string
+      cpvs:
+        type: string
+      minAmount:
+        type: number
+      maxAmount:
+        type: number
+      email:
+        type: string
+      alias:
+        type: string
+      language:
+        type: string
+  example: >-
+    [{"id":4,"userId":255,"query":"ministerio","scope":"","cpvs":"45000000","minAmount":5,"maxAmount":2000000,"email":"email@email.com","alias":"alias","language":"es"},{"id":46,"userId":255,"query":"Hospitalar","scope":"","cpvs":"","minAmount":0,"maxAmount":null,"email":"email@email.com","alias":"Hospitalar","language":"es"},{"id":47,"userId":255,"query":"seguros","scope":"","cpvs":"","minAmount":5,"maxAmount":null,"email":"email@email.com","alias":"seguros","language":"es"},{"id":48,"userId":255,"query":"maderas","scope":"","cpvs":"","minAmount":5,"maxAmount":null,"email":"email@email.com","alias":"maderas","language":"es"},{"id":49,"userId":255,"query":"Madrid","scope":"","cpvs":"45000000","minAmount":5,"maxAmount":null,"email":"dbarcenam@creditoycaucion.es","alias":"Construction
+    work en
+    Madrid","language":"es"},{"id":50,"userId":255,"query":"seguros","scope":"226,424","cpvs":"03111400","minAmount":5,"maxAmount":20,"email":"email@email.com","alias":"subscripción
+    a
+    limpieza","language":"es"},{"id":51,"userId":255,"query":"seguros","scope":"226,424","cpvs":"03111400","minAmount":5,"maxAmount":20,"email":"email@email.com","alias":"subscripción
+    a limpieza","language":"es"}]

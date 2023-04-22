@@ -1,0 +1,7 @@
+CBSAISDetails:
+  description: ''
+  type: object
+  properties:
+    notAvailable:
+      type: string
+  example: '{"notAvailable":"string"}'

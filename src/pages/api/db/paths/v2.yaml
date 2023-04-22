@@ -1,0 +1,78 @@
+'/tendersapi/v2/tenders':
+  get:
+    tags:
+      - Tenders
+    responses:
+      '200':
+        description: 200 OK
+'/tendersapi/v2/tenders/{id}':
+  get:
+    tags:
+      - Tenders
+    responses:
+      '200':
+        description: 200 OK
+  parameters:
+    - name: id
+      type: string
+      required: true
+      in: path
+'/tendersapi/v2/tenders/{id}/twins':
+  get:
+    tags:
+      - Tenders
+    responses:
+      '200':
+        description: 200 OK
+    parameters:
+      - name: id
+        type: string
+        required: true
+        in: path
+      - name: offset
+        type: integer
+        required: false
+        in: query
+        format: int32
+      - name: CPV
+        type: boolean
+        required: false
+        in: query
+      - name: Organism
+        type: boolean
+        required: false
+        in: query
+      - name: Title
+        type: boolean
+        required: false
+        in: query
+      - name: Description
+        type: boolean
+        required: false
+        in: query
+      - name: ContractType
+        type: boolean
+        required: false
+        in: query
+      - name: Country
+        type: boolean
+        required: false
+        in: query
+      - name: TenderSource
+        type: boolean
+        required: false
+        in: query
+      - name: TenderStatus
+        type: boolean
+        required: false
+        in: query
+      - name: limit
+        type: integer
+        required: false
+        in: query
+        format: int32
+  parameters:
+    - name: id
+      type: string
+      required: true
+      in: path

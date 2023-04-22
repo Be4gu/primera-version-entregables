@@ -1,0 +1,22 @@
+alertsTypeDetails:
+  description: ''
+  type: object
+  properties:
+    typeID:
+      type: number
+    typeDescription:
+      type: string
+    reportingMode:
+      type: string
+    payLoad:
+      type: object
+      properties:
+        fileName:
+          type: string
+        numRegs:
+          type: number
+        changeDate:
+          type: string
+  example: >-
+    {"typeID":1,"typeDescription":"Masivo","reportingMode":"MASSIVE","payLoad":{"fileName":"Massive
+    alert file name","numRegs":0,"changeDate":"2020-02-58 13:21:49"}}

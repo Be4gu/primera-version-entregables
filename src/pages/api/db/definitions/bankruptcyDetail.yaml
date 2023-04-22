@@ -1,0 +1,12 @@
+bankruptcyDetail:
+  description: ''
+  type: object
+  properties:
+    claims:
+      type: array
+      items:
+        properties: {}
+        type: object
+    claimsNumber:
+      type: number
+  example: '{"claims":[{}],"claimsNumber":0}'

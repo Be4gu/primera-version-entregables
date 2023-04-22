@@ -1,0 +1,23 @@
+address:
+  required:
+    - city
+    - country
+    - countrySubident
+    - postCode
+    - street
+  properties:
+    city:
+      type: string
+      description: Municipio
+    country:
+      type: string
+      description: País
+    countrySubident:
+      type: string
+      description: Provincia
+    postCode:
+      type: string
+      description: Código postal
+    street:
+      type: string
+      description: Calle

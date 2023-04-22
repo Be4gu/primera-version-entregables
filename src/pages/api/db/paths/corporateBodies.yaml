@@ -1,0 +1,35 @@
+'/modules/corporateBodies/{organisationID}/pages/{page}/size/{size}':
+  get:
+    tags:
+      - Trading Data
+    responses:
+      '200':
+        description: 200 OK
+      '401':
+        description: Unauthorized
+      '403':
+        description: Forbidden
+      '404':
+        description: Recurso no encontrado
+      '500':
+        description: Internal error
+    parameters:
+      - name: organisationID
+        type: string
+        required: true
+        in: path
+        description: identificador de la firma
+      - name: language
+        type: string
+        required: false
+        in: query
+        description: Idioma generación
+      - name: page
+        type: string
+        required: true
+        in: path
+        description: pagina
+      - name: size
+        type: string
+        required: true
+        in: path

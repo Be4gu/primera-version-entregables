@@ -1,0 +1,33 @@
+subscriptionDetails:
+  description: ''
+  type: object
+  properties:
+    id:
+      type: number
+    userId:
+      type: number
+    query:
+      type: string
+    scope:
+      type: string
+    cpvs:
+      type: string
+    minAmount:
+      type: number
+    maxAmount: {}
+    email:
+      type: string
+    alias:
+      type: string
+    language:
+      type: string
+    awardeeIdentifierType:
+      type: string
+    awardeeIdentifier:
+      type: string
+    awarderIdentifierType:
+      type: string
+    awarderIdentifier:
+      type: string
+  example: >-
+    {"id":48,"userId":255,"query":"maderas","scope":"","cpvs":"","minAmount":5,"maxAmount":null,"email":"email@email.com","alias":"maderas","language":"es"}

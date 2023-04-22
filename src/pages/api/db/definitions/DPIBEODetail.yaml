@@ -1,0 +1,52 @@
+DPIBEODetail:
+  description: ''
+  type: object
+  properties:
+    actos_inscritos:
+      type: object
+      properties:
+        listado:
+          type: array
+          items:
+            properties:
+              fechaPublicacion:
+                type: string
+              numeroSubActos:
+                type: number
+              subActos:
+                type: array
+                items:
+                  properties:
+                    codigo:
+                      type: string
+                    valor:
+                      type: string
+                  type: object
+            type: object
+    deposito_cuentas:
+      type: object
+      properties:
+        registro:
+          type: array
+          items:
+            properties:
+              anyoCuenta:
+                type: string
+              codigoTipoCuenta:
+                type: string
+              fechaDeposito:
+                type: string
+              fechaPublicacion:
+                type: string
+            type: object
+    nd:
+      type: string
+    textoCuentasBORME:
+      type: object
+      properties:
+        codigo:
+          type: string
+        valor:
+          type: string
+  example: >-
+    {"actos_inscritos":{"listado":[{"fechaPublicacion":"string","numeroSubActos":0,"subActos":[{"codigo":"string","valor":"string"}]}]},"deposito_cuentas":{"registro":[{"anyoCuenta":"string","codigoTipoCuenta":"string","fechaDeposito":"string","fechaPublicacion":"string"}]},"nd":"string","textoCuentasBORME":{"codigo":"string","valor":"string"}}

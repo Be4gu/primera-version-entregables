@@ -1,0 +1,62 @@
+CBDetail:
+  description: ''
+  type: object
+  properties:
+    currentCompanyBodies:
+      type: object
+      properties:
+        dataSource:
+          type: object
+          properties:
+            date:
+              type: string
+            source:
+              type: string
+        items:
+          type: array
+          items:
+            properties:
+              appointmentDate:
+                type: string
+              name:
+                type: string
+              position:
+                type: string
+              relationships:
+                type: string
+              terminationDate:
+                type: string
+            type: object
+        unavailabilityReason:
+          type: string
+    history:
+      type: object
+      properties:
+        dataSource:
+          type: object
+          properties:
+            date:
+              type: string
+            source:
+              type: string
+        items:
+          type: array
+          items:
+            properties:
+              appointmentDate:
+                type: string
+              name:
+                type: string
+              position:
+                type: string
+              relationships:
+                type: string
+              terminationDate:
+                type: string
+            type: object
+        unavailabilityReason:
+          type: string
+    notAvailable:
+      type: string
+  example: >-
+    {"currentCompanyBodies":{"dataSource":{"date":"string","source":"string"},"items":[{"appointmentDate":"string","name":"string","position":"string","relationships":"string","terminationDate":"string"}],"unavailabilityReason":"string"},"history":{"dataSource":{"date":"string","source":"string"},"items":[{"appointmentDate":"string","name":"string","position":"string","relationships":"string","terminationDate":"string"}],"unavailabilityReason":"string"},"notAvailable":"string"}

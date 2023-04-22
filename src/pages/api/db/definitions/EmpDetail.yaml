@@ -1,0 +1,47 @@
+EmpDetail:
+  description: ''
+  type: object
+  properties:
+    employeesEvolution:
+      type: string
+    functionalManagers:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            properties:
+              firstSurname:
+                type: string
+              name:
+                type: string
+              positionDescription:
+                type: string
+              positions:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      type: string
+                  unavailabilityReason:
+                    type: string
+              secondSurname:
+                type: string
+            type: object
+        unavailabilityReason:
+          type: string
+    notAvailable:
+      type: string
+    totalEmployees:
+      type: string
+    totalEventualesRaw:
+      type: number
+    totalFixedTermEmployees:
+      type: string
+    totalLongTermEmployeesRaw:
+      type: number
+    totalTemporaryEmployees:
+      type: string
+  example: >-
+    {"employeesEvolution":"string","functionalManagers":{"items":[{"firstSurname":"string","name":"string","positionDescription":"string","positions":{"items":["string"],"unavailabilityReason":"string"},"secondSurname":"string"}],"unavailabilityReason":"string"},"notAvailable":"string","totalEmployees":"string","totalEventualesRaw":0,"totalFixedTermEmployees":"string","totalLongTermEmployeesRaw":0,"totalTemporaryEmployees":"string"}

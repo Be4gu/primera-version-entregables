@@ -1,0 +1,10 @@
+rankings:
+  type: array
+  description: ''
+  items:
+    $ref: '#/definitions/ranking'
+  example: >-
+    [{"rankingID":"01","description":"Ventas","units":"Euros","order":"desc","limit":1000},{"rankingID":"02","description":"Número
+    de
+    Empleados","units":"Unidades","order":"desc","limit":1500},{"rankingID":"03","description":"Fecha
+    de Constitución","units":"Fecha","order":"desc","limit":1000}]

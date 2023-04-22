@@ -1,0 +1,178 @@
+'/tendersapi/subscriptions/users/{userID}/alerts/{alertId}/events':
+  get:
+    tags:
+      - Tenders
+    responses:
+      '200':
+        description: 200 OK
+        schema:
+          $ref: '#/definitions/alertDetails'
+      '400':
+        description: 400 Invalid parameters supplied
+        schema:
+          type: string
+      '404':
+        description: 404 Subscription Not Found
+        schema:
+          type: string
+      '500':
+        description: 500 Internal Server Error
+        schema:
+          type: string
+    parameters:
+      - name: userID
+        type: integer
+        required: true
+        in: path
+        description: userID
+        format: int32
+      - name: alertId
+        type: integer
+        required: true
+        in: path
+        description: alertId
+        format: int32
+      - name: date
+        type: string
+        required: false
+        in: query
+        description: date
+      - name: queried
+        type: boolean
+        required: false
+        in: query
+        description: queried
+      - name: offset
+        type: integer
+        required: false
+        in: query
+        description: offset
+        format: int32
+      - name: limit
+        type: integer
+        required: false
+        in: query
+        description: limit
+        format: int32
+'/tendersapi/subscriptions/users/{userID}/alerts':
+  get:
+    tags:
+      - Tenders
+    responses:
+      '200':
+        description: 200 OK
+        schema:
+          $ref: '#/definitions/subscriptionsDetails'
+      '400':
+        description: 400 Invalid Parameters Supplied
+        schema:
+          type: string
+      '404':
+        description: 404 Subscription Not Found
+        schema:
+          type: string
+      '500':
+        description: 500 Internal Server Error
+        schema:
+          type: string
+    parameters:
+      - name: userID
+        type: integer
+        required: true
+        in: path
+        description: userID
+        format: int32
+'/tendersapi/subscriptions/users/{userID}/alerts/{alertId}':
+  get:
+    tags:
+      - Tenders
+    responses:
+      '200':
+        description: 200 OK
+        schema:
+          $ref: '#/definitions/subscriptionDetails'
+      '400':
+        description: 400 Invalid Parameters Supplied
+        schema:
+          type: string
+      '404':
+        description: 400 Invalid Parameters Supplied
+        schema:
+          type: string
+      '500':
+        description: 500 Internal Server Error
+        schema:
+          type: string
+    parameters:
+      - name: userID
+        type: integer
+        required: true
+        in: path
+        description: userID
+        format: int32
+      - name: alertId
+        type: integer
+        required: true
+        in: path
+        description: alertId
+        format: int32
+  delete:
+    tags:
+      - Tenders
+    responses:
+      '200':
+        description: 200 OK
+    parameters:
+      - name: userID
+        type: integer
+        required: true
+        in: path
+        description: userID
+        format: int32
+      - name: alertId
+        type: integer
+        required: true
+        in: path
+        description: alertId
+        format: int32
+'/tendersapi/subscriptions/alerts':
+  get:
+    tags:
+      - Tenders
+    responses:
+      '200':
+        description: 200 OK
+        schema:
+          $ref: '#/definitions/subscriptionsAlertDetails'
+      '500':
+        description: 500 Internal Server Error
+        schema:
+          type: object
+    deprecated: false
+  post:
+    tags:
+      - Tenders
+    responses:
+      '200':
+        description: 200 OK
+        schema:
+          type: integer
+          format: int32
+      '201':
+        description: ''
+      '500':
+        description: 500 Internal Server Error
+    parameters:
+      - name: alert
+        required: false
+        in: body
+        schema:
+          $ref: '#/definitions/bodyPostDetails'
+        description: alert
+'/tendersapi/subscriptions/definitions':
+  get:
+    tags:
+      - Tenders
+    responses:
+      '200':
+        description: 200 OK

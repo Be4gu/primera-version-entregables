@@ -1,0 +1,12 @@
+DFDetail:
+  description: ''
+  type: object
+  properties:
+    apuntes:
+      type: number
+    fechaApunteMasReciente:
+      type: string
+    importe:
+      type: number
+  example: >-
+    {"apuntes":0,"fechaApunteMasReciente":"2019-09-26T06:36:54.837Z","importe":0}

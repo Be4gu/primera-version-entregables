@@ -1,0 +1,84 @@
+TradeDetail:
+  description: ''
+  type: object
+  properties:
+    nd:
+      type: string
+    registros_marcas:
+      type: object
+      properties:
+        registro:
+          type: array
+          items:
+            properties:
+              calificador:
+                type: string
+              claves_niza:
+                type: object
+                properties:
+                  registro:
+                    type: array
+                    items:
+                      properties:
+                        actividad:
+                          type: string
+                        clave:
+                          type: string
+                      type: object
+              estado:
+                type: string
+              expediente:
+                type: string
+              fecha_actualizacion:
+                type: string
+              fecha_concesion:
+                type: string
+              fecha_renovacion:
+                type: string
+              fecha_solicitud:
+                type: string
+              nombre:
+                type: string
+              ruta_imagen:
+                type: string
+            type: object
+    registros_nombres_comerciales:
+      type: object
+      properties:
+        registro:
+          type: array
+          items:
+            properties:
+              calificador:
+                type: string
+              claves_niza:
+                type: object
+                properties:
+                  registro:
+                    type: array
+                    items:
+                      properties:
+                        actividad:
+                          type: string
+                        clave:
+                          type: string
+                      type: object
+              estado:
+                type: string
+              expediente:
+                type: string
+              fecha_actualizacion:
+                type: string
+              fecha_concesion:
+                type: string
+              fecha_renovacion:
+                type: string
+              fecha_solicitud:
+                type: string
+              nombre:
+                type: string
+              ruta_imagen:
+                type: string
+            type: object
+  example: >-
+    {"nd":"string","registros_marcas":{"registro":[{"calificador":"string","claves_niza":{"registro":[{"actividad":"string","clave":"string"}]},"estado":"string","expediente":"string","fecha_actualizacion":"string","fecha_concesion":"string","fecha_renovacion":"string","fecha_solicitud":"string","nombre":"string","ruta_imagen":"string"}]},"registros_nombres_comerciales":{"registro":[{"calificador":"string","claves_niza":{"registro":[{"actividad":"string","clave":"string"}]},"estado":"string","expediente":"string","fecha_actualizacion":"string","fecha_concesion":"string","fecha_renovacion":"string","fecha_solicitud":"string","nombre":"string","ruta_imagen":"string"}]}}

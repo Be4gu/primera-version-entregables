@@ -1,0 +1,9 @@
+alertsCountDetails:
+  description: ''
+  type: object
+  properties:
+    contractId:
+      type: number
+    totalAlerts:
+      type: number
+  example: '{"contractId":107238,"totalAlerts":0}'

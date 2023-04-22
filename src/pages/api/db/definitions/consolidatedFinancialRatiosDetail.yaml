@@ -1,0 +1,59 @@
+consolidatedFinancialRatiosDetail:
+  description: ''
+  type: object
+  properties:
+    notAvailable:
+      type: string
+    wrapperYears:
+      type: array
+      items:
+        properties:
+          balanceInformation:
+            type: object
+            properties:
+              balanceType:
+                type: object
+                properties:
+                  code:
+                    type: string
+                  value:
+                    type: string
+              closeDate:
+                type: string
+              documentLink:
+                type: string
+              period:
+                type: string
+              startDate:
+                type: string
+              year:
+                type: string
+          ratios:
+            type: object
+            properties:
+              items:
+                type: array
+                items:
+                  properties:
+                    description:
+                      type: object
+                      properties:
+                        code:
+                          type: string
+                        value:
+                          type: string
+                    unit:
+                      type: object
+                      properties:
+                        code:
+                          type: string
+                        value:
+                          type: string
+                    value:
+                      type: string
+                  type: object
+              unavailabilityReason:
+                type: string
+        type: object
+  example: >-
+    {"notAvailable":"string","wrapperYears":[{"balanceInformation":{"balanceType":{"code":"string","value":"string"},"closeDate":"string","documentLink":"string","period":"string","startDate":"string","year":"string"},"ratios":{"items":[{"description":{"code":"string","value":"string"},"unit":{"code":"string","value":"string"},"value":"string"}],"unavailabilityReason":"string"}}]}

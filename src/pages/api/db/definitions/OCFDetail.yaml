@@ -1,0 +1,27 @@
+OCFDetail:
+  description: ''
+  type: object
+  properties:
+    wrapperYears:
+      type: array
+      items:
+        properties:
+          balanceInformation:
+            type: object
+            properties:
+              year:
+                type: string
+              startDate:
+                type: string
+              closeDate:
+                type: string
+              documentLink:
+                type: string
+          accountsWrapper:
+            type: object
+            properties:
+              unavailabilityReason:
+                type: string
+        type: object
+  example: >-
+    {"wrapperYears":[{"balanceInformation":{"year":"2013","startDate":"01-01-2013","closeDate":"31-12-2013","documentLink":"https://desa.iberinform.es/RepositorioWs/api/v1.0/cuentas-imagen/89-3-ICM7-cmlseol10-Permanente59-26-A1001001A14H19B71845H3087318-A14H19B71845H308731-14-1019"},"accountsWrapper":{"unavailabilityReason":"NF"}}]}

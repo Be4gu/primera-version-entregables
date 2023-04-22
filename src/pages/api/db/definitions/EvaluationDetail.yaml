@@ -1,0 +1,123 @@
+EvaluationDetail:
+  description: ''
+  type: object
+  properties:
+    nonPayment:
+      type: object
+      properties:
+        definition:
+          type: object
+          properties:
+            code:
+              type: string
+            value:
+              type: string
+        exclusionaryRule:
+          type: object
+          properties:
+            code:
+              type: string
+            value:
+              type: string
+        scale:
+          type: string
+    nonPaymentRatingComments:
+      type: object
+      properties:
+        averageCollectionTime:
+          type: object
+          properties:
+            code:
+              type: string
+            value:
+              type: string
+        bankDebt:
+          type: object
+          properties:
+            code:
+              type: string
+            value:
+              type: string
+        businessRule:
+          type: object
+          properties:
+            code:
+              type: string
+            value:
+              type: string
+        claims:
+          type: object
+          properties:
+            code:
+              type: string
+            value:
+              type: string
+        financialExpenses:
+          type: object
+          properties:
+            code:
+              type: string
+            value:
+              type: string
+        group:
+          type: object
+          properties:
+            code:
+              type: string
+            value:
+              type: string
+        incomeEvolution:
+          type: object
+          properties:
+            code:
+              type: string
+            value:
+              type: string
+        manualRating:
+          type: object
+          properties:
+            code:
+              type: string
+            value:
+              type: string
+        nationalClassificationOfEconomicActivities:
+          type: object
+          properties:
+            code:
+              type: string
+            value:
+              type: string
+        salesEvolution:
+          type: object
+          properties:
+            code:
+              type: string
+            value:
+              type: string
+        shareholdersEquity:
+          type: object
+          properties:
+            code:
+              type: string
+            value:
+              type: string
+        treasury:
+          type: object
+          properties:
+            code:
+              type: string
+            value:
+              type: string
+    notAvailable:
+      type: string
+    opinionOnCreditworthiness:
+      type: object
+      properties:
+        code:
+          type: string
+        value:
+          type: string
+    solvency:
+      type: string
+  example: >-
+    {"nonPayment":{"definition":{"code":"string","value":"string"},"exclusionaryRule":{"code":"string","value":"string"},"scale":"string"},"nonPaymentRatingComments":{"averageCollectionTime":{"code":"string","value":"string"},"bankDebt":{"code":"string","value":"string"},"businessRule":{"code":"string","value":"string"},"claims":{"code":"string","value":"string"},"financialExpenses":{"code":"string","value":"string"},"group":{"code":"string","value":"string"},"incomeEvolution":{"code":"string","value":"string"},"manualRating":{"code":"string","value":"string"},"nationalClassificationOfEconomicActivities":{"code":"string","value":"string"},"salesEvolution":{"code":"string","value":"string"},"shareholdersEquity":{"code":"string","value":"string"},"treasury":{"code":"string","value":"string"}},"notAvailable":"string","opinionOnCreditworthiness":{"code":"string","value":"string"},"solvency":"string"}

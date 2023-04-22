@@ -1,0 +1,87 @@
+asnefDetails:
+  description: ''
+  type: object
+  properties:
+    message:
+      type: object
+      properties:
+        code:
+          type: string
+        description:
+          type: string
+    notAvailable:
+      type: string
+    operations:
+      type: array
+      items:
+        properties:
+          operationSummary:
+            type: object
+            properties:
+              creditorType:
+                type: string
+              firstExpirationDate:
+                type: string
+              lastExpirationDate:
+                type: string
+              nominalAmount:
+                type: number
+              numberUnpaidContributions:
+                type: number
+              product:
+                type: string
+              state:
+                type: string
+              unpaidAmount:
+                type: number
+          operationsHistory:
+            type: array
+            items:
+              properties:
+                date:
+                  type: string
+                numberUnpaidContributions:
+                  type: number
+                state:
+                  type: string
+                unpaidAmount:
+                  type: number
+              type: object
+        type: object
+    totals:
+      type: object
+      properties:
+        firstAmountDate:
+          type: string
+        lastAmountDate:
+          type: string
+        nominalAmount:
+          type: number
+        unpaidAmount:
+          type: number
+        unpaidContributions:
+          type: number
+    unpaidProgression:
+      type: array
+      items:
+        properties:
+          amount:
+            type: number
+          date:
+            type: string
+        type: object
+    unpaidSummary:
+      type: array
+      items:
+        properties:
+          operationsAmount:
+            type: number
+          operationsNumber:
+            type: number
+          situation:
+            type: string
+          year:
+            type: number
+        type: object
+  example: >-
+    {"message":{"code":"string","description":"string"},"notAvailable":"string","operations":[{"operationSummary":{"creditorType":"string","firstExpirationDate":"2020-03-12T11:47:49.665Z","lastExpirationDate":"2020-03-12T11:47:49.665Z","nominalAmount":0,"numberUnpaidContributions":0,"product":"string","state":"string","unpaidAmount":0},"operationsHistory":[{"date":"2020-03-12T11:47:49.665Z","numberUnpaidContributions":0,"state":"string","unpaidAmount":0}]}],"totals":{"firstAmountDate":"2020-03-12T11:47:49.665Z","lastAmountDate":"2020-03-12T11:47:49.665Z","nominalAmount":0,"unpaidAmount":0,"unpaidContributions":0},"unpaidProgression":[{"amount":0,"date":"2020-03-12T11:47:49.665Z"}],"unpaidSummary":[{"operationsAmount":0,"operationsNumber":0,"situation":"string","year":0}]}

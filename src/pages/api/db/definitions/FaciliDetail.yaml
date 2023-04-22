@@ -1,0 +1,270 @@
+FaciliDetail:
+  description: ''
+  type: object
+  properties:
+    facilitiesNumber:
+      type: number
+    mainFacility:
+      type: object
+      properties:
+        address:
+          type: object
+          properties:
+            country:
+              type: object
+              properties:
+                code:
+                  type: string
+                value:
+                  type: string
+            dateUntil:
+              type: string
+            fullAddress:
+              type: string
+            number:
+              type: string
+            otherDetails:
+              type: string
+            postcode:
+              type: string
+            province:
+              type: object
+              properties:
+                code:
+                  type: string
+                value:
+                  type: string
+            streetName:
+              type: string
+            streetType:
+              type: object
+              properties:
+                code:
+                  type: string
+                value:
+                  type: string
+            town:
+              type: object
+              properties:
+                code:
+                  type: string
+                value:
+                  type: string
+            urbanArea:
+              type: string
+        addressStatus:
+          type: string
+        areaType:
+          type: object
+          properties:
+            code:
+              type: string
+            value:
+              type: string
+        commercialTitle:
+          type: string
+        descriptions:
+          type: array
+          items:
+            properties:
+              code:
+                type: string
+              value:
+                type: string
+            type: object
+        expectedRefurbishmentImprovement:
+          type: string
+        expectedRenewalImprovement:
+          type: string
+        geolocation:
+          type: object
+          properties:
+            latitude:
+              type: number
+            longitude:
+              type: number
+        incidents:
+          type: object
+          properties:
+            code:
+              type: string
+            incidentDetails:
+              type: array
+              items:
+                properties:
+                  dateFrom:
+                    type: string
+                  dateTo:
+                    type: string
+                  impact:
+                    type: string
+                  type:
+                    type: string
+                type: object
+            unavailabilityReason:
+              type: string
+        investigatedFacility:
+          type: string
+        location:
+          type: object
+          properties:
+            code:
+              type: string
+            value:
+              type: string
+        machineryLife:
+          type: string
+        ownership:
+          type: string
+        photograph:
+          type: string
+        proficiencyLevel:
+          type: string
+        situation:
+          type: object
+          properties:
+            code:
+              type: string
+            value:
+              type: string
+        squareMeters:
+          type: string
+        telephone:
+          type: string
+        use:
+          type: string
+    notAvailable:
+      type: string
+    otherFacilities:
+      type: array
+      items:
+        properties:
+          address:
+            type: object
+            properties:
+              country:
+                type: object
+                properties:
+                  code:
+                    type: string
+                  value:
+                    type: string
+              dateUntil:
+                type: string
+              fullAddress:
+                type: string
+              number:
+                type: string
+              otherDetails:
+                type: string
+              postcode:
+                type: string
+              province:
+                type: object
+                properties:
+                  code:
+                    type: string
+                  value:
+                    type: string
+              streetName:
+                type: string
+              streetType:
+                type: object
+                properties:
+                  code:
+                    type: string
+                  value:
+                    type: string
+              town:
+                type: object
+                properties:
+                  code:
+                    type: string
+                  value:
+                    type: string
+              urbanArea:
+                type: string
+          addressStatus:
+            type: string
+          areaType:
+            type: object
+            properties:
+              code:
+                type: string
+              value:
+                type: string
+          commercialTitle:
+            type: string
+          descriptions:
+            type: array
+            items:
+              properties:
+                code:
+                  type: string
+                value:
+                  type: string
+              type: object
+          expectedRefurbishmentImprovement:
+            type: string
+          expectedRenewalImprovement:
+            type: string
+          geolocation:
+            type: object
+            properties:
+              latitude:
+                type: number
+              longitude:
+                type: number
+          incidents:
+            type: object
+            properties:
+              code:
+                type: string
+              incidentDetails:
+                type: array
+                items:
+                  properties:
+                    dateFrom:
+                      type: string
+                    dateTo:
+                      type: string
+                    impact:
+                      type: string
+                    type:
+                      type: string
+                  type: object
+              unavailabilityReason:
+                type: string
+          investigatedFacility:
+            type: string
+          location:
+            type: object
+            properties:
+              code:
+                type: string
+              value:
+                type: string
+          machineryLife:
+            type: string
+          ownership:
+            type: string
+          photograph:
+            type: string
+          proficiencyLevel:
+            type: string
+          situation:
+            type: object
+            properties:
+              code:
+                type: string
+              value:
+                type: string
+          squareMeters:
+            type: string
+          telephone:
+            type: string
+          use:
+            type: string
+        type: object
+  example: >-
+    {"facilitiesNumber":0,"mainFacility":{"address":{"country":{"code":"string","value":"string"},"dateUntil":"2019-10-02T10:30:43.011Z","fullAddress":"string","number":"string","otherDetails":"string","postcode":"string","province":{"code":"string","value":"string"},"streetName":"string","streetType":{"code":"string","value":"string"},"town":{"code":"string","value":"string"},"urbanArea":"string"},"addressStatus":"string","areaType":{"code":"string","value":"string"},"commercialTitle":"string","descriptions":[{"code":"string","value":"string"}],"expectedRefurbishmentImprovement":"string","expectedRenewalImprovement":"string","geolocation":{"latitude":0,"longitude":0},"incidents":{"code":"string","incidentDetails":[{"dateFrom":"string","dateTo":"string","impact":"string","type":"string"}],"unavailabilityReason":"string"},"investigatedFacility":"string","location":{"code":"string","value":"string"},"machineryLife":"string","ownership":"string","photograph":"string","proficiencyLevel":"string","situation":{"code":"string","value":"string"},"squareMeters":"string","telephone":"string","use":"string"},"notAvailable":"string","otherFacilities":[{"address":{"country":{"code":"string","value":"string"},"dateUntil":"2019-10-02T10:30:43.011Z","fullAddress":"string","number":"string","otherDetails":"string","postcode":"string","province":{"code":"string","value":"string"},"streetName":"string","streetType":{"code":"string","value":"string"},"town":{"code":"string","value":"string"},"urbanArea":"string"},"addressStatus":"string","areaType":{"code":"string","value":"string"},"commercialTitle":"string","descriptions":[{"code":"string","value":"string"}],"expectedRefurbishmentImprovement":"string","expectedRenewalImprovement":"string","geolocation":{"latitude":0,"longitude":0},"incidents":{"code":"string","incidentDetails":[{"dateFrom":"string","dateTo":"string","impact":"string","type":"string"}],"unavailabilityReason":"string"},"investigatedFacility":"string","location":{"code":"string","value":"string"},"machineryLife":"string","ownership":"string","photograph":"string","proficiencyLevel":"string","situation":{"code":"string","value":"string"},"squareMeters":"string","telephone":"string","use":"string"}]}

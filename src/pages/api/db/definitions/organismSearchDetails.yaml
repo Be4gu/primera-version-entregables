@@ -1,0 +1,73 @@
+organismSearchDetails:
+  description: ''
+  type: object
+  properties:
+    totalResults:
+      type: number
+    numResults:
+      type: number
+    tenders:
+      type: array
+      items:
+        properties:
+          adjBudget:
+            type: string
+          adjOrganism:
+            type: string
+          adjNifOrganism:
+            type: string
+          id:
+            type: number
+          date:
+            type: string
+          record:
+            type: string
+          organism:
+            type: string
+          title:
+            type: string
+          description:
+            type: string
+          budget:
+            type: string
+          endDate:
+            type: string
+          cpv:
+            type: string
+          contractType:
+            type: string
+          country: {}
+          tenderSource:
+            type: string
+          tenderState:
+            type: string
+          cpvDescriptionEN:
+            type: string
+          cpvDescriptionES:
+            type: string
+          cpvDescriptionPT:
+            type: string
+        type: object
+    trigramCounters: {}
+  example: >-
+    {"totalResults":1,"numResults":1,"tenders":[{"adjBudget":"247632.34","adjOrganism":"ABBSOLUTE
+    COMUNICACIÓN,
+    S.L.","adjNifOrganism":"B91348755","id":3386918,"date":"09/08/2019","record":"059/19-CO","organism":"Dirección
+    General de la Entidad Pública Empresarial RED.ES","title":"Servicio de
+    creación y gestión del pabellón de España en Mobile World Congress 2020 y
+    servicios asociados","description":"Id licitación: 059/19-CO; Órgano de
+    Contratación: Dirección General de la Entidad Pública Empresarial RED.ES;
+    Importe: 246572.09 EUR; Estado:
+    RES","budget":"298352.22","endDate":"16/09/2019","cpv":"79340000, 79951000,
+    79952000, 79341000,
+    79950000","contractType":"Servicios","country":null,"tenderSource":"Contratación
+    del Estado","tenderState":"Resuelta","cpvDescriptionEN":"Advertising and
+    marketing services|Seminar organisation services|Event services|Advertising
+    services|Exhibition, fair and congress organisation
+    services","cpvDescriptionES":"Servicios de publicidad y de
+    marketing|Servicio de organización de seminarios|Servicios de
+    eventos|Servicios de publicidad|Servicios de organización de exposiciones,
+    ferias y congresos","cpvDescriptionPT":"Serviços de publicidade e
+    marketing|Serviços de organização de seminários|Serviços de eventos|Serviços
+    de publicidade|Serviços de organização de exposições, feiras e
+    congressos"}],"trigramCounters":null}

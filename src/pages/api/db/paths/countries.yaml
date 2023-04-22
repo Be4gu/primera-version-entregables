@@ -1,0 +1,45 @@
+'/tendersapi/countries':
+  get:
+    tags:
+      - Tenders
+    responses:
+      '200':
+        description: 200 OK
+        schema:
+          $ref: '#/definitions/countryDetails'
+      '500':
+        description: 500 Internal Server Error
+        schema:
+          type: string
+    parameters:
+      - name: offset
+        type: integer
+        required: false
+        in: query
+        description: offset
+        format: int32
+      - name: limit
+        type: integer
+        required: false
+        in: query
+        description: limit
+        format: int32
+'/tendersapi/countries/{countryID}':
+  get:
+    tags:
+      - Tenders
+    responses:
+      '200':
+        description: 200 OK
+        schema:
+          $ref: '#/definitions/countryDetails'
+      '500':
+        description: 500 Internal Server Error
+        schema:
+          type: string
+    parameters:
+      - name: countryID
+        type: string
+        required: true
+        in: path
+        description: countryID

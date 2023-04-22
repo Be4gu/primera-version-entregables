@@ -1,0 +1,62 @@
+SalDetail:
+  description: ''
+  type: object
+  properties:
+    closeDate:
+      type: string
+    currentYearSales:
+      type: object
+      properties:
+        annualSales:
+          type: object
+          properties:
+            expectedAnnualSales:
+              type: string
+            indicator:
+              type: object
+              properties:
+                code:
+                  type: string
+                value:
+                  type: string
+        dateFromPartialSales:
+          type: string
+        dateToPartialSales:
+          type: string
+        partialSales:
+          type: string
+    documentLink:
+      type: string
+    notAvailable:
+      type: string
+    period:
+      type: string
+    previousYearSales:
+      type: object
+      properties:
+        amount:
+          type: string
+        valor:
+          type: string
+        year:
+          type: string
+    salesAssociatedCompanies:
+      type: string
+    salesTrend:
+      type: object
+      properties:
+        code:
+          type: string
+        value:
+          type: string
+    units:
+      type: object
+      properties:
+        code:
+          type: string
+        value:
+          type: string
+    year:
+      type: string
+  example: >-
+    {"closeDate":"string","currentYearSales":{"annualSales":{"expectedAnnualSales":"string","indicator":{"code":"string","value":"string"}},"dateFromPartialSales":"string","dateToPartialSales":"string","partialSales":"string"},"documentLink":"string","notAvailable":"string","period":"string","previousYearSales":{"amount":"string","valor":"string","year":"string"},"salesAssociatedCompanies":"string","salesTrend":{"code":"string","value":"string"},"units":{"code":"string","value":"string"},"year":"string"}

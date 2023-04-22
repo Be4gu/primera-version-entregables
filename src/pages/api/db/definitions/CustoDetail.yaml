@@ -1,0 +1,96 @@
+CustoDetail:
+  description: ''
+  type: object
+  properties:
+    activityScope:
+      type: object
+      properties:
+        code:
+          type: string
+        value:
+          type: string
+    averageCollectionTime:
+      type: object
+      properties:
+        code:
+          type: string
+        value:
+          type: string
+    customerPortfolio:
+      type: object
+      properties:
+        code:
+          type: string
+        value:
+          type: string
+    customerType:
+      type: object
+      properties:
+        dataSource:
+          type: object
+          properties:
+            date:
+              type: string
+            source:
+              type: string
+        items:
+          type: array
+          items:
+            properties:
+              code:
+                type: string
+              value:
+                type: string
+            type: object
+        unavailabilityReason:
+          type: string
+    distributionChannels:
+      type: object
+      properties:
+        dataSource:
+          type: object
+          properties:
+            date:
+              type: string
+            source:
+              type: string
+        items:
+          type: array
+          items:
+            properties:
+              code:
+                type: string
+              value:
+                type: string
+            type: object
+        unavailabilityReason:
+          type: string
+    export:
+      type: string
+    exportCountries:
+      type: object
+      properties:
+        dataSource:
+          type: object
+          properties:
+            date:
+              type: string
+            source:
+              type: string
+        items:
+          type: array
+          items:
+            properties:
+              code:
+                type: string
+              value:
+                type: string
+            type: object
+        unavailabilityReason:
+          type: string
+    lastYearExportPercentage:
+      type: string
+    notAvailable:
+      type: string
+  example: >-
+    {"activityScope":{"code":"string","value":"string"},"averageCollectionTime":{"code":"string","value":"string"},"customerPortfolio":{"code":"string","value":"string"},"customerType":{"dataSource":{"date":"string","source":"string"},"items":[{"code":"string","value":"string"}],"unavailabilityReason":"string"},"distributionChannels":{"dataSource":{"date":"string","source":"string"},"items":[{"code":"string","value":"string"}],"unavailabilityReason":"string"},"export":"string","exportCountries":{"dataSource":{"date":"string","source":"string"},"items":[{"code":"string","value":"string"}],"unavailabilityReason":"string"},"lastYearExportPercentage":"string","notAvailable":"string"}

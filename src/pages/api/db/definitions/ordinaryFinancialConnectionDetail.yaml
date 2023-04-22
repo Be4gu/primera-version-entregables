@@ -1,0 +1,85 @@
+ordinaryFinancialConnectionDetail:
+  description: ''
+  type: object
+  properties:
+    investeeCompanies:
+      type: object
+      properties:
+        dataSource:
+          type: object
+          properties:
+            date:
+              type: string
+            source:
+              type: string
+        elements:
+          type: array
+          items:
+            properties:
+              directHolding:
+                type: string
+              holdingPercentage:
+                type: string
+              indirectHolding:
+                type: string
+              legalForm:
+                type: object
+                properties:
+                  code:
+                    type: string
+                  value:
+                    type: string
+              name:
+                type: string
+              nonPaymentRating:
+                type: string
+              taxId:
+                type: string
+              type:
+                type: object
+                properties:
+                  code:
+                    type: string
+                  value:
+                    type: string
+            type: object
+        unavailabilityReason:
+          type: string
+    notAvailable:
+      type: string
+    shareholders:
+      type: object
+      properties:
+        dataSource:
+          type: object
+          properties:
+            date:
+              type: string
+            source:
+              type: string
+        elements:
+          type: array
+          items:
+            properties:
+              country:
+                type: string
+              legalForm:
+                type: object
+                properties:
+                  code:
+                    type: string
+                  value:
+                    type: string
+              name:
+                type: string
+              nonPaymentRating:
+                type: string
+              percentage:
+                type: string
+              taxId:
+                type: string
+            type: object
+        unavailabilityReason:
+          type: string
+  example: >-
+    {"investeeCompanies":{"dataSource":{"date":"string","source":"string"},"elements":[{"directHolding":"string","holdingPercentage":"string","indirectHolding":"string","legalForm":{"code":"string","value":"string"},"name":"string","nonPaymentRating":"string","taxId":"string","type":{"code":"string","value":"string"}}],"unavailabilityReason":"string"},"notAvailable":"string","shareholders":{"dataSource":{"date":"string","source":"string"},"elements":[{"country":"string","legalForm":{"code":"string","value":"string"},"name":"string","nonPaymentRating":"string","percentage":"string","taxId":"string"}],"unavailabilityReason":"string"}}

@@ -1,0 +1,83 @@
+alertDetails:
+  type: array
+  description: ''
+  items:
+    type: object
+    properties:
+      alert:
+        type: object
+        properties:
+          id:
+            type: number
+          creationDate:
+            type: string
+          statusDate:
+            type: string
+          userId:
+            type: string
+          tenderId:
+            type: string
+          subscriptionId:
+            type: string
+          sendEmailStatus:
+            type: boolean
+          apiQueried:
+            type: boolean
+      tender:
+        type: object
+        properties:
+          id:
+            type: number
+          date:
+            type: string
+          record:
+            type: string
+          organism:
+            type: string
+          title:
+            type: string
+          description:
+            type: string
+          budget:
+            type: string
+          endDate:
+            type: string
+          cpv:
+            type: string
+          contractType:
+            type: string
+          country:
+            type: string
+          tenderSource:
+            type: string
+          tenderState:
+            type: string
+          cpvDescriptionEN: {}
+          cpvDescriptionES:
+            type: string
+          cpvDescriptionPT: {}
+  example: >-
+    [{"alert":{"id":1465,"creationDate":"10/10/2019","statusDate":"10/10/2019","userId":"255","tenderId":"3337405","subscriptionId":"48","sendEmailStatus":false,"apiQueried":false},"tender":{"id":3337405,"date":"31/10/2019","record":"CON
+    7/2019 BIS","organism":"Junta de Gobierno Local del Ayuntamiento de Arcos de
+    Jalón","title":"Terminación  ™ ® ª º de la mejora de la captación,
+    distribución e impulsión de la tubería de abastecimiento de
+    agua","description":"Id licitación: CON 7/2019 BIS; Órgano de Contratación:
+    Junta de Gobierno Local del Ayuntamiento de Arcos de Jalón; Importe:
+    80165.29 EUR; Estado:
+    ADJ","budget":"97000.00","endDate":"20/11/2019","cpv":"45232100,
+    45000000","contractType":"Obras","country":"424","tenderSource":"Contratación
+    del
+    Estado","tenderState":"Adjudicada","cpvDescriptionEN":null,"cpvDescriptionES":"Trabajos
+    de construcción | Obras auxiliares para tuberías de
+    agua","cpvDescriptionPT":null}},{"alert":{"id":1466,"creationDate":"10/10/2019","statusDate":"10/10/2019","userId":"255","tenderId":"3337406","subscriptionId":"48","sendEmailStatus":false,"apiQueried":false},"tender":{"id":3337406,"date":"31/10/2019","record":"CON/37/2019","organism":"Alcaldía
+    del Ayuntamiento de Aller","title":"prestación de los servicios que se
+    detallan a continuación: alquiler y montaje, servicios audiovisuales,
+    servicio de vigilancia y servicio de elaboración plan de autoprotección del
+    recinto ferial de Nevaria 2019, la feria de la nieve y la
+    montaña","description":"Id licitación: CON/37/2019; Órgano de Contratación:
+    Alcaldía del Ayuntamiento de Aller; Importe: 38030.02 EUR; Estado:
+    ADJ","budget":"46016.33","endDate":"18/11/2019","cpv":"79950000","contractType":"Servicios","country":"424","tenderSource":"Contratación
+    del
+    Estado","tenderState":"Adjudicada","cpvDescriptionEN":null,"cpvDescriptionES":"Servicios
+    de organización de exposiciones, ferias y
+    congresos","cpvDescriptionPT":null}}]

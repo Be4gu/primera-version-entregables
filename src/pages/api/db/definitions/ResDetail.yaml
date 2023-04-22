@@ -1,0 +1,73 @@
+ResDetail:
+  description: ''
+  type: object
+  properties:
+    activities:
+      type: array
+      items:
+        properties:
+          activityClassCategory:
+            type: string
+          activityClassCode:
+            type: string
+          activityClassDesc:
+            type: string
+          activityClassType:
+            type: string
+          activityClassVersion:
+            type: string
+        type: object
+    address:
+      type: object
+      properties:
+        city:
+          type: string
+        country:
+          type: string
+        countrySubident:
+          type: string
+        postcode:
+          type: string
+        street:
+          type: string
+    commercialTitle:
+      type: string
+    currency:
+      type: string
+    legalForm:
+      type: object
+      properties:
+        code:
+          type: string
+        value:
+          type: string
+    name:
+      type: string
+    nd:
+      type: string
+    orgStatus:
+      type: object
+      properties:
+        statusCode:
+          type: string
+        statusDate:
+          type: string
+        statusDesc:
+          type: string
+    registeredOffice:
+      type: object
+      properties:
+        registeredOfficeCode:
+          type: string
+        registeredOfficeType:
+          type: string
+    shareCapital:
+      type: string
+    startDate:
+      type: string
+    telephone:
+      type: string
+    web:
+      type: string
+  example: >-
+    {"activities":[{"activityClassCategory":"string","activityClassCode":"string","activityClassDesc":"string","activityClassType":"string","activityClassVersion":"string"}],"address":{"city":"string","country":"string","countrySubident":"string","postcode":"string","street":"string"},"commercialTitle":"string","currency":"string","legalForm":{"code":"string","value":"string"},"name":"string","nd":"string","orgStatus":{"statusCode":"string","statusDate":"string","statusDesc":"string"},"registeredOffice":{"registeredOfficeCode":"string","registeredOfficeType":"string"},"shareCapital":"string","startDate":"string","telephone":"string","web":"string"}

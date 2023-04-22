@@ -1,0 +1,39 @@
+DefClaimsDetail:
+  description: ''
+  type: object
+  properties:
+    claims:
+      type: array
+      items:
+        properties:
+          claimConcept:
+            type: object
+            properties:
+              description:
+                type: string
+              id:
+                type: string
+          claimPublicationDate:
+            type: string
+          claimantType:
+            type: object
+            properties:
+              description:
+                type: string
+              id:
+                type: string
+          claimedAmount:
+            type: string
+          endDate:
+            type: string
+          id:
+            type: number
+          idFile:
+            type: string
+          startDate:
+            type: string
+        type: object
+    claimsNumber:
+      type: number
+  example: >-
+    {"claims":[{"claimConcept":{"description":"string","id":"string"},"claimPublicationDate":"string","claimantType":{"description":"string","id":"string"},"claimedAmount":"string","endDate":"string","id":0,"idFile":"string","startDate":"string"}],"claimsNumber":0}

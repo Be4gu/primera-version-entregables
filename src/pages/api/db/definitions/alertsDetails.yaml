@@ -1,0 +1,48 @@
+alertsDetails:
+  description: ''
+  type: object
+  properties:
+    contractId:
+      type: number
+    alerts:
+      type: array
+      items:
+        properties:
+          id:
+            type: string
+          typeId:
+            type: number
+          payload:
+            type: object
+            properties:
+              companyId:
+                type: number
+              previousValue: {}
+              previousDescription: {}
+              currentValue:
+                type: string
+              currentDescription:
+                type: string
+              changeDate:
+                type: string
+        type: object
+    totalAlerts:
+      type: number
+  example: >-
+    {"contractId":107238,"alerts":[{"id":"PdRB","typeId":2,"payload":{"companyId":3108923,"previousValue":null,"previousDescription":null,"currentValue":"0113","currentDescription":"CULTIVO
+    DE HORTALIZAS RAICES Y TUBERCULOS","changeDate":"2020-12-363
+    15:46:23"}},{"id":"YnBw","typeId":4,"payload":{"companyId":3108923,"previousValue":null,"previousDescription":null,"currentValue":"33","currentDescription":"SLL","changeDate":"2020-12-363
+    15:46:23"}},{"id":"ZaOW","typeId":5,"payload":{"companyId":3108923,"previousValue":null,"previousDescription":null,"currentValue":"COLCHONES
+    SANTA ANA","currentDescription":"","changeDate":"2020-12-363
+    15:46:23"}},{"id":"nlgj","typeId":3,"payload":{"companyId":3108923,"previousValue":null,"previousDescription":null,"currentValue":"916589632","currentDescription":"","changeDate":"2020-12-363
+    15:46:23"}},{"id":"a2KN","typeId":2,"payload":{"companyId":3639441,"previousValue":"0115","previousDescription":"CULTIVO
+    DE TABACO","currentValue":"0116","currentDescription":"CULTIVO DE PLANTAS
+    PARA FIBRAS TEXTILES","changeDate":"2020-12-363
+    16:55:29"}},{"id":"mjgX","typeId":2,"payload":{"companyId":7195876,"previousValue":"0113","previousDescription":"CULTIVO
+    DE HORTALIZAS RAICES Y
+    TUBERCULOS","currentValue":"0115","currentDescription":"CULTIVO DE
+    TABACO","changeDate":"2020-12-363
+    16:55:29"}},{"id":"QKM1","typeId":2,"payload":{"companyId":7201224,"previousValue":"0116","previousDescription":"CULTIVO
+    DE PLANTAS PARA FIBRAS
+    TEXTILES","currentValue":"0114","currentDescription":"CULTIVO DE CA A DE
+    AZUCAR","changeDate":"2020-12-363 16:55:29"}}],"totalAlerts":7}
