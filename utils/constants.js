@@ -25,6 +25,109 @@ export const INPUT_INFO = [
   }
 ]
 
+export const FILE_TEMPLATE = {
+  swagger: '2.0',
+  info: {
+    'x-ibm-name': 'iberinformapis',
+    title: 'IberinformApis',
+    version: '1.0.0',
+    contact: {
+      name: 'Iberinform',
+      url: 'https://www.iberinform.es/',
+      email: 'api.support@iberinform.es'
+    }
+  },
+  schemes: ['https'],
+  host: 'apipre.iberinform.es',
+  consumes: ['application/json'],
+  produces: ['application/json'],
+  securityDefinitions: {
+    APIKeyHeader: {
+      type: 'apiKey',
+      in: 'header',
+      name: 'X-IBM-Client-Id'
+    },
+    ClientSecretHeader: {
+      type: 'apiKey',
+      in: 'header',
+      name: 'X-IBM-Client-Secret',
+      description: 'Unique token directly related to the client contract'
+    }
+  },
+  security: [
+    {
+      APIKeyHeader: [],
+      ClientSecretHeader: []
+    }
+  ],
+  tags: [],
+  paths: '---',
+  definitions: '---',
+  basePath: '/',
+  'x-ibm-configuration': {
+    enforced: true,
+    testable: true,
+    phase: 'realized',
+    cors: {
+      enabled: true
+    }
+  }
+}
+
+export const REF_REGEX = new RegExp(/"\$ref":"#\/definitions\/[\w]*"/gm)
+
+export const DB_PATHS = {
+  endPoints: 'paths',
+  definitions: 'definitions'
+}
+
+export const TAGS_LIST = {
+  Identification: {
+    name: 'Identification',
+    description: 'Identification data about the organisations'
+  },
+  CompanyData: {
+    name: 'Company Data',
+    description: 'Company data about the organisations'
+  },
+  TradingData: {
+    name: 'Trading Data',
+    description: 'Trading data about organisations'
+  },
+  FinancialData: {
+    name: 'Financial Data',
+    description: 'Financial data about the organisations'
+  },
+  Incidents: {
+    name: 'Incidents',
+    description: 'Incidents data about the organisations'
+  },
+  RiskAnalysis: {
+    name: 'Risk Analysis',
+    description: 'Risk Analysis data about the organisations'
+  },
+  ProductReports: {
+    name: 'Product Reports',
+    description: 'Product Reports'
+  },
+  Companies: {
+    name: 'Companies',
+    description: 'Methods for search organisations'
+  },
+  Rankings: {
+    name: 'Rankings',
+    description: 'Rankings data about the organisations'
+  },
+  Tenders: {
+    name: 'Tenders',
+    description: 'Information about Tenders'
+  },
+  Alerts: {
+    name: 'Alerts',
+    description: 'Methods for alerts'
+  }
+}
+
 export const APIS_LIST = [
   'activity',
   'identificationDetails',
