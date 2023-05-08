@@ -136,4 +136,16 @@ export function crearCarpeta(nombreCarpeta) {
   fs.mkdirSync(`${path}/01 - Yaml`)
   fs.mkdirSync(`${path}/02 - Swagger`)
   fs.mkdirSync(`${path}/03 - Postman`)
+  fs.mkdirSync(`${path}/04 - Documentacion`)
+}
+
+export function getPathName(name, enviroment) {
+  return `ApisIberinform - ${name} - ${enviroment.toUpperCase()}`
+}
+
+export function copyPdfToDirectory(destinationPath) {
+  fs.copyFileSync(
+    './public/files/Iberinform_Ayuda_APIs_v1.0.pdf',
+    destinationPath
+  )
 }

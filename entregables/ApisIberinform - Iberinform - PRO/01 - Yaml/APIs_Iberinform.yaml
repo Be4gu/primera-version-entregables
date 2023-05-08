@@ -1,0 +1,319 @@
+swagger: '2.0'
+info:
+  x-ibm-name: iberinformapis
+  title: IberinformApis
+  version: 1.0.0
+  contact:
+    name: Iberinform
+    url: https://www.iberinform.es/
+    email: api.support@iberinform.es
+schemes:
+  - https
+host: api.iberinform.es
+consumes:
+  - application/json
+produces:
+  - application/json
+securityDefinitions:
+  APIKeyHeader:
+    type: apiKey
+    in: header
+    name: X-IBM-Client-Id
+  ClientSecretHeader:
+    type: apiKey
+    in: header
+    name: X-IBM-Client-Secret
+    description: Unique token directly related to the client contract
+security:
+  - APIKeyHeader: []
+    ClientSecretHeader: []
+tags:
+  - name: Financial Data
+    description: Financial data about the organisations
+  - name: Company Data
+    description: Company data about the organisations
+  - name: Trading Data
+    description: Trading data about organisations
+paths:
+  /modules/consolidatedCashFlows/{organisationID}:
+    get:
+      tags:
+        - Financial Data
+      responses:
+        '200':
+          description: 200 OK
+          schema:
+            $ref: '#/definitions/CCFDetail'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/ErrorDetail'
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/ErrorDetail'
+        '404':
+          description: Recurso no encontrado
+          schema:
+            $ref: '#/definitions/ErrorDetail'
+        '500':
+          description: Internal error
+          schema:
+            $ref: '#/definitions/ErrorDetail'
+      parameters:
+        - name: organisationID
+          type: string
+          required: true
+          in: path
+          description: identificador de la firma
+        - name: language
+          type: string
+          required: false
+          in: query
+          description: Idioma generación
+  /modules/banks/{organisationID}:
+    get:
+      tags:
+        - Company Data
+      responses:
+        '200':
+          description: 200 OK
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Recurso no encontrado
+        '500':
+          description: Internal error
+      parameters:
+        - name: organisationID
+          type: string
+          required: true
+          in: path
+          description: identificador de la firma
+        - name: language
+          type: string
+          required: false
+          in: query
+          description: Idioma generación
+  /modules/tradingInformation/{organisationID}:
+    get:
+      tags:
+        - Trading Data
+      responses:
+        '200':
+          description: 200 OK
+          schema:
+            $ref: '#/definitions/TradInfDetail'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/ErrorDetail'
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/ErrorDetail'
+        '404':
+          description: Recurso no encontrado
+          schema:
+            $ref: '#/definitions/ErrorDetail'
+        '500':
+          description: Internal error
+          schema:
+            $ref: '#/definitions/ErrorDetail'
+      parameters:
+        - name: organisationID
+          type: string
+          required: true
+          in: path
+          description: identificador de la firma
+        - name: language
+          type: string
+          required: false
+          in: query
+          description: Idioma generación
+definitions:
+  CCFDetail:
+    description: ''
+    type: object
+    properties:
+      notAvailable:
+        type: string
+      wrapperYears:
+        type: array
+        items:
+          properties:
+            accountsWrapper:
+              type: object
+              properties:
+                accounts:
+                  type: array
+                  items:
+                    properties:
+                      balance:
+                        type: string
+                      description:
+                        type: object
+                        properties:
+                          code:
+                            type: string
+                          value:
+                            type: string
+                    type: object
+                unavailabilityReason:
+                  type: string
+            balanceInformation:
+              type: object
+              properties:
+                balanceType:
+                  type: object
+                  properties:
+                    code:
+                      type: string
+                    value:
+                      type: string
+                closeDate:
+                  type: string
+                documentLink:
+                  type: string
+                period:
+                  type: string
+                startDate:
+                  type: string
+                year:
+                  type: string
+          type: object
+    example: >-
+      {"notAvailable":"string","wrapperYears":[{"accountsWrapper":{"accounts":[{"balance":"string","description":{"code":"string","value":"string"}}],"unavailabilityReason":"string"},"balanceInformation":{"balanceType":{"code":"string","value":"string"},"closeDate":"string","documentLink":"string","period":"string","startDate":"string","year":"string"}}]}
+  ErrorDetail:
+    description: ''
+    type: object
+    properties:
+      code:
+        type: string
+      message:
+        type: string
+      principal:
+        type: string
+      status:
+        type: number
+        format: int32
+      propiedad-nueva-1:
+        type: string
+    example: '{"code":"string","message":"string","principal":"string","status":0}'
+    additionalProperties: false
+  TradInfDetail:
+    description: ''
+    type: object
+    properties:
+      companyBodies:
+        type: object
+        properties:
+          dataSource:
+            type: object
+            properties:
+              date:
+                type: string
+              source:
+                type: string
+          items:
+            type: array
+            items:
+              properties:
+                holding:
+                  type: string
+                name:
+                  type: string
+                position:
+                  type: object
+                  properties:
+                    code:
+                      type: string
+                    value:
+                      type: string
+              type: object
+          unavailabilityReason:
+            type: string
+      consolidated:
+        type: string
+      corporatePurposeChange:
+        type: object
+        properties:
+          date:
+            type: string
+          newCorporatePurpose:
+            type: string
+          variationType:
+            type: object
+            properties:
+              code:
+                type: string
+              value:
+                type: string
+      groupParentCompany:
+        type: string
+      notAvailable:
+        type: string
+      relationships:
+        type: object
+        properties:
+          dataSource:
+            type: object
+            properties:
+              date:
+                type: string
+              source:
+                type: string
+          items:
+            type: array
+            items:
+              properties:
+                country:
+                  type: object
+                  properties:
+                    code:
+                      type: string
+                    value:
+                      type: string
+                holding:
+                  type: string
+                name:
+                  type: string
+                relationshipType:
+                  type: object
+                  properties:
+                    code:
+                      type: string
+                    value:
+                      type: string
+              type: object
+          unavailabilityReason:
+            type: string
+      shareCapitalChange:
+        type: object
+        properties:
+          changeDate:
+            type: string
+          currentAmount:
+            type: string
+          expectedAmount:
+            type: string
+          previousAmount:
+            type: string
+          variationSign:
+            type: object
+            properties:
+              code:
+                type: string
+              value:
+                type: string
+    example: >-
+      {"companyBodies":{"dataSource":{"date":"string","source":"string"},"items":[{"holding":"string","name":"string","position":{"code":"string","value":"string"}}],"unavailabilityReason":"string"},"consolidated":"string","corporatePurposeChange":{"date":"string","newCorporatePurpose":"string","variationType":{"code":"string","value":"string"}},"groupParentCompany":"string","notAvailable":"string","relationships":{"dataSource":{"date":"string","source":"string"},"items":[{"country":{"code":"string","value":"string"},"holding":"string","name":"string","relationshipType":{"code":"string","value":"string"}}],"unavailabilityReason":"string"},"shareCapitalChange":{"changeDate":"string","currentAmount":"string","expectedAmount":"string","previousAmount":"string","variationSign":{"code":"string","value":"string"}}}
+basePath: /
+x-ibm-configuration:
+  enforced: true
+  testable: true
+  phase: realized
+  cors:
+    enabled: true

@@ -1,2 +1,0 @@
-X-IBM-CLIENT-ID ---------- dasd 
-X-IBM-CLIENT-SECRET ---------- dasd
