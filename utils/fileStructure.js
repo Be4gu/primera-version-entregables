@@ -1,4 +1,4 @@
-const lsit = {
+export const LIST = {
   activity: { folderName: 'Identification' },
   identificationDetails: { folderName: 'Identification' },
   resume: { folderName: 'Identification' },

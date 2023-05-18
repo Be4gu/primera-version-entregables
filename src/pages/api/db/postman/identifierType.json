@@ -1,0 +1,152 @@
+[
+  {
+    "name": "/tendersapi/identifierType",
+    "request": {
+      "method": "GET",
+      "header": [
+        {
+          "key": "X-IBM-Client-Secret",
+          "value": "{{X-IBM-Client-Secret}}",
+          "type": "text"
+        }
+      ],
+      "url": {
+        "raw": "{{baseUrl}}/tendersapi/identifierType?offset=-23471775&limit=-23471775",
+        "host": ["{{baseUrl}}"],
+        "path": ["tendersapi", "identifierType"],
+        "query": [
+          {
+            "key": "offset",
+            "value": "-23471775"
+          },
+          {
+            "key": "limit",
+            "value": "-23471775"
+          }
+        ]
+      }
+    },
+    "response": [
+      {
+        "name": "200 OK",
+        "originalRequest": {
+          "method": "GET",
+          "header": [
+            {
+              "description": "Added as a part of security scheme: apikey",
+              "key": "X-IBM-Client-Id",
+              "value": "<API Key>"
+            }
+          ],
+          "url": {
+            "raw": "{{baseUrl}}/tendersapi/identifierType?offset=-23471775&limit=-23471775",
+            "host": ["{{baseUrl}}"],
+            "path": ["tendersapi", "identifierType"],
+            "query": [
+              {
+                "key": "offset",
+                "value": "-23471775"
+              },
+              {
+                "key": "limit",
+                "value": "-23471775"
+              }
+            ]
+          }
+        },
+        "status": "OK",
+        "code": 200,
+        "_postman_previewlanguage": "text",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "text/plain"
+          }
+        ],
+        "cookie": [],
+        "body": ""
+      }
+    ]
+  },
+  {
+    "name": "/tendersapi/identifierType/:country",
+    "request": {
+      "method": "GET",
+      "header": [
+        {
+          "key": "X-IBM-Client-Secret",
+          "value": "{{X-IBM-Client-Secret}}",
+          "type": "text"
+        }
+      ],
+      "url": {
+        "raw": "{{baseUrl}}/tendersapi/identifierType/:country?offset=-23471775&limit=-23471775",
+        "host": ["{{baseUrl}}"],
+        "path": ["tendersapi", "identifierType", ":country"],
+        "query": [
+          {
+            "key": "offset",
+            "value": "-23471775"
+          },
+          {
+            "key": "limit",
+            "value": "-23471775"
+          }
+        ],
+        "variable": [
+          {
+            "key": "country",
+            "value": "repre",
+            "description": "(Required) "
+          }
+        ]
+      }
+    },
+    "response": [
+      {
+        "name": "200 OK",
+        "originalRequest": {
+          "method": "GET",
+          "header": [
+            {
+              "description": "Added as a part of security scheme: apikey",
+              "key": "X-IBM-Client-Id",
+              "value": "<API Key>"
+            }
+          ],
+          "url": {
+            "raw": "{{baseUrl}}/tendersapi/identifierType/:country?offset=-23471775&limit=-23471775",
+            "host": ["{{baseUrl}}"],
+            "path": ["tendersapi", "identifierType", ":country"],
+            "query": [
+              {
+                "key": "offset",
+                "value": "-23471775"
+              },
+              {
+                "key": "limit",
+                "value": "-23471775"
+              }
+            ],
+            "variable": [
+              {
+                "key": "country"
+              }
+            ]
+          }
+        },
+        "status": "OK",
+        "code": 200,
+        "_postman_previewlanguage": "text",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "text/plain"
+          }
+        ],
+        "cookie": [],
+        "body": ""
+      }
+    ]
+  }
+]

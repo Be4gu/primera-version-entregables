@@ -1,0 +1,257 @@
+[
+  {
+    "name": "/tendersapi/v2/tenders",
+    "request": {
+      "method": "GET",
+      "header": [
+        {
+          "key": "X-IBM-Client-Secret",
+          "value": "{{X-IBM-Client-Secret}}",
+          "type": "text"
+        }
+      ],
+      "url": {
+        "raw": "{{baseUrl}}/tendersapi/v2/tenders",
+        "host": ["{{baseUrl}}"],
+        "path": ["tendersapi", "v2", "tenders"]
+      }
+    },
+    "response": [
+      {
+        "name": "200 OK",
+        "originalRequest": {
+          "method": "GET",
+          "header": [
+            {
+              "description": "Added as a part of security scheme: apikey",
+              "key": "X-IBM-Client-Id",
+              "value": "<API Key>"
+            }
+          ],
+          "url": {
+            "raw": "{{baseUrl}}/tendersapi/v2/tenders",
+            "host": ["{{baseUrl}}"],
+            "path": ["tendersapi", "v2", "tenders"]
+          }
+        },
+        "status": "OK",
+        "code": 200,
+        "_postman_previewlanguage": "text",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "text/plain"
+          }
+        ],
+        "cookie": [],
+        "body": ""
+      }
+    ]
+  },
+  {
+    "name": "/tendersapi/v2/tenders/:id",
+    "request": {
+      "method": "GET",
+      "header": [
+        {
+          "key": "X-IBM-Client-Secret",
+          "value": "{{X-IBM-Client-Secret}}",
+          "type": "text"
+        }
+      ],
+      "url": {
+        "raw": "{{baseUrl}}/tendersapi/v2/tenders/:id",
+        "host": ["{{baseUrl}}"],
+        "path": ["tendersapi", "v2", "tenders", ":id"],
+        "variable": [
+          {
+            "key": "id",
+            "value": "repre",
+            "description": "(Required) "
+          }
+        ]
+      }
+    },
+    "response": [
+      {
+        "name": "200 OK",
+        "originalRequest": {
+          "method": "GET",
+          "header": [
+            {
+              "description": "Added as a part of security scheme: apikey",
+              "key": "X-IBM-Client-Id",
+              "value": "<API Key>"
+            }
+          ],
+          "url": {
+            "raw": "{{baseUrl}}/tendersapi/v2/tenders/:id",
+            "host": ["{{baseUrl}}"],
+            "path": ["tendersapi", "v2", "tenders", ":id"],
+            "variable": [
+              {
+                "key": "id"
+              }
+            ]
+          }
+        },
+        "status": "OK",
+        "code": 200,
+        "_postman_previewlanguage": "text",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "text/plain"
+          }
+        ],
+        "cookie": [],
+        "body": ""
+      }
+    ]
+  },
+  {
+    "name": "/tendersapi/v2/tenders/:id/twins",
+    "request": {
+      "method": "GET",
+      "header": [
+        {
+          "key": "X-IBM-Client-Secret",
+          "value": "{{X-IBM-Client-Secret}}",
+          "type": "text"
+        }
+      ],
+      "url": {
+        "raw": "{{baseUrl}}/tendersapi/v2/tenders/:id/twins?offset=-23471775&CPV=true&Organism=true&Title=true&Description=true&ContractType=true&Country=true&TenderSource=true&TenderStatus=true&limit=-23471775",
+        "host": ["{{baseUrl}}"],
+        "path": ["tendersapi", "v2", "tenders", ":id", "twins"],
+        "query": [
+          {
+            "key": "offset",
+            "value": "-23471775"
+          },
+          {
+            "key": "CPV",
+            "value": "true"
+          },
+          {
+            "key": "Organism",
+            "value": "true"
+          },
+          {
+            "key": "Title",
+            "value": "true"
+          },
+          {
+            "key": "Description",
+            "value": "true"
+          },
+          {
+            "key": "ContractType",
+            "value": "true"
+          },
+          {
+            "key": "Country",
+            "value": "true"
+          },
+          {
+            "key": "TenderSource",
+            "value": "true"
+          },
+          {
+            "key": "TenderStatus",
+            "value": "true"
+          },
+          {
+            "key": "limit",
+            "value": "-23471775"
+          }
+        ],
+        "variable": [
+          {
+            "key": "id",
+            "value": "repre",
+            "description": "(Required) "
+          }
+        ]
+      }
+    },
+    "response": [
+      {
+        "name": "200 OK",
+        "originalRequest": {
+          "method": "GET",
+          "header": [
+            {
+              "description": "Added as a part of security scheme: apikey",
+              "key": "X-IBM-Client-Id",
+              "value": "<API Key>"
+            }
+          ],
+          "url": {
+            "raw": "{{baseUrl}}/tendersapi/v2/tenders/:id/twins?offset=-23471775&CPV=true&Organism=true&Title=true&Description=true&ContractType=true&Country=true&TenderSource=true&TenderStatus=true&limit=-23471775",
+            "host": ["{{baseUrl}}"],
+            "path": ["tendersapi", "v2", "tenders", ":id", "twins"],
+            "query": [
+              {
+                "key": "offset",
+                "value": "-23471775"
+              },
+              {
+                "key": "CPV",
+                "value": "true"
+              },
+              {
+                "key": "Organism",
+                "value": "true"
+              },
+              {
+                "key": "Title",
+                "value": "true"
+              },
+              {
+                "key": "Description",
+                "value": "true"
+              },
+              {
+                "key": "ContractType",
+                "value": "true"
+              },
+              {
+                "key": "Country",
+                "value": "true"
+              },
+              {
+                "key": "TenderSource",
+                "value": "true"
+              },
+              {
+                "key": "TenderStatus",
+                "value": "true"
+              },
+              {
+                "key": "limit",
+                "value": "-23471775"
+              }
+            ],
+            "variable": [
+              {
+                "key": "id"
+              }
+            ]
+          }
+        },
+        "status": "OK",
+        "code": 200,
+        "_postman_previewlanguage": "text",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "text/plain"
+          }
+        ],
+        "cookie": [],
+        "body": ""
+      }
+    ]
+  }
+]

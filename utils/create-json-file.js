@@ -7,15 +7,16 @@ import {
   FILE_TEMPLATE,
   HTMLTemplate,
   REF_REGEX,
-  TAGS_LIST
+  TAGS_LIST,
+  formatJSONForPostman
 } from './constants'
+import { LIST } from './fileStructure'
 
 export function getFinalJSON(arr, enviroment) {
   //Devuelve un json con todos los endpoint correspondientes a la lista de apis que ha recibido
   const endPoints = readFilesAndConvertToJson(arr, DB_PATHS.endPoints)
 
   const tags = getTags(JSON.stringify(endPoints))
-  console.log(tags)
   //Recibe un array con la definiciones correspondientes al json de endpoints
   const listOfDefinitions = getDefinitionsList(endPoints, REF_REGEX)
 
@@ -49,6 +50,12 @@ export function getFinalJSON(arr, enviroment) {
 }
 
 export function generateHTMLFile(str, path) {
+  fs.writeFile(path, HTMLTemplate(str), function (err) {
+    if (err) throw err
+    console.log('Saved!')
+  })
+}
+export function generatePostmanFile(str, path) {
   fs.writeFile(path, HTMLTemplate(str), function (err) {
     if (err) throw err
     console.log('Saved!')
@@ -144,8 +151,54 @@ export function getPathName(name, enviroment) {
 }
 
 export function copyPdfToDirectory(destinationPath) {
-  fs.copyFileSync(
+  fs.copyFile(
     './public/files/Iberinform_Ayuda_APIs_v1.0.pdf',
-    destinationPath
+    destinationPath,
+    (err) => {
+      if (err) {
+        console.log('Error Found:', err)
+      }
+    }
   )
+}
+
+export function createPostmanJson(params, secret, apiKey) {
+  const auxObject = readJSONFilesToObject(params)
+  const items = []
+  for (const key in auxObject) {
+    const newKeyTag = key.replace(/\s/g, '')
+    items.push({
+      name: key,
+      items: auxObject[key],
+      description: TAGS_LIST[newKeyTag].description
+    })
+  }
+  const aux = formatJSONForPostman(items, secret, apiKey)
+  return aux
+}
+
+function readJSONFilesToObject(params) {
+  let aux = {}
+  params.forEach((api) => {
+    const data = fs.readFileSync(
+      `src/pages/api/db/postman/${api}.json`,
+      'utf8',
+      (err) => {
+        if (err) {
+          console.error(err)
+          return
+        }
+      }
+    )
+    const jsonData = JSON.parse(data)
+    if (!aux[LIST[api].folderName]) aux[LIST[api].folderName] = []
+
+    if (Array.isArray(jsonData)) {
+      const newArray = [...aux[LIST[api].folderName], ...jsonData]
+      aux[LIST[api].folderName] = newArray
+    } else {
+      aux[LIST[api].folderName].push(jsonData)
+    }
+  })
+  return aux
 }

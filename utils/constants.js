@@ -1,27 +1,27 @@
 export const INPUT_INFO = [
   {
-    labelText: 'Número de contrato',
-    id: 'num',
-    type: 'text',
-    placeholder: 'Example: .....'
-  },
-  {
-    labelText: 'Nombre del cliente',
+    labelText: 'Nombre',
     id: 'name',
     type: 'text',
-    placeholder: 'Example: .....'
+    placeholder: 'Introduzca el nombre...'
   },
   {
     labelText: 'X-IBM-CLIENT-ID',
     id: 'clientID',
     type: 'text',
-    placeholder: 'Example: .....'
+    placeholder: 'Introduzca el Client-ID...'
   },
   {
     labelText: 'X-IBM-CLIENT-SECRET',
     id: 'clientSecret',
     type: 'text',
-    placeholder: 'Example: .....'
+    placeholder: 'Introduzca el Client-Secret...'
+  },
+  {
+    labelText: 'Contrato',
+    id: 'num',
+    type: 'text',
+    placeholder: 'Num de contrato...'
   }
 ]
 
@@ -128,56 +128,137 @@ export const TAGS_LIST = {
   }
 }
 
+export function formatJSONForPostman(items, secret, key) {
+  return {
+    info: {
+      _postman_id: '22a7a982-c82c-42a4-a946-14f8432dba1b',
+      name: 'IberinformApis',
+      description:
+        'Contact Support:\n Name: Iberinform\n Email: api.support@iberinform.es',
+      schema:
+        'https://schema.getpostman.com/json/collection/v2.1.0/collection.json'
+    },
+    item: items,
+    auth: {
+      type: 'apikey',
+      apikey: [
+        {
+          key: 'value',
+          value: key,
+          type: 'string'
+        },
+        {
+          key: 'key',
+          value: 'X-IBM-Client-Id',
+          type: 'string'
+        },
+        {
+          key: 'in',
+          value: 'header',
+          type: 'string'
+        }
+      ]
+    },
+    event: [
+      {
+        listen: 'prerequest',
+        script: {
+          type: 'text/javascript',
+          exec: ['']
+        }
+      },
+      {
+        listen: 'test',
+        script: {
+          type: 'text/javascript',
+          exec: ['']
+        }
+      }
+    ],
+    variable: [
+      {
+        key: 'baseUrl',
+        value: 'https://apipre.iberinform.es/'
+      },
+      {
+        key: 'X-IBM-Client-Secret',
+        value: secret
+      }
+    ]
+  }
+}
+
 export const APIS_LIST = [
-  'activity',
-  'identificationDetails',
-  'resume',
-  'consolidatedBalanceSheetAndIncomeStatement',
-  'consolidatedCashFlows',
-  'consolidatedEquityChanges',
-  'consolidatedFinancialAccounts',
-  'consolidatedFinancialConnections',
-  'consolidatedFinancialRatios',
-  'notesConsolidatedAccounts',
-  'notesOrdinaryAccounts',
-  'ordinaryBalanceSheetAndIncomeStatement',
-  'ordinaryCashFlows',
-  'ordinaryEquityChanges',
-  'ordinaryFinancialAccounts',
-  'ordinaryFinancialConnections',
-  'ordinaryFinancialRatios',
-  'sales',
-  'additionalFinancialData',
-  'activityIncidents',
-  'incidents',
-  'asnefdata',
-  'delinquencyFiles',
-  'banks',
-  'customers',
-  'employees',
-  'facilities',
-  'providers',
-  'riskControlElements',
-  'trademarksEO',
-  'deedsPublishedInBormeEO',
-  'corporateBodies',
-  'officialGazetteOfMercantileRegistryDetail',
-  'tradingInformation',
-  'iberPlusReportEO',
-  'investigatedReportEO',
-  'rankings',
-  'evaluation',
-  'organisations',
-  'alerts',
-  'alertTypes',
-  'countries',
-  'subscriptions',
-  'cpvs',
-  'tenders',
-  'v2',
-  'awardee',
-  'awarder',
-  'identifierType'
+  { value: 'identificationDetails', label: 'identificationDetails' },
+  { value: 'activity', label: 'activity' },
+  { value: 'resume', label: 'resume' },
+  {
+    value: 'consolidatedBalanceSheetAndIncomeStatement',
+    label: 'consolidatedBalanceSheetAndIncomeStatement'
+  },
+  { value: 'consolidatedCashFlows', label: 'consolidatedCashFlows' },
+  { value: 'consolidatedEquityChanges', label: 'consolidatedEquityChanges' },
+  {
+    value: 'consolidatedFinancialAccounts',
+    label: 'consolidatedFinancialAccounts'
+  },
+  {
+    value: 'consolidatedFinancialConnections',
+    label: 'consolidatedFinancialConnections'
+  },
+  {
+    value: 'consolidatedFinancialRatios',
+    label: 'consolidatedFinancialRatios'
+  },
+  { value: 'notesConsolidatedAccounts', label: 'notesConsolidatedAccounts' },
+  { value: 'notesOrdinaryAccounts', label: 'notesOrdinaryAccounts' },
+  {
+    value: 'ordinaryBalanceSheetAndIncomeStatement',
+    label: 'ordinaryBalanceSheetAndIncomeStatement'
+  },
+  { value: 'ordinaryCashFlows', label: 'ordinaryCashFlows' },
+  { value: 'ordinaryEquityChanges', label: 'ordinaryEquityChanges' },
+  { value: 'ordinaryFinancialAccounts', label: 'ordinaryFinancialAccounts' },
+  {
+    value: 'ordinaryFinancialConnections',
+    label: 'ordinaryFinancialConnections'
+  },
+  { value: 'ordinaryFinancialRatios', label: 'ordinaryFinancialRatios' },
+  { value: 'sales', label: 'sales' },
+  { value: 'additionalFinancialData', label: 'additionalFinancialData' },
+  { value: 'activityIncidents', label: 'activityIncidents' },
+  { value: 'incidents', label: 'Incidents' },
+  { value: 'asnefdata', label: 'Asnefdata' },
+  { value: 'delinquencyFiles', label: 'DelinquencyFiles' },
+  { value: 'banks', label: 'banks' },
+  { value: 'customers', label: 'customers' },
+  { value: 'employees', label: 'employees' },
+  { value: 'facilities', label: 'facilities' },
+  { value: 'providers', label: 'providers' },
+  { value: 'riskControlElements', label: 'riskControlElements' },
+  { value: 'trademarksEO', label: 'trademarksEO' },
+  { value: 'deedsPublishedInBormeEO', label: 'deedsPublishedInBormeEO' },
+  { value: 'corporateBodies', label: 'corporateBodies' },
+  {
+    value: 'officialGazetteOfMercantileRegistryDetail',
+    label: 'officialGazetteOfMercantileRegistryDetail'
+  },
+  { value: 'tradingInformation', label: 'tradingInformation' },
+  { value: 'iberPlusReportEO', label: 'iberPlusReportEO' },
+  { value: 'investigatedReportEO', label: 'investigatedReportEO' },
+  { value: 'rankings', label: 'rankings' },
+  { value: 'evaluation', label: 'evaluation' },
+  { value: 'organisations', label: 'organisations' },
+  { value: 'alerts', label: 'alerts' },
+  { value: 'alertTypes', label: 'alertTypes' },
+  { value: 'countries', label: 'countries' },
+  { value: 'subscriptions', label: 'subscriptions' },
+  { value: 'cpvs', label: 'cpvs' },
+  { value: 'tenders', label: 'tenders' },
+  // { value: 'v2', label: 'v2' },
+  { value: 'awardee', label: 'awardee' },
+  { value: 'awarder', label: 'awarder' },
+  { value: 'identifierType', label: 'identifierType' }
 ]
 
 export function HTMLTemplate(str) {

@@ -1,0 +1,234 @@
+{
+  "name": "/modules/banks/:organisationID",
+  "request": {
+    "method": "GET",
+    "header": [
+      {
+        "key": "X-IBM-Client-Secret",
+        "value": "{{X-IBM-Client-Secret}}",
+        "type": "text"
+      }
+    ],
+    "url": {
+      "raw": "{{baseUrl}}/modules/banks/:organisationID?language=repre",
+      "host": ["{{baseUrl}}"],
+      "path": ["modules", "banks", ":organisationID"],
+      "query": [
+        {
+          "key": "language",
+          "value": "repre",
+          "description": "Idioma generación"
+        }
+      ],
+      "variable": [
+        {
+          "key": "organisationID",
+          "value": "repre",
+          "description": "(Required) identificador de la firma"
+        }
+      ]
+    }
+  },
+  "response": [
+    {
+      "name": "200 OK",
+      "originalRequest": {
+        "method": "GET",
+        "header": [
+          {
+            "description": "Added as a part of security scheme: apikey",
+            "key": "X-IBM-Client-Id",
+            "value": "<API Key>"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/modules/banks/:organisationID?language=repre",
+          "host": ["{{baseUrl}}"],
+          "path": ["modules", "banks", ":organisationID"],
+          "query": [
+            {
+              "key": "language",
+              "value": "repre"
+            }
+          ],
+          "variable": [
+            {
+              "key": "organisationID"
+            }
+          ]
+        }
+      },
+      "status": "OK",
+      "code": 200,
+      "_postman_previewlanguage": "text",
+      "header": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain"
+        }
+      ],
+      "cookie": [],
+      "body": ""
+    },
+    {
+      "name": "Unauthorized",
+      "originalRequest": {
+        "method": "GET",
+        "header": [
+          {
+            "description": "Added as a part of security scheme: apikey",
+            "key": "X-IBM-Client-Id",
+            "value": "<API Key>"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/modules/banks/:organisationID?language=repre",
+          "host": ["{{baseUrl}}"],
+          "path": ["modules", "banks", ":organisationID"],
+          "query": [
+            {
+              "key": "language",
+              "value": "repre"
+            }
+          ],
+          "variable": [
+            {
+              "key": "organisationID"
+            }
+          ]
+        }
+      },
+      "status": "Unauthorized",
+      "code": 401,
+      "_postman_previewlanguage": "text",
+      "header": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain"
+        }
+      ],
+      "cookie": [],
+      "body": ""
+    },
+    {
+      "name": "Forbidden",
+      "originalRequest": {
+        "method": "GET",
+        "header": [
+          {
+            "description": "Added as a part of security scheme: apikey",
+            "key": "X-IBM-Client-Id",
+            "value": "<API Key>"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/modules/banks/:organisationID?language=repre",
+          "host": ["{{baseUrl}}"],
+          "path": ["modules", "banks", ":organisationID"],
+          "query": [
+            {
+              "key": "language",
+              "value": "repre"
+            }
+          ],
+          "variable": [
+            {
+              "key": "organisationID"
+            }
+          ]
+        }
+      },
+      "status": "Forbidden",
+      "code": 403,
+      "_postman_previewlanguage": "text",
+      "header": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain"
+        }
+      ],
+      "cookie": [],
+      "body": ""
+    },
+    {
+      "name": "Recurso no encontrado",
+      "originalRequest": {
+        "method": "GET",
+        "header": [
+          {
+            "description": "Added as a part of security scheme: apikey",
+            "key": "X-IBM-Client-Id",
+            "value": "<API Key>"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/modules/banks/:organisationID?language=repre",
+          "host": ["{{baseUrl}}"],
+          "path": ["modules", "banks", ":organisationID"],
+          "query": [
+            {
+              "key": "language",
+              "value": "repre"
+            }
+          ],
+          "variable": [
+            {
+              "key": "organisationID"
+            }
+          ]
+        }
+      },
+      "status": "Not Found",
+      "code": 404,
+      "_postman_previewlanguage": "text",
+      "header": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain"
+        }
+      ],
+      "cookie": [],
+      "body": ""
+    },
+    {
+      "name": "Internal error",
+      "originalRequest": {
+        "method": "GET",
+        "header": [
+          {
+            "description": "Added as a part of security scheme: apikey",
+            "key": "X-IBM-Client-Id",
+            "value": "<API Key>"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/modules/banks/:organisationID?language=repre",
+          "host": ["{{baseUrl}}"],
+          "path": ["modules", "banks", ":organisationID"],
+          "query": [
+            {
+              "key": "language",
+              "value": "repre"
+            }
+          ],
+          "variable": [
+            {
+              "key": "organisationID"
+            }
+          ]
+        }
+      },
+      "status": "Internal Server Error",
+      "code": 500,
+      "_postman_previewlanguage": "text",
+      "header": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain"
+        }
+      ],
+      "cookie": [],
+      "body": ""
+    }
+  ]
+}

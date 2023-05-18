@@ -1,0 +1,403 @@
+[
+  {
+    "name": "/tendersapi/awardee/:country/:identifierType/:identifier",
+    "request": {
+      "method": "GET",
+      "header": [
+        {
+          "key": "X-IBM-Client-Secret",
+          "value": "{{X-IBM-Client-Secret}}",
+          "type": "text"
+        }
+      ],
+      "url": {
+        "raw": "{{baseUrl}}/tendersapi/awardee/:country/:identifierType/:identifier?offset=-23471775&limit=-23471775",
+        "host": ["{{baseUrl}}"],
+        "path": [
+          "tendersapi",
+          "awardee",
+          ":country",
+          ":identifierType",
+          ":identifier"
+        ],
+        "query": [
+          {
+            "key": "offset",
+            "value": "-23471775",
+            "description": "(Required) "
+          },
+          {
+            "key": "limit",
+            "value": "-23471775"
+          }
+        ],
+        "variable": [
+          {
+            "key": "country",
+            "value": "repre",
+            "description": "(Required) "
+          },
+          {
+            "key": "identifierType",
+            "value": "repre",
+            "description": "(Required) "
+          },
+          {
+            "key": "identifier",
+            "value": "repre",
+            "description": "(Required) "
+          }
+        ]
+      }
+    },
+    "response": [
+      {
+        "name": "200 OK",
+        "originalRequest": {
+          "method": "GET",
+          "header": [
+            {
+              "description": "Added as a part of security scheme: apikey",
+              "key": "X-IBM-Client-Id",
+              "value": "<API Key>"
+            }
+          ],
+          "url": {
+            "raw": "{{baseUrl}}/tendersapi/awardee/:country/:identifierType/:identifier?offset=-23471775&limit=-23471775",
+            "host": ["{{baseUrl}}"],
+            "path": [
+              "tendersapi",
+              "awardee",
+              ":country",
+              ":identifierType",
+              ":identifier"
+            ],
+            "query": [
+              {
+                "key": "offset",
+                "value": "-23471775"
+              },
+              {
+                "key": "limit",
+                "value": "-23471775"
+              }
+            ],
+            "variable": [
+              {
+                "key": "country"
+              },
+              {
+                "key": "identifierType"
+              },
+              {
+                "key": "identifier"
+              }
+            ]
+          }
+        },
+        "status": "OK",
+        "code": 200,
+        "_postman_previewlanguage": "text",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "text/plain"
+          }
+        ],
+        "cookie": [],
+        "body": ""
+      }
+    ]
+  },
+  {
+    "name": "/tendersapi/awardee/:country",
+    "request": {
+      "method": "GET",
+      "header": [
+        {
+          "key": "X-IBM-Client-Secret",
+          "value": "{{X-IBM-Client-Secret}}",
+          "type": "text"
+        }
+      ],
+      "url": {
+        "raw": "{{baseUrl}}/tendersapi/awardee/:country?name=repre&offset=-23471775&limit=-23471775",
+        "host": ["{{baseUrl}}"],
+        "path": ["tendersapi", "awardee", ":country"],
+        "query": [
+          {
+            "key": "name",
+            "value": "repre",
+            "description": "(Required) "
+          },
+          {
+            "key": "offset",
+            "value": "-23471775"
+          },
+          {
+            "key": "limit",
+            "value": "-23471775"
+          }
+        ],
+        "variable": [
+          {
+            "key": "country",
+            "value": "repre",
+            "description": "(Required) "
+          }
+        ]
+      }
+    },
+    "response": [
+      {
+        "name": "200 OK",
+        "originalRequest": {
+          "method": "GET",
+          "header": [
+            {
+              "description": "Added as a part of security scheme: apikey",
+              "key": "X-IBM-Client-Id",
+              "value": "<API Key>"
+            }
+          ],
+          "url": {
+            "raw": "{{baseUrl}}/tendersapi/awardee/:country?name=repre&offset=-23471775&limit=-23471775",
+            "host": ["{{baseUrl}}"],
+            "path": ["tendersapi", "awardee", ":country"],
+            "query": [
+              {
+                "key": "name",
+                "value": "repre"
+              },
+              {
+                "key": "offset",
+                "value": "-23471775"
+              },
+              {
+                "key": "limit",
+                "value": "-23471775"
+              }
+            ],
+            "variable": [
+              {
+                "key": "country"
+              }
+            ]
+          }
+        },
+        "status": "OK",
+        "code": 200,
+        "_postman_previewlanguage": "text",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "text/plain"
+          }
+        ],
+        "cookie": [],
+        "body": ""
+      }
+    ]
+  },
+  {
+    "name": "/tendersapi/awardee/:country/:identifierType/:identifier/tenders",
+    "request": {
+      "method": "GET",
+      "header": [
+        {
+          "key": "X-IBM-Client-Secret",
+          "value": "{{X-IBM-Client-Secret}}",
+          "type": "text"
+        }
+      ],
+      "url": {
+        "raw": "{{baseUrl}}/tendersapi/awardee/:country/:identifierType/:identifier/tenders?offset=-23471775&limit=-23471775",
+        "host": ["{{baseUrl}}"],
+        "path": [
+          "tendersapi",
+          "awardee",
+          ":country",
+          ":identifierType",
+          ":identifier",
+          "tenders"
+        ],
+        "query": [
+          {
+            "key": "offset",
+            "value": "-23471775"
+          },
+          {
+            "key": "limit",
+            "value": "-23471775"
+          }
+        ],
+        "variable": [
+          {
+            "key": "country",
+            "value": "repre",
+            "description": "(Required) "
+          },
+          {
+            "key": "identifierType",
+            "value": "repre",
+            "description": "(Required) "
+          },
+          {
+            "key": "identifier",
+            "value": "repre",
+            "description": "(Required) "
+          }
+        ]
+      }
+    },
+    "response": [
+      {
+        "name": "200 OK",
+        "originalRequest": {
+          "method": "GET",
+          "header": [
+            {
+              "description": "Added as a part of security scheme: apikey",
+              "key": "X-IBM-Client-Id",
+              "value": "<API Key>"
+            }
+          ],
+          "url": {
+            "raw": "{{baseUrl}}/tendersapi/awardee/:country/:identifierType/:identifier/tenders?offset=-23471775&limit=-23471775",
+            "host": ["{{baseUrl}}"],
+            "path": [
+              "tendersapi",
+              "awardee",
+              ":country",
+              ":identifierType",
+              ":identifier",
+              "tenders"
+            ],
+            "query": [
+              {
+                "key": "offset",
+                "value": "-23471775"
+              },
+              {
+                "key": "limit",
+                "value": "-23471775"
+              }
+            ],
+            "variable": [
+              {
+                "key": "country"
+              },
+              {
+                "key": "identifierType"
+              },
+              {
+                "key": "identifier"
+              }
+            ]
+          }
+        },
+        "status": "OK",
+        "code": 200,
+        "_postman_previewlanguage": "text",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "text/plain"
+          }
+        ],
+        "cookie": [],
+        "body": ""
+      }
+    ]
+  },
+  {
+    "name": "/tendersapi/awardee/:country/tenders",
+    "request": {
+      "method": "GET",
+      "header": [
+        {
+          "key": "X-IBM-Client-Secret",
+          "value": "{{X-IBM-Client-Secret}}",
+          "type": "text"
+        }
+      ],
+      "url": {
+        "raw": "{{baseUrl}}/tendersapi/awardee/:country/tenders?name=repre&offset=-23471775&limit=-23471775",
+        "host": ["{{baseUrl}}"],
+        "path": ["tendersapi", "awardee", ":country", "tenders"],
+        "query": [
+          {
+            "key": "name",
+            "value": "repre",
+            "description": "(Required) "
+          },
+          {
+            "key": "offset",
+            "value": "-23471775"
+          },
+          {
+            "key": "limit",
+            "value": "-23471775"
+          }
+        ],
+        "variable": [
+          {
+            "key": "country",
+            "value": "repre",
+            "description": "(Required) "
+          }
+        ]
+      }
+    },
+    "response": [
+      {
+        "name": "200 OK",
+        "originalRequest": {
+          "method": "GET",
+          "header": [
+            {
+              "description": "Added as a part of security scheme: apikey",
+              "key": "X-IBM-Client-Id",
+              "value": "<API Key>"
+            }
+          ],
+          "url": {
+            "raw": "{{baseUrl}}/tendersapi/awardee/:country/tenders?name=repre&offset=-23471775&limit=-23471775",
+            "host": ["{{baseUrl}}"],
+            "path": ["tendersapi", "awardee", ":country", "tenders"],
+            "query": [
+              {
+                "key": "name",
+                "value": "repre"
+              },
+              {
+                "key": "offset",
+                "value": "-23471775"
+              },
+              {
+                "key": "limit",
+                "value": "-23471775"
+              }
+            ],
+            "variable": [
+              {
+                "key": "country"
+              }
+            ]
+          }
+        },
+        "status": "OK",
+        "code": 200,
+        "_postman_previewlanguage": "text",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "text/plain"
+          }
+        ],
+        "cookie": [],
+        "body": ""
+      }
+    ]
+  }
+]

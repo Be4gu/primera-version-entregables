@@ -7,14 +7,14 @@ import {
   getFinalJSON,
   crearCarpeta,
   getPathName,
-  copyPdfToDirectory
+  copyPdfToDirectory,
+  createPostmanJson
 } from '../../../utils/create-json-file.js'
 
 export default function handler(req, res) {
   // Obtener el objeto que se va a escribir en el archivo JSON
   const data = JSON.parse(req.body)
   const pathName = getPathName(data.name, data.entorno)
-  console.log(pathName)
   const newArr = data.apisList.map((item) => item.name)
   const finalJson = getFinalJSON(newArr, data.entorno)
   crearCarpeta(pathName)
@@ -33,7 +33,18 @@ export default function handler(req, res) {
     clientID: data.clientID,
     clientSecret: data.clientSecret
   })
-  copyPdfToDirectory(`./entregables/${pathName}/04 - Documentacion`)
+  copyPdfToDirectory(
+    `./entregables/${pathName}/04 - Documentacion/Iberinform_Ayuda_APIs_v1.0.pdf`
+  )
+  const postmanResult = createPostmanJson(
+    newArr,
+    data.clientSecret,
+    data.clientID
+  )
+  fs.writeFileSync(
+    `./entregables/${pathName}/03 - Postman/IberinformApis.postman_collection.json`,
+    JSON.stringify(postmanResult, null, 2)
+  )
   res.status(200).json({ message: 'Datos escritos en el archivo JSON.' })
 }
 
