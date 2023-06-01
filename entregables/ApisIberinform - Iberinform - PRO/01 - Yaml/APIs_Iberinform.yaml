@@ -28,28 +28,217 @@ security:
   - APIKeyHeader: []
     ClientSecretHeader: []
 tags:
-  - name: Financial Data
-    description: Financial data about the organisations
-  - name: Company Data
-    description: Company data about the organisations
-  - name: Trading Data
-    description: Trading data about organisations
+  - name: Tenders
+    description: Information about Tenders
+  - name: Companies
+    description: Methods for search organisations
+  - name: Alerts
+    description: Methods for alerts
 paths:
-  /modules/consolidatedCashFlows/{organisationID}:
+  /tendersapi/tenders/awards/{id}:
     get:
       tags:
-        - Financial Data
+        - Tenders
       responses:
         '200':
           description: 200 OK
           schema:
-            $ref: '#/definitions/CCFDetail'
+            $ref: '#/definitions/organismSearchDetails'
+        '400':
+          description: 400 Bad Request
+          schema:
+            $ref: '#/definitions/responseError'
         '401':
-          description: Unauthorized
+          description: 401 Authentication failed
+          schema:
+            $ref: '#/definitions/responseError'
+        '403':
+          description: 403 Forbidden
+          schema:
+            $ref: '#/definitions/responseError'
+        '404':
+          description: 404 Not found
+          schema:
+            $ref: '#/definitions/responseError'
+        '500':
+          description: 500 An internal error has occurred
+          schema:
+            $ref: '#/definitions/responseError'
+      parameters:
+        - name: id
+          type: string
+          required: true
+          in: path
+          description: id
+        - name: offset
+          type: integer
+          required: false
+          in: query
+          description: offset
+          format: int32
+        - name: limit
+          type: integer
+          required: false
+          in: query
+          description: limit
+          format: int32
+  /tendersapi/v2/tenders:
+    get:
+      tags:
+        - Tenders
+      responses:
+        '200':
+          description: 200 OK
+  /tendersapi/v2/tenders/{id}:
+    get:
+      tags:
+        - Tenders
+      responses:
+        '200':
+          description: 200 OK
+    parameters:
+      - name: id
+        type: string
+        required: true
+        in: path
+  /tendersapi/v2/tenders/{id}/twins:
+    get:
+      tags:
+        - Tenders
+      responses:
+        '200':
+          description: 200 OK
+      parameters:
+        - name: id
+          type: string
+          required: true
+          in: path
+        - name: offset
+          type: integer
+          required: false
+          in: query
+          format: int32
+        - name: CPV
+          type: boolean
+          required: false
+          in: query
+        - name: Organism
+          type: boolean
+          required: false
+          in: query
+        - name: Title
+          type: boolean
+          required: false
+          in: query
+        - name: Description
+          type: boolean
+          required: false
+          in: query
+        - name: ContractType
+          type: boolean
+          required: false
+          in: query
+        - name: Country
+          type: boolean
+          required: false
+          in: query
+        - name: TenderSource
+          type: boolean
+          required: false
+          in: query
+        - name: TenderStatus
+          type: boolean
+          required: false
+          in: query
+        - name: limit
+          type: integer
+          required: false
+          in: query
+          format: int32
+    parameters:
+      - name: id
+        type: string
+        required: true
+        in: path
+  /modules/organisations/:
+    get:
+      tags:
+        - Companies
+      parameters:
+        - name: user
+          in: query
+          description: Alias del usuario
+          required: false
+          type: string
+        - name: lang
+          in: query
+          description: Idioma del usuario
+          required: false
+          type: string
+        - name: maxOrgs
+          in: query
+          description: Número máximo de firmas de las localizadas a devolver
+          required: false
+          type: integer
+          format: int32
+        - name: name
+          in: query
+          description: Denominación por la que se quiere localizar firmas
+          required: false
+          type: string
+        - name: country
+          in: query
+          description: País
+          required: false
+          type: string
+        - name: street
+          in: query
+          description: Calle
+          required: false
+          type: string
+        - name: city
+          in: query
+          description: Municipio
+          required: false
+          type: string
+        - name: postCode
+          in: query
+          description: Código postal
+          required: false
+          type: string
+        - name: countrySubidentName
+          in: query
+          description: Provincia
+          required: false
+          type: string
+        - name: registeredOfficeCode
+          in: query
+          description: Número de identificación (NIF,CIF)
+          required: false
+          type: string
+        - name: minScore
+          in: query
+          description: >-
+            Puntuación mínima de coincidencia de las firmas localizadas con la
+            Denominación y Datos del Domicilio.
+          required: false
+          type: number
+          format: double
+      responses:
+        '200':
+          description: Recurso recuperado correctamente
+          schema:
+            $ref: '#/definitions/organisationSearchResult'
+        '400':
+          description: Parametros de peticion incorrectos
+          schema:
+            $ref: '#/definitions/ErrorDetail'
+        '401':
+          description: No autorizado
           schema:
             $ref: '#/definitions/ErrorDetail'
         '403':
-          description: Forbidden
+          description: Acceso no permitido
           schema:
             $ref: '#/definitions/ErrorDetail'
         '404':
@@ -60,132 +249,196 @@ paths:
           description: Internal error
           schema:
             $ref: '#/definitions/ErrorDetail'
-      parameters:
-        - name: organisationID
-          type: string
-          required: true
-          in: path
-          description: identificador de la firma
-        - name: language
-          type: string
-          required: false
-          in: query
-          description: Idioma generación
-  /modules/banks/{organisationID}:
+  /alertsapi/alerts/count:
     get:
       tags:
-        - Company Data
-      responses:
-        '200':
-          description: 200 OK
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Recurso no encontrado
-        '500':
-          description: Internal error
-      parameters:
-        - name: organisationID
-          type: string
-          required: true
-          in: path
-          description: identificador de la firma
-        - name: language
-          type: string
-          required: false
-          in: query
-          description: Idioma generación
-  /modules/tradingInformation/{organisationID}:
-    get:
-      tags:
-        - Trading Data
+        - Alerts
       responses:
         '200':
           description: 200 OK
           schema:
-            $ref: '#/definitions/TradInfDetail'
+            $ref: '#/definitions/alertsCountDetails'
+        '400':
+          description: 400 Bad Request
+          schema:
+            $ref: '#/definitions/responseError'
         '401':
-          description: Unauthorized
+          description: 401 Authentication failed
           schema:
-            $ref: '#/definitions/ErrorDetail'
+            $ref: '#/definitions/responseError'
         '403':
-          description: Forbidden
+          description: 403 Forbidden
           schema:
-            $ref: '#/definitions/ErrorDetail'
+            $ref: '#/definitions/responseError'
         '404':
-          description: Recurso no encontrado
+          description: 404 Not found
           schema:
-            $ref: '#/definitions/ErrorDetail'
+            $ref: '#/definitions/responseError'
         '500':
-          description: Internal error
+          description: 500 Internal Server Error
           schema:
-            $ref: '#/definitions/ErrorDetail'
+            $ref: '#/definitions/responseError'
+  /alertsapi/alerts:
+    get:
+      tags:
+        - Alerts
+      responses:
+        '200':
+          description: 200 OK
+          schema:
+            $ref: '#/definitions/alertsDetails'
+        '400':
+          description: 400 Bad Request
+          schema:
+            $ref: '#/definitions/responseError'
+        '401':
+          description: 401 Authentication failed
+          schema:
+            $ref: '#/definitions/responseError'
+        '403':
+          description: 403 Forbiden
+          schema:
+            $ref: '#/definitions/responseError'
+        '404':
+          description: 404 Not Found
+          schema:
+            $ref: '#/definitions/responseError'
+        '500':
+          description: 500 Internal Server Error
+          schema:
+            $ref: '#/definitions/responseError'
       parameters:
-        - name: organisationID
-          type: string
-          required: true
-          in: path
-          description: identificador de la firma
-        - name: language
+        - name: limit
+          type: integer
+          required: false
+          in: query
+          description: limit
+          format: int32
+    delete:
+      tags:
+        - Alerts
+      responses:
+        '200':
+          description: 200 OK
+      parameters:
+        - name: alertId
           type: string
           required: false
           in: query
-          description: Idioma generación
+          description: alertId
 definitions:
-  CCFDetail:
+  organismSearchDetails:
     description: ''
     type: object
     properties:
-      notAvailable:
-        type: string
-      wrapperYears:
+      totalResults:
+        type: number
+      numResults:
+        type: number
+      tenders:
         type: array
         items:
           properties:
-            accountsWrapper:
-              type: object
-              properties:
-                accounts:
-                  type: array
-                  items:
-                    properties:
-                      balance:
-                        type: string
-                      description:
-                        type: object
-                        properties:
-                          code:
-                            type: string
-                          value:
-                            type: string
-                    type: object
-                unavailabilityReason:
-                  type: string
-            balanceInformation:
-              type: object
-              properties:
-                balanceType:
-                  type: object
-                  properties:
-                    code:
-                      type: string
-                    value:
-                      type: string
-                closeDate:
-                  type: string
-                documentLink:
-                  type: string
-                period:
-                  type: string
-                startDate:
-                  type: string
-                year:
-                  type: string
+            adjBudget:
+              type: string
+            adjOrganism:
+              type: string
+            adjNifOrganism:
+              type: string
+            id:
+              type: number
+            date:
+              type: string
+            record:
+              type: string
+            organism:
+              type: string
+            title:
+              type: string
+            description:
+              type: string
+            budget:
+              type: string
+            endDate:
+              type: string
+            cpv:
+              type: string
+            contractType:
+              type: string
+            country: {}
+            tenderSource:
+              type: string
+            tenderState:
+              type: string
+            cpvDescriptionEN:
+              type: string
+            cpvDescriptionES:
+              type: string
+            cpvDescriptionPT:
+              type: string
           type: object
+      trigramCounters: {}
     example: >-
-      {"notAvailable":"string","wrapperYears":[{"accountsWrapper":{"accounts":[{"balance":"string","description":{"code":"string","value":"string"}}],"unavailabilityReason":"string"},"balanceInformation":{"balanceType":{"code":"string","value":"string"},"closeDate":"string","documentLink":"string","period":"string","startDate":"string","year":"string"}}]}
+      {"totalResults":1,"numResults":1,"tenders":[{"adjBudget":"247632.34","adjOrganism":"ABBSOLUTE
+      COMUNICACIÓN,
+      S.L.","adjNifOrganism":"B91348755","id":3386918,"date":"09/08/2019","record":"059/19-CO","organism":"Dirección
+      General de la Entidad Pública Empresarial RED.ES","title":"Servicio de
+      creación y gestión del pabellón de España en Mobile World Congress 2020 y
+      servicios asociados","description":"Id licitación: 059/19-CO; Órgano de
+      Contratación: Dirección General de la Entidad Pública Empresarial RED.ES;
+      Importe: 246572.09 EUR; Estado:
+      RES","budget":"298352.22","endDate":"16/09/2019","cpv":"79340000,
+      79951000, 79952000, 79341000,
+      79950000","contractType":"Servicios","country":null,"tenderSource":"Contratación
+      del Estado","tenderState":"Resuelta","cpvDescriptionEN":"Advertising and
+      marketing services|Seminar organisation services|Event
+      services|Advertising services|Exhibition, fair and congress organisation
+      services","cpvDescriptionES":"Servicios de publicidad y de
+      marketing|Servicio de organización de seminarios|Servicios de
+      eventos|Servicios de publicidad|Servicios de organización de exposiciones,
+      ferias y congresos","cpvDescriptionPT":"Serviços de publicidade e
+      marketing|Serviços de organização de seminários|Serviços de
+      eventos|Serviços de publicidade|Serviços de organização de exposições,
+      feiras e congressos"}],"trigramCounters":null}
+  responseError:
+    properties:
+      code:
+        type: integer
+        description: Error code
+        example: '1404'
+        format: int32
+      message:
+        type: string
+        description: Error message
+        example: Resource not found
+      more_info:
+        type: string
+        description: Additional information
+        example: This error is produced when ...
+      status:
+        type: string
+        description: HttpStatus
+        example: '404'
+    additionalProperties: false
+    description: Payload error form
+  organisationSearchResult:
+    required:
+      - baseRequest
+      - count
+      - organisations
+    properties:
+      baseRequest:
+        description: BaseRequest
+        $ref: '#/definitions/baseRequest'
+      count:
+        type: integer
+        format: int32
+        description: Número de empresas localizadas
+      organisations:
+        description: >-
+          Listado que contiene las empresas que cumplen los criterios de la
+          petición
+        $ref: '#/definitions/organisationsArray'
   ErrorDetail:
     description: ''
     type: object
@@ -203,113 +456,75 @@ definitions:
         type: string
     example: '{"code":"string","message":"string","principal":"string","status":0}'
     additionalProperties: false
-  TradInfDetail:
+  alertsCountDetails:
     description: ''
     type: object
     properties:
-      companyBodies:
-        type: object
-        properties:
-          dataSource:
-            type: object
-            properties:
-              date:
-                type: string
-              source:
-                type: string
-          items:
-            type: array
-            items:
-              properties:
-                holding:
-                  type: string
-                name:
-                  type: string
-                position:
-                  type: object
-                  properties:
-                    code:
-                      type: string
-                    value:
-                      type: string
+      contractId:
+        type: number
+      totalAlerts:
+        type: number
+    example: '{"contractId":107238,"totalAlerts":0}'
+  alertsDetails:
+    description: ''
+    type: object
+    properties:
+      contractId:
+        type: number
+      alerts:
+        type: array
+        items:
+          properties:
+            id:
+              type: string
+            typeId:
+              type: number
+            payload:
               type: object
-          unavailabilityReason:
-            type: string
-      consolidated:
-        type: string
-      corporatePurposeChange:
-        type: object
-        properties:
-          date:
-            type: string
-          newCorporatePurpose:
-            type: string
-          variationType:
-            type: object
-            properties:
-              code:
-                type: string
-              value:
-                type: string
-      groupParentCompany:
-        type: string
-      notAvailable:
-        type: string
-      relationships:
-        type: object
-        properties:
-          dataSource:
-            type: object
-            properties:
-              date:
-                type: string
-              source:
-                type: string
-          items:
-            type: array
-            items:
               properties:
-                country:
-                  type: object
-                  properties:
-                    code:
-                      type: string
-                    value:
-                      type: string
-                holding:
+                companyId:
+                  type: number
+                previousValue: {}
+                previousDescription: {}
+                currentValue:
                   type: string
-                name:
+                currentDescription:
                   type: string
-                relationshipType:
-                  type: object
-                  properties:
-                    code:
-                      type: string
-                    value:
-                      type: string
-              type: object
-          unavailabilityReason:
-            type: string
-      shareCapitalChange:
-        type: object
-        properties:
-          changeDate:
-            type: string
-          currentAmount:
-            type: string
-          expectedAmount:
-            type: string
-          previousAmount:
-            type: string
-          variationSign:
-            type: object
-            properties:
-              code:
-                type: string
-              value:
-                type: string
+                changeDate:
+                  type: string
+          type: object
+      totalAlerts:
+        type: number
     example: >-
-      {"companyBodies":{"dataSource":{"date":"string","source":"string"},"items":[{"holding":"string","name":"string","position":{"code":"string","value":"string"}}],"unavailabilityReason":"string"},"consolidated":"string","corporatePurposeChange":{"date":"string","newCorporatePurpose":"string","variationType":{"code":"string","value":"string"}},"groupParentCompany":"string","notAvailable":"string","relationships":{"dataSource":{"date":"string","source":"string"},"items":[{"country":{"code":"string","value":"string"},"holding":"string","name":"string","relationshipType":{"code":"string","value":"string"}}],"unavailabilityReason":"string"},"shareCapitalChange":{"changeDate":"string","currentAmount":"string","expectedAmount":"string","previousAmount":"string","variationSign":{"code":"string","value":"string"}}}
+      {"contractId":107238,"alerts":[{"id":"PdRB","typeId":2,"payload":{"companyId":3108923,"previousValue":null,"previousDescription":null,"currentValue":"0113","currentDescription":"CULTIVO
+      DE HORTALIZAS RAICES Y TUBERCULOS","changeDate":"2020-12-363
+      15:46:23"}},{"id":"YnBw","typeId":4,"payload":{"companyId":3108923,"previousValue":null,"previousDescription":null,"currentValue":"33","currentDescription":"SLL","changeDate":"2020-12-363
+      15:46:23"}},{"id":"ZaOW","typeId":5,"payload":{"companyId":3108923,"previousValue":null,"previousDescription":null,"currentValue":"COLCHONES
+      SANTA ANA","currentDescription":"","changeDate":"2020-12-363
+      15:46:23"}},{"id":"nlgj","typeId":3,"payload":{"companyId":3108923,"previousValue":null,"previousDescription":null,"currentValue":"916589632","currentDescription":"","changeDate":"2020-12-363
+      15:46:23"}},{"id":"a2KN","typeId":2,"payload":{"companyId":3639441,"previousValue":"0115","previousDescription":"CULTIVO
+      DE TABACO","currentValue":"0116","currentDescription":"CULTIVO DE PLANTAS
+      PARA FIBRAS TEXTILES","changeDate":"2020-12-363
+      16:55:29"}},{"id":"mjgX","typeId":2,"payload":{"companyId":7195876,"previousValue":"0113","previousDescription":"CULTIVO
+      DE HORTALIZAS RAICES Y
+      TUBERCULOS","currentValue":"0115","currentDescription":"CULTIVO DE
+      TABACO","changeDate":"2020-12-363
+      16:55:29"}},{"id":"QKM1","typeId":2,"payload":{"companyId":7201224,"previousValue":"0116","previousDescription":"CULTIVO
+      DE PLANTAS PARA FIBRAS
+      TEXTILES","currentValue":"0114","currentDescription":"CULTIVO DE CA A DE
+      AZUCAR","changeDate":"2020-12-363 16:55:29"}}],"totalAlerts":7}
+  baseRequest:
+    properties:
+      lang:
+        type: string
+        description: Código del idioma en el que se están retornando las descripciones
+      user:
+        type: string
+        description: Alias del usuario
+  organisationsArray:
+    type: array
+    items:
+      $ref: '#/definitions/organisation'
 basePath: /
 x-ibm-configuration:
   enforced: true

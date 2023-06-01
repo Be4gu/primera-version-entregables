@@ -2,9 +2,10 @@ import { INPUT_INFO, APIS_LIST } from '../../utils/constants'
 import { Input } from '../../components/input.js'
 import { CheckBox } from '../../components/check-box.js'
 import { v4 as uuidv4 } from 'uuid'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Select from 'react-select'
 import { Header } from '../../components/header'
+import { useSession } from 'next-auth/react'
 
 export default function Home() {
   const [inputValues, setInputValues] = useState({
@@ -17,6 +18,7 @@ export default function Home() {
   })
   const [api, setApi] = useState('')
   const [checked, setChecked] = useState(false)
+  const [err, setError] = useState()
 
   const resteApiList = () => {
     setInputValues({
@@ -80,10 +82,10 @@ export default function Home() {
     })
       .then((res) => res.text())
       .then((data) => {
-        console.log(data)
+        setError(data)
       })
       .catch((err) => {
-        console.error(err)
+        setError(err)
       })
   }
 
@@ -134,117 +136,131 @@ export default function Home() {
       padding: 0
     })
   })
-  return (
-    <>
-      <Header />
-      <h1 className='font-[Catalana-Bold] xl:text-4xl 2xl:text-5xl text-[#666666] text-center xl:mt-10 2xl:mt-12 2xl:mb-24 xl:mb-16'>
-        Generador de entregables API's
-      </h1>
-      <div className='w-full flex justify-start gap-20 px-10'>
-        <form
-          onSubmit={handleSubmit}
-          className=' w-80 flex xl:gap-y-0 2xl:gap-y-7 h-[558px] flex-wrap justify-between '
-        >
-          {/* Pinta todos los input segun la info que hay en la variable INPUT_INFO */}
-          {INPUT_INFO.map((info, index) => {
-            return (
-              <Input
-                changeValue={handleInputChange}
-                inputId={info.id}
-                labelText={info.labelText}
-                placeholder={info.placeholder}
-                type={info.type}
-                key={index}
-              />
-            )
-          })}
-          <div className='font-[CatalanaSans-Regular] flex flex-col w-32'>
-            <label
-              htmlFor='searcherEnvironment'
-              className='text-[#828282] text-sm'
-            >
-              Entorno
-            </label>
-            <Select
-              styles={customStyles(125)}
-              instanceId='searcherEnvironment'
-              options={[
-                { value: 'pre', label: 'Pre' },
-                { value: 'pro', label: 'Pro' }
-              ]}
-              defaultValue={{ value: 'pre', label: 'Pre' }}
-              onChange={(e) => {
-                handelChangeEntorno(e.value)
-              }}
-              isSearchable={false}
-            />
-          </div>
-          <div className='font-[CatalanaSans-Regular] flex flex-col w-80'>
-            <label
-              htmlFor='searcherEnvironment'
-              className='text-[#828282] text-sm'
-            >
-              Entorno
-            </label>
-            <Select
-              styles={customStyles(320)}
-              instanceId='searcherApi'
-              options={APIS_LIST}
-              defaultValue={APIS_LIST[1]}
-              onChange={(e) => {
-                setApi(e.value)
-              }}
-            />
-          </div>
-          <div className='flex justify-between items-center'>
-            <label
-              htmlFor='checkbox-all-apis'
-              className='cursor-pointer font-[CatalanaSans-Regular] text-base text-[#828282] text-center mr-[6px]'
-            >
-              Sel. todo
-            </label>
-            <input
-              id='checkbox-all-apis'
-              className='accent-[#DC0028] w-4 h-4'
-              type='checkbox'
-              checked={checked}
-              onChange={handleSeletAllApis}
-            />
-          </div>
-          <button onClick={addApiBtns} className='btn-primary' type='button'>
-            Ins. API
-          </button>
-          <button onClick={resteApiList} className='btn-primary' type='button'>
-            Res. todo
-          </button>
-          <div className='flex justify-center items-center w-full mt-3'>
-            <button
-              className='bg-[#DC0028] hover:bg-[#8E2A2B] py-4 px-5 rounded-[30px] uppercase font-[CatalanaSans-Medium] shrink-1 text-white leading-3'
-              type='submit'
-            >
-              Generar ficheros
-            </button>
-          </div>
-        </form>
-        <span className='xl:h-[550px] 2xl:h-[600px] w-[3px] bg-[#82828280]'></span>
-        <div className='w-full '>
-          <h3 className='font-[Catalana-Bold] text-2xl text-[#666666] mb-5'>
-            Listado de API's
-          </h3>
-          <ul className='w-full list-disc flex flex-wrap  font-[Catalana-Medium] text-[#666666]'>
-            {inputValues.apisList.map((apis, index) => {
+
+  const { data: session } = useSession()
+  if (session) {
+    return (
+      <>
+        <Header />
+
+        <h1 className='font-[Catalana-Bold] xl:text-4xl 2xl:text-5xl text-[#666666] text-center xl:mt-10 2xl:mt-12 2xl:mb-24 xl:mb-16'>
+          Generador de entregables API's
+        </h1>
+        <div className='w-full flex justify-start gap-20 px-10'>
+          <form
+            onSubmit={handleSubmit}
+            className=' w-80 flex xl:gap-y-0 2xl:gap-y-7 h-[558px] flex-wrap justify-between '
+          >
+            {/* Pinta todos los input segun la info que hay en la variable INPUT_INFO */}
+            {INPUT_INFO.map((info, index) => {
               return (
-                <CheckBox
-                  text={apis.name}
-                  id={apis.id}
-                  onClick={handleDeleteApi}
+                <Input
+                  changeValue={handleInputChange}
+                  inputId={info.id}
+                  labelText={info.labelText}
+                  placeholder={info.placeholder}
+                  type={info.type}
                   key={index}
                 />
               )
             })}
-          </ul>
+            <div className='font-[CatalanaSans-Regular] flex flex-col w-32'>
+              <label
+                htmlFor='searcherEnvironment'
+                className='text-[#828282] text-sm'
+              >
+                Entorno
+              </label>
+              <Select
+                styles={customStyles(125)}
+                instanceId='searcherEnvironment'
+                options={[
+                  { value: 'pre', label: 'Pre' },
+                  { value: 'pro', label: 'Pro' }
+                ]}
+                defaultValue={{ value: 'pre', label: 'Pre' }}
+                onChange={(e) => {
+                  handelChangeEntorno(e.value)
+                }}
+                isSearchable={false}
+              />
+            </div>
+            <div className='font-[CatalanaSans-Regular] flex flex-col w-80'>
+              <label
+                htmlFor='searcherEnvironment'
+                className='text-[#828282] text-sm'
+              >
+                Entorno
+              </label>
+              <Select
+                styles={customStyles(320)}
+                instanceId='searcherApi'
+                options={APIS_LIST}
+                defaultValue={APIS_LIST[1]}
+                onChange={(e) => {
+                  setApi(e.value)
+                }}
+              />
+            </div>
+            <div className='flex justify-between items-center'>
+              <label
+                htmlFor='checkbox-all-apis'
+                className='cursor-pointer font-[CatalanaSans-Regular] text-base text-[#828282] text-center mr-[6px]'
+              >
+                Sel. todo
+              </label>
+              <input
+                id='checkbox-all-apis'
+                className='accent-[#DC0028] w-4 h-4'
+                type='checkbox'
+                checked={checked}
+                onChange={handleSeletAllApis}
+              />
+            </div>
+            <button onClick={addApiBtns} className='btn-primary' type='button'>
+              Ins. API
+            </button>
+            <button
+              onClick={resteApiList}
+              className='btn-primary'
+              type='button'
+            >
+              Res. todo
+            </button>
+            <div className='flex justify-center items-center w-full mt-3'>
+              <button
+                className='bg-[#DC0028] hover:bg-[#8E2A2B] py-4 px-5 rounded-[30px] uppercase font-[CatalanaSans-Medium] shrink-1 text-white leading-3'
+                type='submit'
+              >
+                Generar ficheros
+              </button>
+            </div>
+            <span>{err}</span>
+          </form>
+          <span
+            style={{ boxShadow: '20px 10px 6px -5px rgba(0,0,0,0.5)' }}
+            className='xl:h-[550px] 2xl:h-[600px] w-[3px] bg-[#82828280]'
+          ></span>
+          <div className='w-full '>
+            <h3 className='font-[Catalana-Bold] text-2xl text-[#666666] mb-5'>
+              Listado de API's
+            </h3>
+            <ul className='w-full list-disc flex flex-wrap  font-[Catalana-Medium] text-[#666666]'>
+              {inputValues.apisList.map((apis, index) => {
+                return (
+                  <CheckBox
+                    text={apis.name}
+                    id={apis.id}
+                    onClick={handleDeleteApi}
+                    key={index}
+                  />
+                )
+              })}
+            </ul>
+          </div>
         </div>
-      </div>
-    </>
-  )
+      </>
+    )
+  }
+  return <Header />
 }

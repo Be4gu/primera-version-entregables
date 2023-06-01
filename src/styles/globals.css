@@ -61,6 +61,6 @@
     @apply h-10 bg-[#DC0028] hover:bg-[#8E2A2B] py-3 px-4 rounded-[30px] uppercase font-[CatalanaSans-Medium] text-white text-sm self-center;
   }
   .btn-primary-outline-disabled {
-    @apply flex items-center gap-2 border-[1px] text-[#E5A9B2] border-[#E5A9B2] py-3 px-4 rounded-[30px] font-[CatalanaSans-Medium] text-sm leading-3;
+    @apply flex cursor-pointer  items-center gap-2 border-[1px] text-[#DC0028] border-[#DC0028] py-3 px-4 rounded-[30px] font-[CatalanaSans-Medium] text-sm leading-3;
   }
 }
