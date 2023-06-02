@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'INNAPPSERVICE01'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E8E08DCAE9614F61A993C3CDAAC58B7F }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_17E0B4B8B0F04A948A1A09F9BF4C0863 }}
           package: .
