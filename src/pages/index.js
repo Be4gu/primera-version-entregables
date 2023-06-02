@@ -262,5 +262,5 @@ export default function Home() {
       </>
     )
   }
-  return <Header />
+  return <h1>HOLA</h1>
 }
