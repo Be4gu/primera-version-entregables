@@ -16,6 +16,7 @@ export default function Home() {
     entorno: 'pro',
     apisList: []
   })
+  const a = ''
   const [api, setApi] = useState('')
   const [checked, setChecked] = useState(false)
   const [err, setError] = useState()
