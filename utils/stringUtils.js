@@ -25,6 +25,7 @@ export function modifyStringsBySubstring(arr) {
 }
 
 export function getAPIHost(enviroment) {
+  console.log(enviroment)
   if (enviroment === 'pro') return 'api.iberinform.es'
   if (enviroment === 'pre') return 'apipre.iberinform.es'
 }

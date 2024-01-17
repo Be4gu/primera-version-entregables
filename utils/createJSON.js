@@ -45,8 +45,9 @@ export function getFinalJSON(arr, enviroment) {
   finalJson.paths = endPoints
   finalJson.definitions = definitions
   finalJson.tags = tags
+  console.log(finalJson.host)
   finalJson.host = getAPIHost(enviroment)
-
+  console.log(finalJson.host)
   return finalJson
 }
 

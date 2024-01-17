@@ -1,2 +1,0 @@
-X-IBM-CLIENT-ID ---------- qwertyuo 
-X-IBM-CLIENT-SECRET ---------- qwertyuii

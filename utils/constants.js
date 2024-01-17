@@ -38,7 +38,7 @@ export const FILE_TEMPLATE = {
     }
   },
   schemes: ['https'],
-  host: 'apipre.iberinform.es',
+  host: '---',
   consumes: ['application/json'],
   produces: ['application/json'],
   securityDefinitions: {
