@@ -182,10 +182,17 @@ export default function Home() {
               styles={customStyles(125)}
               instanceId='searcherEnvironment'
               options={[
+<<<<<<< HEAD
                 { value: 'pro', label: 'Pro' },
                 { value: 'pre', label: 'Pre' }
               ]}
               defaultValue={[{ value: 'pre', label: 'Pre', isFixed: true }]}
+=======
+                { value: 'pre', label: 'Pre' },
+                { value: 'pro', label: 'Pro' }
+              ]}
+              defaultValue={{ value: 'pre', label: 'Pre' }}
+>>>>>>> 8e241a9a6bbdb8c22222d28f6d38f7b26b9b6f11
               onChange={(e) => {
                 handelChangeEntorno(e.value)
               }}
@@ -197,13 +204,21 @@ export default function Home() {
               htmlFor='searcherEnvironment'
               className='text-[#828282] text-sm'
             >
+<<<<<<< HEAD
               API's
+=======
+              Entorno
+>>>>>>> 8e241a9a6bbdb8c22222d28f6d38f7b26b9b6f11
             </label>
             <Select
               styles={customStyles(320)}
               instanceId='searcherApi'
               options={APIS_LIST}
+<<<<<<< HEAD
               defaultValue={APIS_LIST[0]}
+=======
+              defaultValue={APIS_LIST[1]}
+>>>>>>> 8e241a9a6bbdb8c22222d28f6d38f7b26b9b6f11
               onChange={(e) => {
                 setApi(e.value)
               }}
