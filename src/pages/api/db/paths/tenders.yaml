@@ -123,3 +123,537 @@
       type: string
       required: true
       in: path
+'/tendersapi/subscriptions/users/{userID}/alerts/{alertId}/events':
+  get:
+    tags:
+      - Tenders
+    responses:
+      '200':
+        description: 200 OK
+        schema:
+          $ref: '#/definitions/alertDetails'
+      '400':
+        description: 400 Invalid parameters supplied
+        schema:
+          type: string
+      '404':
+        description: 404 Subscription Not Found
+        schema:
+          type: string
+      '500':
+        description: 500 Internal Server Error
+        schema:
+          type: string
+    parameters:
+      - name: userID
+        type: integer
+        required: true
+        in: path
+        description: userID
+        format: int32
+      - name: alertId
+        type: integer
+        required: true
+        in: path
+        description: alertId
+        format: int32
+      - name: date
+        type: string
+        required: false
+        in: query
+        description: date
+      - name: queried
+        type: boolean
+        required: false
+        in: query
+        description: queried
+      - name: offset
+        type: integer
+        required: false
+        in: query
+        description: offset
+        format: int32
+      - name: limit
+        type: integer
+        required: false
+        in: query
+        description: limit
+        format: int32
+'/tendersapi/subscriptions/users/{userID}/alerts':
+  get:
+    tags:
+      - Tenders
+    responses:
+      '200':
+        description: 200 OK
+        schema:
+          $ref: '#/definitions/subscriptionsDetails'
+      '400':
+        description: 400 Invalid Parameters Supplied
+        schema:
+          type: string
+      '404':
+        description: 404 Subscription Not Found
+        schema:
+          type: string
+      '500':
+        description: 500 Internal Server Error
+        schema:
+          type: string
+    parameters:
+      - name: userID
+        type: integer
+        required: true
+        in: path
+        description: userID
+        format: int32
+'/tendersapi/subscriptions/users/{userID}/alerts/{alertId}':
+  get:
+    tags:
+      - Tenders
+    responses:
+      '200':
+        description: 200 OK
+        schema:
+          $ref: '#/definitions/subscriptionDetails'
+      '400':
+        description: 400 Invalid Parameters Supplied
+        schema:
+          type: string
+      '404':
+        description: 400 Invalid Parameters Supplied
+        schema:
+          type: string
+      '500':
+        description: 500 Internal Server Error
+        schema:
+          type: string
+    parameters:
+      - name: userID
+        type: integer
+        required: true
+        in: path
+        description: userID
+        format: int32
+      - name: alertId
+        type: integer
+        required: true
+        in: path
+        description: alertId
+        format: int32
+  delete:
+    tags:
+      - Tenders
+    responses:
+      '200':
+        description: 200 OK
+    parameters:
+      - name: userID
+        type: integer
+        required: true
+        in: path
+        description: userID
+        format: int32
+      - name: alertId
+        type: integer
+        required: true
+        in: path
+        description: alertId
+        format: int32
+'/tendersapi/subscriptions/alerts':
+  get:
+    tags:
+      - Tenders
+    responses:
+      '200':
+        description: 200 OK
+        schema:
+          $ref: '#/definitions/subscriptionsAlertDetails'
+      '500':
+        description: 500 Internal Server Error
+        schema:
+          type: object
+    deprecated: false
+  post:
+    tags:
+      - Tenders
+    responses:
+      '200':
+        description: 200 OK
+        schema:
+          type: integer
+          format: int32
+      '201':
+        description: ''
+      '500':
+        description: 500 Internal Server Error
+    parameters:
+      - name: alert
+        required: false
+        in: body
+        schema:
+          $ref: '#/definitions/bodyPostDetails'
+        description: alert
+'/tendersapi/subscriptions/definitions':
+  get:
+    tags:
+      - Tenders
+    responses:
+      '200':
+        description: 200 OK
+'/tendersapi/identifierType':
+  get:
+    tags:
+      - Tenders
+    responses:
+      '200':
+        description: 200 OK
+    parameters:
+      - name: offset
+        type: integer
+        required: false
+        in: query
+        format: int32
+      - name: limit
+        type: integer
+        required: false
+        in: query
+        format: int32
+'/tendersapi/identifierType/{country}':
+  get:
+    tags:
+      - Tenders
+    responses:
+      '200':
+        description: 200 OK
+    parameters:
+      - name: country
+        type: string
+        required: true
+        in: path
+      - name: offset
+        type: integer
+        required: false
+        in: query
+        format: int32
+      - name: limit
+        type: integer
+        required: false
+        in: query
+        format: int32
+'/tendersapi/cpvs':
+  get:
+    tags:
+      - Tenders
+    responses:
+      '200':
+        description: 200 OK
+        schema:
+          $ref: '#/definitions/cpvsDetails'
+      '500':
+        description: 500 Internal Server Error
+    parameters:
+      - name: offset
+        type: integer
+        required: false
+        in: query
+        description: offset
+        format: int32
+      - name: limit
+        type: integer
+        required: false
+        in: query
+        description: limit
+        format: int32
+      - name: lang
+        type: string
+        required: false
+        in: query
+        description: lang
+'/tendersapi/cpvs/{cpvID}':
+  get:
+    tags:
+      - Tenders
+    responses:
+      '200':
+        description: 200 OK
+        schema:
+          $ref: '#/definitions/cpvDetails'
+      '400':
+        description: 400 Cpv Not Found
+        schema:
+          type: string
+      '500':
+        description: 500 Internal Server Error
+        schema:
+          type: string
+    parameters:
+      - name: cpvID
+        type: string
+        required: true
+        in: path
+        description: cpvID
+      - name: lang
+        type: string
+        required: false
+        in: query
+        description: lang
+'/tendersapi/countries':
+  get:
+    tags:
+      - Tenders
+    responses:
+      '200':
+        description: 200 OK
+        schema:
+          $ref: '#/definitions/countryDetails'
+      '500':
+        description: 500 Internal Server Error
+        schema:
+          type: string
+    parameters:
+      - name: offset
+        type: integer
+        required: false
+        in: query
+        description: offset
+        format: int32
+      - name: limit
+        type: integer
+        required: false
+        in: query
+        description: limit
+        format: int32
+'/tendersapi/countries/{countryID}':
+  get:
+    tags:
+      - Tenders
+    responses:
+      '200':
+        description: 200 OK
+        schema:
+          $ref: '#/definitions/countryDetails'
+      '500':
+        description: 500 Internal Server Error
+        schema:
+          type: string
+    parameters:
+      - name: countryID
+        type: string
+        required: true
+        in: path
+        description: countryID
+'/tendersapi/awarder/{country}/{identifierType}/{identifier}':
+  get:
+    tags:
+      - Tenders
+    responses:
+      '200':
+        description: 200 OK
+  parameters:
+    - name: country
+      type: string
+      required: true
+      in: path
+    - name: identifierType
+      type: string
+      required: true
+      in: path
+    - name: identifier
+      type: string
+      required: true
+      in: path
+    - name: offset
+      type: integer
+      required: false
+      in: query
+      format: int32
+    - name: limit
+      type: integer
+      required: false
+      in: query
+      format: int32
+'/tendersapi/awarder/{country}':
+  get:
+    tags:
+      - Tenders
+    responses:
+      '200':
+        description: 200 OK
+  parameters:
+    - name: country
+      type: string
+      required: true
+      in: path
+    - name: name
+      type: string
+      required: true
+      in: query
+    - name: offset
+      type: integer
+      required: false
+      in: query
+      format: int32
+'/tendersapi/awarder/{country}/tenders':
+  get:
+    tags:
+      - Tenders
+    responses:
+      '200':
+        description: 200 OK
+  parameters:
+    - name: country
+      type: string
+      required: true
+      in: path
+    - name: name
+      type: string
+      required: true
+      in: query
+    - name: limit
+      type: integer
+      required: false
+      in: query
+      format: int32
+'/tendersapi/awarder/{country}/{identifierType}/{identifier}/tenders':
+  get:
+    tags:
+      - Tenders
+    responses:
+      '200':
+        description: 200 OK
+  parameters:
+    - name: country
+      type: string
+      required: true
+      in: path
+    - name: identifierType
+      type: string
+      required: true
+      in: path
+    - name: identifier
+      type: string
+      required: true
+      in: path
+    - name: offset
+      type: integer
+      required: false
+      in: query
+      format: int32
+    - name: limit
+      type: integer
+      required: false
+      in: query
+      format: int32
+'/tendersapi/awardee/{country}/{identifierType}/{identifier}':
+  get:
+    tags:
+      - Tenders
+    responses:
+      '200':
+        description: 200 OK
+  parameters:
+    - name: country
+      type: string
+      required: true
+      in: path
+    - name: identifierType
+      type: string
+      required: true
+      in: path
+    - name: identifier
+      type: string
+      required: true
+      in: path
+    - name: offset
+      type: integer
+      required: true
+      in: query
+      format: int32
+    - name: limit
+      type: integer
+      required: false
+      in: query
+      format: int32
+'/tendersapi/awardee/{country}':
+  get:
+    tags:
+      - Tenders
+    responses:
+      '200':
+        description: 200 OK
+  parameters:
+    - name: country
+      type: string
+      required: true
+      in: path
+    - name: name
+      type: string
+      required: true
+      in: query
+    - name: offset
+      type: integer
+      required: false
+      in: query
+      format: int32
+    - name: limit
+      type: integer
+      required: false
+      in: query
+      format: int32
+'/tendersapi/awardee/{country}/{identifierType}/{identifier}/tenders':
+  get:
+    tags:
+      - Tenders
+    responses:
+      '200':
+        description: 200 OK
+  parameters:
+    - name: country
+      type: string
+      required: true
+      in: path
+    - name: identifierType
+      type: string
+      required: true
+      in: path
+    - name: identifier
+      type: string
+      required: true
+      in: path
+    - name: offset
+      type: integer
+      required: false
+      in: query
+      format: int32
+    - name: limit
+      type: integer
+      required: false
+      in: query
+      format: int32
+'/tendersapi/awardee/{country}/tenders':
+  get:
+    tags:
+      - Tenders
+    responses:
+      '200':
+        description: 200 OK
+  parameters:
+    - name: country
+      type: string
+      required: true
+      in: path
+    - name: name
+      type: string
+      required: true
+      in: query
+    - name: offset
+      type: integer
+      required: false
+      in: query
+      format: int32
+    - name: limit
+      type: integer
+      required: false
+      in: query
+      format: int32

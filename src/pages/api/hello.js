@@ -1,5 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 const yaml = require('js-yaml')
+const archiver = require('archiver')
 import fs from 'fs'
 import {
   getFinalJSON,
@@ -9,11 +10,13 @@ import {
 import {
   crearCarpeta,
   createTextFileKeys,
-  generateHTMLFile
+  generateHTMLFile,
+  zipCarpeta
+  // zipCarpeta
 } from '@/utils/createFile'
 import { getPathName } from '@/utils/stringUtils'
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
   try {
     // Obtener el objeto que se va a escribir en el archivo JSON
     const data = JSON.parse(req.body)
@@ -66,14 +69,36 @@ export default function handler(req, res) {
       `./entregables/${pathName}/03 - Postman/IberinformApis.postman_collection.json`,
       JSON.stringify(postmanResult, null, 2)
     )
-
-    // res.setHeader('Content-Type', 'application/json')
-    // res.end(JSON.stringify({ number: 1, name: 'John' }))
-    res.status(200).json('Hecho')
+    // require modules
+    zipCarpeta(pathName)
+      .then((fileContent) => {
+        // Aquí puedes hacer lo que necesites con el contenido del archivo ZIP
+        res.setHeader('Content-Type', 'application/zip')
+        res.setHeader('Content-Disposition', 'attachment; filename=archivo.zip')
+        res.setHeader('Content-Length', fileContent.length)
+        res.status(200).send(fileContent)
+      })
+      .catch((error) => {
+        console.error('Error al comprimir la carpeta:', error)
+      })
   } catch (err) {
+    console.log(err)
     res.status(500).json('Algo ha salido mal!')
   }
 }
+
+// export async function GET() {
+//   const zip = new JSZip()
+//   zip.file('Hello.txt', 'Hola')
+//   const archive = await zip.generateAsync({ type: 'blob' })
+
+//   return new Response(archive, {
+//     status: 200,
+//     headers: {
+//       'Content-Type': 'application/zip'
+//     }
+//   })
+// }
 
 // Iberinform/
 //     ├── 01 - Yaml/

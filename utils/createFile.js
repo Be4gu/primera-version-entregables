@@ -1,4 +1,5 @@
 import { HTMLTemplate } from './constants'
+const archiver = require('archiver')
 
 const fs = require('fs')
 
@@ -10,6 +11,29 @@ export function crearCarpeta(nombreCarpeta) {
   fs.mkdirSync(`${path}/02 - Swagger`)
   fs.mkdirSync(`${path}/03 - Postman`)
   fs.mkdirSync(`${path}/04 - Documentacion`)
+}
+
+export async function zipCarpeta(pathName) {
+  return new Promise((resolve, reject) => {
+    const sourcePath = `./entregables/${pathName}`
+    const destinationPath = `./entregables/${pathName}.zip`
+    const output = fs.createWriteStream(destinationPath)
+    const archive = archiver('zip', { zlib: { level: 9 } })
+
+    output.on('close', () => {
+      console.log('Carpeta comprimida exitosamente.')
+      const fileContent = fs.readFileSync(destinationPath)
+      resolve(fileContent)
+    })
+
+    archive.on('error', (err) => {
+      reject(err)
+    })
+
+    archive.directory(sourcePath, false)
+    archive.pipe(output)
+    archive.finalize()
+  })
 }
 
 export function generateHTMLFile(str, path) {

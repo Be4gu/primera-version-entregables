@@ -1,8 +1,8 @@
 import { BsFillPersonFill } from 'react-icons/bs'
-import { useSession, signIn, signOut } from 'next-auth/react'
+// import { useSession, signIn, signOut } from 'next-auth/react'
 
 export function Header() {
-  const { data: session } = useSession()
+  // const { data: session } = useSession()
   return (
     <header className='xl:h-24 2xl:h-32 w-full flex justify-between items-center shadow-md px-10'>
       <img
@@ -22,7 +22,7 @@ export function Header() {
             size={18}
             style={{ width: '20px', fill: '#DC0028' }}
           />
-          {session ? 'Salir' : 'Acceso'}
+          {'Acceso'}
         </button>
       </div>
     </header>

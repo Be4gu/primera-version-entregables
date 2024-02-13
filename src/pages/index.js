@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid'
 import React, { useState } from 'react'
 import Select from 'react-select'
 import { Header } from '../../components/header'
-import { useSession } from 'next-auth/react'
+// import { useSession } from 'next-auth/react'
 
 export default function Home() {
   const [inputValues, setInputValues] = useState({
@@ -17,6 +17,7 @@ export default function Home() {
     apisList: []
   })
   const a = ''
+  const [downloadLink, setDownloadLink] = useState(null)
   const [api, setApi] = useState('')
   const [checked, setChecked] = useState(false)
   const [err, setError] = useState()
@@ -81,15 +82,25 @@ export default function Home() {
   }
 
   const handleSubmit = (event) => {
-    // if (!inputValues) return
+    if (!inputValues) return
     event.preventDefault()
     fetch('/api/hello', {
       method: 'POST',
       body: JSON.stringify(inputValues)
     })
-      .then((res) => res.text())
+      .then((res) => res.blob())
       .then((data) => {
-        setError(data)
+        const a = document.createElement('a')
+        const url = window.URL.createObjectURL(data)
+        a.href = url
+        a.download = `ApisIberinform - ${
+          inputValues.name
+        } - ${inputValues.entorno.toUpperCase()}`
+        document.body.appendChild(a)
+        a.click()
+
+        console.log('entra')
+        window.URL.revokeObjectURL(a.href)
       })
       .catch((err) => {
         setError(err)
@@ -144,7 +155,7 @@ export default function Home() {
     })
   })
 
-  const { data: session } = useSession()
+  // const { data: session } = useSession()
   // if (session) {
   return (
     <>
@@ -182,17 +193,10 @@ export default function Home() {
               styles={customStyles(125)}
               instanceId='searcherEnvironment'
               options={[
-<<<<<<< HEAD
                 { value: 'pro', label: 'Pro' },
                 { value: 'pre', label: 'Pre' }
               ]}
               defaultValue={[{ value: 'pre', label: 'Pre', isFixed: true }]}
-=======
-                { value: 'pre', label: 'Pre' },
-                { value: 'pro', label: 'Pro' }
-              ]}
-              defaultValue={{ value: 'pre', label: 'Pre' }}
->>>>>>> 8e241a9a6bbdb8c22222d28f6d38f7b26b9b6f11
               onChange={(e) => {
                 handelChangeEntorno(e.value)
               }}
@@ -204,21 +208,13 @@ export default function Home() {
               htmlFor='searcherEnvironment'
               className='text-[#828282] text-sm'
             >
-<<<<<<< HEAD
               API's
-=======
-              Entorno
->>>>>>> 8e241a9a6bbdb8c22222d28f6d38f7b26b9b6f11
             </label>
             <Select
               styles={customStyles(320)}
               instanceId='searcherApi'
               options={APIS_LIST}
-<<<<<<< HEAD
               defaultValue={APIS_LIST[0]}
-=======
-              defaultValue={APIS_LIST[1]}
->>>>>>> 8e241a9a6bbdb8c22222d28f6d38f7b26b9b6f11
               onChange={(e) => {
                 setApi(e.value)
               }}
@@ -279,6 +275,4 @@ export default function Home() {
       </div>
     </>
   )
-  // }
-  // return <Header />
 }
