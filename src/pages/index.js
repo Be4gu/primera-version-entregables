@@ -38,25 +38,6 @@ export default function Home() {
       setInputValues({ ...inputValues, clientSecret: event })
   }
 
-  const addApiBtns = () => {
-    if (!api) return
-    let hola = true
-    inputValues.apisList.filter((item) => {
-      if (item.name === api) {
-        hola = false
-      }
-    })
-
-    if (hola) {
-      const newListApi = [...inputValues.apisList]
-      newListApi.push({ name: api, id: uuidv4() })
-      setInputValues({
-        ...inputValues,
-        apisList: newListApi
-      })
-    }
-  }
-
   const handleSeletAllApis = () => {
     if (!checked) {
       const newList = []
