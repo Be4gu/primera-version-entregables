@@ -251,14 +251,14 @@ export const APIS_LIST = [
   { value: 'organisations', label: 'organisations' },
   { value: 'alerts', label: 'alerts' },
   { value: 'alertTypes', label: 'alertTypes' },
-  { value: 'countries', label: 'countries' },
-  { value: 'subscriptions', label: 'subscriptions' },
-  { value: 'cpvs', label: 'cpvs' },
-  { value: 'tenders', label: 'tenders' },
+  // { value: 'countries', label: 'countries' },
+  // { value: 'subscriptions', label: 'subscriptions' },
+  // { value: 'cpvs', label: 'cpvs' },
+  { value: 'tenders', label: 'tenders' }
   // { value: 'v2', label: 'v2' },
-  { value: 'awardee', label: 'awardee' },
-  { value: 'awarder', label: 'awarder' },
-  { value: 'identifierType', label: 'identifierType' }
+  // { value: 'awardee', label: 'awardee' },
+  // { value: 'awarder', label: 'awarder' },
+  // { value: 'identifierType', label: 'identifierType' }
 ]
 
 export function HTMLTemplate(str) {

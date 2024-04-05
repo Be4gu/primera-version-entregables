@@ -24,6 +24,12 @@ export default function Home() {
   const [api, setApi] = useState('')
   const [checked, setChecked] = useState(false)
   const [err, setError] = useState()
+  const [valueSerch, setValueSerch] = useState()
+
+  const handelValueSerch = (value) => {
+    setValueSerch(value)
+    console.log(value)
+  }
 
   const resteApiList = () => {
     setInputValues({
@@ -53,6 +59,24 @@ export default function Home() {
     } else if (checked) {
       resteApiList()
       setChecked(!checked)
+    }
+  }
+  const addApiBtns = () => {
+    if (!api) return
+    let hola = true
+    inputValues.apisList.filter((item) => {
+      if (item.name === api) {
+        hola = false
+      }
+    })
+
+    if (hola) {
+      const newListApi = [...inputValues.apisList]
+      newListApi.push({ name: api, id: uuidv4() })
+      setInputValues({
+        ...inputValues,
+        apisList: newListApi
+      })
     }
   }
 
@@ -151,11 +175,12 @@ export default function Home() {
       })
       console.log(aux)
     } else {
+      const newListApi = [...inputValues.apisList]
+      newListApi.push(item)
       setInputValues({
         ...inputValues,
-        apisList: [...item]
+        apisList: newListApi
       })
-      console.log(inputValues.apisList)
     }
 
     // setInputValues({
@@ -284,23 +309,37 @@ export default function Home() {
           className='xl:h-[550px] 2xl:h-[600px] w-[3px] bg-[#82828280]'
         ></span>
         <div className='w-full '>
-          <h3 className='font-[Catalana-Bold] text-2xl text-[#666666] mb-5'>
-            Listado de API's
-          </h3>
+          <div className='flex gap-8 align-bottom'>
+            <h3 className='font-[Catalana-Bold] text-2xl text-[#666666] inline-block  align-text-bottom'>
+              Listado de API's
+            </h3>
+            <input
+              type='text'
+              placeholder='Buscar API...'
+              className='input-primary-lg'
+              onChange={(event) => setValueSerch(event.target.value)}
+            ></input>
+          </div>
           <ul
             typeof='none'
-            className='w-full  flex flex-wrap  font-[Catalana-Medium] text-[#666666]'
+            className='w-full mt-10 grid grid-cols-2 font-[Catalana-Medium] text-[#666666]'
           >
             {APIS_LIST.map((item, index) => (
               <li key={index}>
                 <label>
                   <input
                     type='checkbox'
-                    className='accent-[#DC0028] w-4 h-4'
+                    className='accent-[#DC0028] w-4 h-4 mr-1'
                     checked={inputValues.apisList.includes(item.value)}
                     onChange={() => handleToggleSelection(item.value)}
                   />
-                  {item.value}
+                  {item.value.includes(valueSerch) && valueSerch !== '' ? (
+                    <span className='bg-[#dc002850] text-[#555555]'>
+                      {item.value}
+                    </span>
+                  ) : (
+                    <span className='bg-transparent'>{item.value}</span>
+                  )}
                 </label>
               </li>
             ))}
