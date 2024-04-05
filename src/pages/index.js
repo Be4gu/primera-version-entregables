@@ -99,7 +99,6 @@ export default function Home() {
         document.body.appendChild(a)
         a.click()
 
-        console.log('entra')
         window.URL.revokeObjectURL(a.href)
       })
       .catch((err) => {
