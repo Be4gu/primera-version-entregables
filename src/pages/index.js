@@ -5,6 +5,9 @@ import { v4 as uuidv4 } from 'uuid'
 import React, { useState } from 'react'
 import Select from 'react-select'
 import { Header } from '../../components/header'
+import { log } from 'util'
+import { list } from 'postcss'
+import { type } from 'os'
 // import { useSession } from 'next-auth/react'
 
 export default function Home() {
@@ -21,6 +24,12 @@ export default function Home() {
   const [api, setApi] = useState('')
   const [checked, setChecked] = useState(false)
   const [err, setError] = useState()
+  const [valueSerch, setValueSerch] = useState()
+
+  const handelValueSerch = (value) => {
+    setValueSerch(value)
+    console.log(value)
+  }
 
   const resteApiList = () => {
     setInputValues({
@@ -38,6 +47,20 @@ export default function Home() {
       setInputValues({ ...inputValues, clientSecret: event })
   }
 
+  const handleSeletAllApis = () => {
+    if (!checked) {
+      const newList = []
+      APIS_LIST.map((items, i) => newList.push(items.value))
+      setInputValues({
+        ...inputValues,
+        apisList: newList
+      })
+      setChecked(!checked)
+    } else if (checked) {
+      resteApiList()
+      setChecked(!checked)
+    }
+  }
   const addApiBtns = () => {
     if (!api) return
     let hola = true
@@ -57,23 +80,6 @@ export default function Home() {
     }
   }
 
-  const handleSeletAllApis = () => {
-    if (!checked) {
-      const newList = []
-      APIS_LIST.map((ictems, i) =>
-        newList.push({ name: ictems.value, id: uuidv4() })
-      )
-      setInputValues({
-        ...inputValues,
-        apisList: newList
-      })
-      setChecked(!checked)
-    } else if (checked) {
-      resteApiList()
-      setChecked(!checked)
-    }
-  }
-
   const handelChangeEntorno = (value) => {
     setInputValues({
       ...inputValues,
@@ -84,6 +90,7 @@ export default function Home() {
   const handleSubmit = (event) => {
     if (!inputValues) return
     event.preventDefault()
+    console.log(inputValues)
     fetch('/api/hello', {
       method: 'POST',
       body: JSON.stringify(inputValues)
@@ -154,8 +161,74 @@ export default function Home() {
     })
   })
 
-  // const { data: session } = useSession()
-  // if (session) {
+  // const [selectedItems, setSelectedItems] = useState([])
+
+  const handleToggleSelection = (item) => {
+    console.log(item)
+    if (inputValues.apisList.includes(item)) {
+      let aux = inputValues.apisList.filter(
+        (selectedItem) => selectedItem !== item
+      )
+      setInputValues({
+        ...inputValues,
+        apisList: aux
+      })
+      console.log(aux)
+    } else {
+      const newListApi = [...inputValues.apisList]
+      newListApi.push(item)
+      setInputValues({
+        ...inputValues,
+        apisList: newListApi
+      })
+    }
+
+    // setInputValues({
+    //   ...inputValues,
+    //   apisList: [...selectedItems]
+    // })
+  }
+
+  const handleAddToNewArrayCheck = () => {
+    // Aquí podrías hacer algo con los elementos seleccionados si es necesario
+    setSelectedItems(originalArray)
+  }
+
+  // return (
+  //   <div>
+  //     <h1>Array Original</h1>
+  //     <ul>
+  //       {originalArray.map((item, index) => (
+  //         <li key={index}>
+  //           <label>
+  //             <input
+  //               type='checkbox'
+  //               className='accent-[#DC0028] w-4 h-4'
+  //               checked={selectedItems.includes(item)}
+  //               onChange={() => handleToggleSelection(item)}
+  //             />
+  //             {item}
+  //           </label>
+  //         </li>
+  //       ))}
+  //     </ul>
+  //     {/* <button onClick={handleAddToNewArray}>
+  //       Agregar elementos seleccionados
+  //     </button> */}
+  //     <div>
+  //       {inputValues.apisList.map((item, index) => (
+  //         <li key={index}>{item}</li>
+  //       ))}
+  //     </div>
+  //     <input
+  //       id='checkbox-all-apis'
+  //       className='accent-[#DC0028] w-4 h-4'
+  //       type='checkbox'
+  //       // checked={checked}
+  //       onChange={handleSeletAllApis}
+  //     />
+  //   </div>
+  // )
   return (
     <>
       <Header />
@@ -202,23 +275,7 @@ export default function Home() {
               isSearchable={false}
             />
           </div>
-          <div className='font-[CatalanaSans-Regular] flex flex-col w-80'>
-            <label
-              htmlFor='searcherEnvironment'
-              className='text-[#828282] text-sm'
-            >
-              API's
-            </label>
-            <Select
-              styles={customStyles(320)}
-              instanceId='searcherApi'
-              options={APIS_LIST}
-              defaultValue={APIS_LIST[0]}
-              onChange={(e) => {
-                setApi(e.value)
-              }}
-            />
-          </div>
+
           <div className='flex justify-between items-center'>
             <label
               htmlFor='checkbox-all-apis'
@@ -234,9 +291,6 @@ export default function Home() {
               onChange={handleSeletAllApis}
             />
           </div>
-          <button onClick={addApiBtns} className='btn-primary' type='button'>
-            Ins. API
-          </button>
           <button onClick={resteApiList} className='btn-primary' type='button'>
             Res. todo
           </button>
@@ -255,23 +309,47 @@ export default function Home() {
           className='xl:h-[550px] 2xl:h-[600px] w-[3px] bg-[#82828280]'
         ></span>
         <div className='w-full '>
-          <h3 className='font-[Catalana-Bold] text-2xl text-[#666666] mb-5'>
-            Listado de API's
-          </h3>
-          <ul className='w-full list-disc flex flex-wrap  font-[Catalana-Medium] text-[#666666]'>
-            {inputValues.apisList.map((apis, index) => {
-              return (
-                <CheckBox
-                  text={apis.name}
-                  id={apis.id}
-                  onClick={handleDeleteApi}
-                  key={index}
-                />
-              )
-            })}
+          <div className='flex gap-8 align-bottom'>
+            <h3 className='font-[Catalana-Bold] text-2xl text-[#666666] inline-block  align-text-bottom'>
+              Listado de API's
+            </h3>
+            <input
+              type='text'
+              placeholder='Buscar API...'
+              className='input-primary-lg'
+              onChange={(event) => setValueSerch(event.target.value)}
+            ></input>
+          </div>
+          <ul
+            typeof='none'
+            className='w-full mt-10 grid grid-cols-2 font-[Catalana-Medium] text-[#666666]'
+          >
+            {APIS_LIST.map((item, index) => (
+              <li key={index}>
+                <label>
+                  <input
+                    type='checkbox'
+                    className='accent-[#DC0028] w-4 h-4 mr-1'
+                    checked={inputValues.apisList.includes(item.value)}
+                    onChange={() => handleToggleSelection(item.value)}
+                  />
+                  {item.value.includes(valueSerch) && valueSerch !== '' ? (
+                    <span className='bg-[#dc002850] text-[#555555]'>
+                      {item.value}
+                    </span>
+                  ) : (
+                    <span className='bg-transparent'>{item.value}</span>
+                  )}
+                </label>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
     </>
   )
 }
+
+// const { data: session } = useSession()
+// if (session) {
+// }
