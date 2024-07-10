@@ -25,8 +25,8 @@ export default async function handler(req, res) {
     const pathName = getPathName(data.name, data.entorno)
 
     //Obtiene una lista de APIS
-    const newArr = data.apisList.map((item) => item.name)
-
+    const newArr = data.apisList
+    console.log(newArr)
     //Crea obtiene el JSON final necesario para la creacion de todos los ficheros salvo para el postman ya que tiene una estructura diferente.
     const finalJson = getFinalJSON(newArr, data.entorno)
 

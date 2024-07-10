@@ -90,6 +90,7 @@ export default function Home() {
   const handleSubmit = (event) => {
     if (!inputValues) return
     event.preventDefault()
+    console.log(inputValues)
     fetch('/api/hello', {
       method: 'POST',
       body: JSON.stringify(inputValues)
